@@ -517,6 +517,8 @@ class AsyncioRouter:
                 f"Request failed because {replica_id} is temporarily unavailable."
             )
 
+    
+    # NOTE: This method is the main entry point for request assignment
     async def schedule_and_send_request(
         self, pr: PendingRequest
     ) -> Tuple[ReplicaResult, ReplicaID]:
@@ -525,6 +527,7 @@ class AsyncioRouter:
         This will block indefinitely if no replicas are available to handle the
         request, so it's up to the caller to time out or cancel the request.
         """
+        # Routing logic: choose a replica for the request.
         r = await self._replica_scheduler.choose_replica_for_request(pr)
 
         # If the queue len cache is disabled or we're sending a request to Java,

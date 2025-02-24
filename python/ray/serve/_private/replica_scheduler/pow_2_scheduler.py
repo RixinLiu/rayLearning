@@ -403,6 +403,7 @@ class PowerOfTwoChoicesReplicaScheduler(ReplicaScheduler):
                     multiplexed_start_matching_time = time.time()
 
                 candidate_replica_ids = None
+                # attempt to choose replicas that have the requested model ID
                 if (
                     request_metadata is not None
                     and request_metadata.multiplexed_model_id
@@ -488,7 +489,8 @@ class PowerOfTwoChoicesReplicaScheduler(ReplicaScheduler):
                     )
                     yield [self._replicas[chosen_id] for chosen_id in chosen_ids]
 
-                # We have a slight unintended behavior when enabled locality routing
+                # We have a slight unintended behavior (So, is there a bug?) 
+                # when enabled locality routing
                 # for both node and AZ. The intention is to try same node first,
                 # then try same AZ if node fails, then try everything else until a
                 # replica is found. These sequence should only help to reduce the
@@ -743,6 +745,7 @@ class PowerOfTwoChoicesReplicaScheduler(ReplicaScheduler):
                 start_time = time.time()
                 backoff_index = 0
                 request_metadata = self._get_next_pending_request_metadata_to_schedule()
+                # Choose two replicas to schedule the request.
                 async for candidates in self.choose_two_replicas_with_backoff(
                     request_metadata
                 ):
@@ -758,6 +761,7 @@ class PowerOfTwoChoicesReplicaScheduler(ReplicaScheduler):
                     if len(self._scheduling_tasks) > self.target_num_scheduling_tasks:
                         break
 
+                    # Choose the best replica from these two candidates.
                     replica = await self.select_from_candidate_replicas(
                         candidates, backoff_index
                     )
@@ -787,6 +791,7 @@ class PowerOfTwoChoicesReplicaScheduler(ReplicaScheduler):
         except Exception:
             logger.exception("Unexpected error in fulfill_pending_requests.")
         finally:
+            # Remove this task from the set of scheduling tasks.
             self._scheduling_tasks.remove(asyncio.current_task(loop=self._event_loop))
             self.num_scheduling_tasks_gauge.set(self.curr_num_scheduling_tasks)
 
@@ -832,6 +837,7 @@ class PowerOfTwoChoicesReplicaScheduler(ReplicaScheduler):
                 pending_request.reset_future()
                 index = 0
                 for pr in self._pending_requests_to_fulfill:
+                    # based on the created_at time, insert the request in the right place
                     if pending_request.created_at < pr.created_at:
                         break
 
@@ -848,6 +854,7 @@ class PowerOfTwoChoicesReplicaScheduler(ReplicaScheduler):
 
                 self._pending_requests_to_schedule.insert(index, pending_request)
 
+            # Start scheduling tasks
             self.maybe_start_scheduling_tasks()
             replica = await pending_request.future
         except asyncio.CancelledError as e:
