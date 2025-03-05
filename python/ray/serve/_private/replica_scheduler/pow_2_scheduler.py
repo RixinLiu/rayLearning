@@ -489,7 +489,7 @@ class PowerOfTwoChoicesReplicaScheduler(ReplicaScheduler):
                     )
                     yield [self._replicas[chosen_id] for chosen_id in chosen_ids]
 
-                # We have a slight unintended behavior (So, is there a bug?) 
+                # We have a slight unintended behavior (Rixin: So, is there a bug?) 
                 # when enabled locality routing
                 # for both node and AZ. The intention is to try same node first,
                 # then try same AZ if node fails, then try everything else until a
