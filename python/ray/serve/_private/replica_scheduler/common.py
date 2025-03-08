@@ -74,3 +74,44 @@ class ReplicaQueueLengthCache:
         for replica_id in list(self._cache.keys()):
             if replica_id not in active_replica_ids:
                 self._cache.pop(replica_id)
+
+class ReplicaThroughputCache:
+    def __init__(
+        self,
+        *,
+        staleness_timeout_s: float = RAY_SERVE_THROUGHPUT_CACHE_TIMEOUT_S,
+        get_curr_time_s: Optional[Callable[[], float]] = None,
+    ):
+        self._cache: Dict[ReplicaID, float] = {}
+        self._staleness_timeout_s = staleness_timeout_s
+        self._get_curr_time_s = (
+            get_curr_time_s if get_curr_time_s is not None else time.time
+        )
+
+    def _is_timed_out(self, timestamp_s: int) -> bool:
+        return self._get_curr_time_s() - timestamp_s > self._staleness_timeout_s
+
+    def get(self, replica_id: ReplicaID) -> Optional[float]:
+        """Get the throughput for a replica.
+
+        Returns `None` if the replica ID is not present or the entry is timed out.
+        """
+        entry = self._cache.get(replica_id)
+        if entry is None or self._is_timed_out(entry):
+            return None
+
+        return entry
+
+    def update(self, replica_id: ReplicaID, throughput: float):
+        """Set (or update) the throughput for a replica ID."""
+        self._cache[replica_id] = throughput
+
+    def invalidate_key(self, replica_id: ReplicaID):
+        self._cache.pop(replica_id, None)
+
+    def remove_inactive_replicas(self, *, active_replica_ids: Set[ReplicaID]):
+        """Removes entries for all replica IDs not in the provided active set."""
+        # NOTE: the size of the cache dictionary changes during this loop.
+        for replica_id in list(self._cache.keys()):
+            if replica_id not in active_replica_ids:
+                self._cache.pop(replica_id)

@@ -176,6 +176,20 @@ class RunningReplica:
             ray.cancel(obj_ref)
             raise
 
+    async def get_throughput (
+        self, *, deadline_s: float
+    ) -> int:
+        """Returns current throughput for the replica.
+        `deadline_s` is passed to verify backoff for testing.
+        """
+        # TODO: the function `get_throughput` is not implemented
+        obj_ref = self._actor_handle.get_throughput.remote()
+        try:
+            return await obj_ref
+        except asyncio.CancelledError:
+            ray.cancel(obj_ref)
+            raise
+
     async def send_request(
         self, pr: PendingRequest, with_rejection: bool
     ) -> Tuple[Optional[ReplicaResult], Optional[ReplicaQueueLengthInfo]]:

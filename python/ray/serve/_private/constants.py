@@ -285,6 +285,16 @@ RAY_SERVE_MAX_QUEUE_LENGTH_RESPONSE_DEADLINE_S = float(
     os.environ.get("RAY_SERVE_MAX_QUEUE_LENGTH_RESPONSE_DEADLINE_S", 1.0)
 )
 
+# Initial deadline for throughput responses in the router.
+RAY_SERVE_THROUGHPUT_RESPONSE_DEADLINE_S = float(
+    os.environ.get("RAY_SERVE_QUEUE_LENGTH_RESPONSE_DEADLINE_S", 0.1)
+)
+
+# Maximum deadline for throughput responses in the router (in backoff).
+RAY_SERVE_MAX_THROUGHPUT_RESPONSE_DEADLINE_S = float(
+    os.environ.get("RAY_SERVE_MAX_QUEUE_LENGTH_RESPONSE_DEADLINE_S", 1.0)
+)
+
 # Feature flag for caching queue lengths for faster routing in each handle.
 RAY_SERVE_ENABLE_QUEUE_LENGTH_CACHE = (
     os.environ.get("RAY_SERVE_ENABLE_QUEUE_LENGTH_CACHE", "1") == "1"
@@ -300,6 +310,11 @@ RAY_SERVE_ENABLE_STRICT_MAX_ONGOING_REQUESTS = (
 
 # Length of time to respect entries in the queue length cache when scheduling requests.
 RAY_SERVE_QUEUE_LENGTH_CACHE_TIMEOUT_S = float(
+    os.environ.get("RAY_SERVE_QUEUE_LENGTH_CACHE_TIMEOUT_S", 10.0)
+)
+
+# Length of time to respect entries in the throughput cache when scheduling requests.
+RAY_SERVE_THROUGHPUT_CACHE_TIMEOUT_S = float(
     os.environ.get("RAY_SERVE_QUEUE_LENGTH_CACHE_TIMEOUT_S", 10.0)
 )
 
