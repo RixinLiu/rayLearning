@@ -74,6 +74,7 @@ def select_worker() -> str:
 
     for worker_url in worker_urls:
         metrics = metrics_cache.get(worker_url, {})
+        print(f"Metrics for {worker_url}: {metrics}")
         # Skip metrics older than 10 seconds
         if current_time - metrics.get('last_updated', 0) > 10:
             continue

@@ -38,7 +38,7 @@ def start_replicas(
     gpu_indices: List[int],
     model_name: str,
     enable_prefix_caching: bool,
-    disable_log_requests: bool
+    # disable_log_requests: bool
 ) -> List[subprocess.Popen]:
     """Start VLLM worker replicas on the specified ports and GPUs."""
     processes = []
@@ -75,7 +75,7 @@ def main():
         gpu_indices=gpu_indices,
         model_name=args.model_name,
         enable_prefix_caching=args.enable_prefix_caching,
-        disable_log_requests=args.disable_log_requests
+        # disable_log_requests=args.disable_log_requests
     )
     
     try:
