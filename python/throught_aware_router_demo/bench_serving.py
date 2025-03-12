@@ -457,10 +457,9 @@ class BenchmarkMetrics:
     p99_itl_ms: float
     mean_e2e_latency_ms: float
     median_e2e_latency_ms: float
+    p99_e2e_latency_ms: float
 
-
-SHAREGPT_URL = "https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/resolve/main/ShareGPT_V3_unfiltered_cleaned_split.json"
-
+SHAREGPT_URL = "https://hf-mirror.com/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/blob/main/ShareGPT_V3_unfiltered_cleaned_split_no_imsorry.json"
 
 def download_and_cache_file(url: str, filename: Optional[str] = None):
     """Read and cache a file from a url."""
@@ -749,6 +748,7 @@ def calculate_metrics(
             "on the benchmark arguments.",
             stacklevel=2,
         )
+    # Rixin: Here is metric set
     metrics = BenchmarkMetrics(
         completed=completed,
         total_input=total_input,
@@ -773,6 +773,7 @@ def calculate_metrics(
         p99_itl_ms=np.percentile(itls or 0, 99) * 1000,
         mean_e2e_latency_ms=np.mean(e2e_latencies) * 1000,
         median_e2e_latency_ms=np.median(e2e_latencies) * 1000,
+        p99_e2e_latency_ms=np.percentile(e2e_latencies or 0, 99) * 1000,
     )
 
     return metrics, output_lens
@@ -893,6 +894,11 @@ async def benchmark(
             "Median E2E Latency (ms):", metrics.median_e2e_latency_ms
         )
     )
+    print(
+        "{:<40} {:<10.2f}".format(
+            "P99 E2E Latency (ms):", metrics.p99_e2e_latency_ms
+        )
+    )
     print("{s:{c}^{n}}".format(s="Time to First Token", n=50, c="-"))
     print("{:<40} {:<10.2f}".format("Mean TTFT (ms):", metrics.mean_ttft_ms))
     print("{:<40} {:<10.2f}".format("Median TTFT (ms):", metrics.median_ttft_ms))
@@ -962,6 +968,7 @@ async def benchmark(
             "errors": [output.error for output in outputs],
             "mean_e2e_latency_ms": metrics.mean_e2e_latency_ms,
             "median_e2e_latency_ms": metrics.median_e2e_latency_ms,
+            "p99_e2e_latency_ms": metrics.p99_e2e_latency_ms,
         }
     else:
         print(f"Error running benchmark for request rate: {request_rate}")

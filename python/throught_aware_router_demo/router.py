@@ -1,92 +1,130 @@
 import json
-import os
-from fastapi import FastAPI, Request, Response, HTTPException
+from fastapi import FastAPI, Request, Response
 from starlette.responses import StreamingResponse
 import httpx
 import asyncio
 import argparse
 import time
-from typing import List, Dict
+from typing import List, Dict, Optional
+from collections import deque
+import signal
+import random
 
 app = FastAPI()
 
+# Global config
 worker_urls = []
-metrics_cache: Dict[str, Dict] = {}  # {worker_url: {"total_tokens": int, "last_updated": float}}
+metrics_cache: Dict[str, Dict] = {}
+latency_history: Dict[str, deque] = {}
+worker_request_count = {"http://localhost:8001": 0, "http://localhost:8002": 0}
+strategy_config = {
+    "current_strategy": "tokens",  # default strategy
+    "history_size": 100,          # num of recent latency values to keep
+    "metric_expiry": 10           # metric expiration time(s)
+}
+last_access_worker = 0
 
-def initialize_worker_urls(ports: List[int]):
-    """Initialize the worker URLs from the provided ports."""
-    global worker_urls
+def initialize_config(ports: List[int], strategy: str):
+    global worker_urls, latency_history
     worker_urls = [f"http://localhost:{port}" for port in ports]
-    print(f"Initialized worker URLs: {worker_urls}")
+    latency_history = {url: deque(maxlen=strategy_config["history_size"]) for url in worker_urls}
+    strategy_config["current_strategy"] = strategy
+    print(f"Initialized with strategy: {strategy}")
 
-async def update_metrics_cache():
-    """Periodically update metrics cache from all workers."""
+async def metrics_updater():
     while True:
-        global worker_urls, metrics_cache
         for worker_url in worker_urls:
             try:
                 async with httpx.AsyncClient() as client:
-                    response = await client.get(f"{worker_url}/metrics", timeout=2.0)
+                    # Get metrics from each worker, and cache them
+                    # Metrics are maintained by vLLM
+                    response = await client.get(f"{worker_url}/metrics", timeout=2)
                     if response.status_code == 200:
-                        prompt_tokens = 0.0
-                        generation_tokens = 0.0
-                        for line in response.text.split('\n'):
-                            line = line.strip()
-                            if line.startswith('#') or not line:
-                                continue
-                            if line.startswith('vllm:prompt_tokens_total'):
-                                parts = line.split()
-                                if len(parts) >= 2:
-                                    try:
-                                        prompt_tokens += float(parts[-1])
-                                    except ValueError:
-                                        pass
-                            elif line.startswith('vllm:generation_tokens_total'):
-                                parts = line.split()
-                                if len(parts) >= 2:
-                                    try:
-                                        generation_tokens += float(parts[-1])
-                                    except ValueError:
-                                        pass
-                        total = int(prompt_tokens + generation_tokens)
+                        metrics = parse_metrics(response.text)
                         metrics_cache[worker_url] = {
-                            "total_tokens": total,
-                            "last_updated": time.time()
+                            "metrics": metrics,
+                            "timestamp": time.time()
                         }
             except Exception as e:
-                print(f"Error updating metrics for {worker_url}: {str(e)}")
-                metrics_cache[worker_url] = {
-                    "total_tokens": float('inf'),
-                    "last_updated": time.time()
-                }
-        await asyncio.sleep(1)  # Update every 1 second
+                print(f"Metrics update failed for {worker_url}: {str(e)}")
+        await asyncio.sleep(1)
 
-@app.on_event("startup")
-async def startup_event():
-    asyncio.create_task(update_metrics_cache())
-
-def select_worker() -> str:
-    """Select worker with the least processed tokens."""
-    global worker_urls, metrics_cache
-    current_time = time.time()
-    min_tokens = float('inf')
-    selected_worker = None
-
-    for worker_url in worker_urls:
-        metrics = metrics_cache.get(worker_url, {})
-        print(f"Metrics for {worker_url}: {metrics}")
-        # Skip metrics older than 10 seconds
-        if current_time - metrics.get('last_updated', 0) > 10:
+def parse_metrics(text: str) -> Dict[str, float]:
+    """Parse Prometheus format metrics"""
+    metrics = {}
+    for line in text.split('\n'):
+        if line.startswith('#') or not line.strip():
             continue
-        if metrics.get('total_tokens', float('inf')) < min_tokens:
-            min_tokens = metrics['total_tokens']
-            selected_worker = worker_url
+        parts = line.split()
+        if len(parts) >= 2:
+            try:
+                metrics[parts[0]] = float(parts[1])
+            except ValueError:
+                pass
+    return metrics
 
-    return selected_worker or worker_urls[0] if worker_urls else None
+async def track_latency(worker_url: str, start_time: float):
+    """Track request latency"""
+    latency = time.time() - start_time
+    latency_history[worker_url].append(latency)
+
+def select_worker() -> Optional[str]:
+    """Main routing logic"""
+    global last_access_worker
+    valid_workers = get_valid_workers()
+    if not valid_workers:
+        return None
+    
+    strategy = strategy_config["current_strategy"]
+    if strategy == "tokens":
+        min_tokens = min(get_total_tokens(w) for w in valid_workers)
+        # if multiple workers have the same metric, pick one randomly
+        candidates = [w for w in valid_workers if get_total_tokens(w) == min_tokens]
+        worker = random.choice(candidates)
+    elif strategy == "latency":
+        min_latency = min(get_avg_latency(w) for w in valid_workers)
+        candidates = [w for w in valid_workers if get_avg_latency(w) == min_latency]
+        worker = random.choice(candidates)
+    elif strategy == "cache_hit":
+        max_hit = max(get_cache_hit_rate(w) for w in valid_workers)
+        candidates = [w for w in valid_workers if get_cache_hit_rate(w) == max_hit]
+        worker = random.choice(candidates)
+    elif strategy == "round_robin":
+        worker = valid_workers[last_access_worker % len(valid_workers)]
+        last_access_worker += 1
+
+    # Record request count
+    if worker in worker_request_count:
+        worker_request_count[worker] += 1
+
+    return worker
+
+def get_valid_workers() -> List[str]:
+    """Return a list of valid worker URLs based on the freshness of their metric"""
+    now = time.time()
+    return [
+        url for url in worker_urls 
+        if (now - metrics_cache.get(url, {}).get("timestamp", 0)) < strategy_config["metric_expiry"]
+    ]
+
+def get_total_tokens(worker_url: str) -> float:
+    """Total tokens processed by the worker"""
+    metrics = metrics_cache.get(worker_url, {}).get("metrics", {})
+    return metrics.get("vllm:prompt_tokens_total", 0) + metrics.get("vllm:generation_tokens_total", 0)
+
+def get_avg_latency(worker_url: str) -> float:
+    """Return average request latency in the recent history"""
+    history = latency_history.get(worker_url, deque())
+    return sum(history)/len(history) if history else float('inf')
+
+def get_cache_hit_rate(worker_url: str) -> float:
+    metrics = metrics_cache.get(worker_url, {}).get("metrics", {})
+    return metrics.get("vllm:gauge_gpu_prefix_cache_hit_rate", -1)
 
 async def forward_request(request: Request, endpoint: str):
-    """Forward request to the worker with least tokens."""
+    start_time = time.time()
     worker_url = select_worker()
+    
     if not worker_url:
         return Response(
             content=json.dumps({"error": "No available workers"}),
@@ -95,13 +133,26 @@ async def forward_request(request: Request, endpoint: str):
         )
 
     try:
-        request_body = await request.json() if await request.body() else None
+        body = await request.body()
+        request_body = json.loads(body) if body else None
+        
+        # Call different function based on request method
         async with httpx.AsyncClient() as client:
-            if request_body:
-                response = await client.post(f"{worker_url}{endpoint}", json=request_body, timeout=60.0)
+            if request.method == "POST":
+                response = await client.post(
+                    f"{worker_url}{endpoint}",
+                    json=request_body,
+                    timeout=60
+                )
             else:
-                response = await client.get(f"{worker_url}{endpoint}", timeout=60.0)
-
+                response = await client.get(
+                    f"{worker_url}{endpoint}",
+                    timeout=60
+                )
+            
+            # Track latency
+            await track_latency(worker_url, start_time)
+            
             return Response(
                 content=response.content,
                 status_code=response.status_code,
@@ -116,8 +167,10 @@ async def forward_request(request: Request, endpoint: str):
         )
 
 async def forward_streaming_request(request: Request, endpoint: str):
-    """Forward streaming request to the worker with least tokens."""
+    """Handle streaming request, where the response is sent back in chunks"""
+    start_time = time.time()
     worker_url = select_worker()
+    
     if not worker_url:
         return Response(
             content=json.dumps({"error": "No available workers"}),
@@ -126,20 +179,23 @@ async def forward_streaming_request(request: Request, endpoint: str):
         )
 
     try:
-        request_body = await request.json() if await request.body() else None
-        if request_body and "stream" not in request_body:
-            request_body["stream"] = True
-
-        async def stream_generator():
+        body = await request.body()
+        request_body = json.loads(body) if body else None
+        
+        async def generate_stream():
             async with httpx.AsyncClient() as client:
-                async with client.stream("POST", f"{worker_url}{endpoint}", json=request_body, timeout=120.0) as response:
+                async with client.stream(
+                    "POST",
+                    f"{worker_url}{endpoint}",
+                    json=request_body,
+                    timeout=120
+                ) as response:
                     async for chunk in response.aiter_bytes():
                         yield chunk
-
-        return StreamingResponse(
-            stream_generator(),
-            media_type="text/event-stream"
-        )
+        
+        await track_latency(worker_url, start_time)
+        return StreamingResponse(generate_stream(), media_type="text/event-stream")
+    
     except Exception as e:
         return Response(
             content=json.dumps({"error": str(e)}),
@@ -148,7 +204,7 @@ async def forward_streaming_request(request: Request, endpoint: str):
         )
 
 @app.post("/v1/completions")
-async def completions(request: Request):
+async def handle_completions(request: Request):
     try:
         body = await request.json()
         if body.get("stream", False):
@@ -157,43 +213,41 @@ async def completions(request: Request):
         pass
     return await forward_request(request, "/v1/completions")
 
-@app.get("/v1/models")
-async def models(request: Request):
-    all_models = []
-    async with httpx.AsyncClient() as client:
-        for worker_url in worker_urls:
-            try:
-                response = await client.get(f"{worker_url}/v1/models", timeout=10.0)
-                if response.status_code == 200:
-                    worker_models = response.json()
-                    if "data" in worker_models:
-                        all_models.extend(worker_models["data"])
-            except:
-                continue
-    return {"object": "list", "data": all_models}
+@app.on_event("shutdown")
+async def shutdown():
+    print("\nShutting down... Final worker request counts:")
+    print(json.dumps(worker_request_count, indent=4))
 
-@app.get("/health")
-async def health():
-    available = []
-    async with httpx.AsyncClient() as client:
-        for worker_url in worker_urls:
-            try:
-                response = await client.get(f"{worker_url}/health", timeout=2.0)
-                if response.status_code == 200:
-                    available.append(worker_url)
-            except:
-                continue
-    return {
-        "status": "healthy" if available else "unhealthy",
-        "available_workers": available,
-        "worker_count": len(available)
-    }
+# Handle `ctrl+c` gracefully
+def handle_sigint(sig, frame):
+    import asyncio
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(shutdown())
+    loop.stop()
+
+signal.signal(signal.SIGINT, handle_sigint)
+
+@app.get("/v1/models")
+async def handle_models(request: Request):
+    return await forward_request(request, "/v1/models")
+
+@app.on_event("startup")
+async def startup():
+    asyncio.create_task(metrics_updater())
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--worker-ports", nargs="+", type=int, required=True,
-                       help="List of worker ports")
+    parser.add_argument("--worker-ports", type=str, required=True,
+                       help="Comma-separated list of worker ports")
+    parser.add_argument("--port", type=int, required=True,
+                       help="Router listening port")
+    parser.add_argument("--strategy", type=str, required=True,
+                       choices=["tokens", "latency", "cache_hit", "round_robin"],
+                       help="Routing strategy")
     args = parser.parse_args()
-    initialize_worker_urls(args.worker_ports)
+    
+    ports = list(map(int, args.worker_ports.split(',')))
+    initialize_config(ports, args.strategy)
+    
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=args.port)
