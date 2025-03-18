@@ -82,9 +82,12 @@ def select_worker() -> Optional[str]:
         candidates = [w for w in valid_workers if get_total_tokens(w) == min_tokens]
         worker = random.choice(candidates)
     elif strategy == "latency":
-        min_latency = min(get_avg_latency(w) for w in valid_workers)
-        candidates = [w for w in valid_workers if get_avg_latency(w) == min_latency]
-        worker = random.choice(candidates)
+        latencies = [get_avg_latency(w) for w in valid_workers]
+        min_latency = min(latencies)
+        candidates = [w for w in valid_workers if get_avg_latency(w) <= min_latency * 1.1]  # Allow 10% tolerance
+        # Use round-robin among candidates
+        worker = candidates[last_access_worker % len(candidates)]
+        last_access_worker += 1
     elif strategy == "cache_hit":
         max_hit = max(get_cache_hit_rate(w) for w in valid_workers)
         candidates = [w for w in valid_workers if get_cache_hit_rate(w) == max_hit]
