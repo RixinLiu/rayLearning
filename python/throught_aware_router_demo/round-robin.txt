@@ -1,0 +1,30 @@
+============ Serving Benchmark Result ============
+Backend:                                 vllm      
+Traffic request rate:                    inf       
+Successful requests:                     1019      
+Benchmark duration (s):                  464.73    
+Total input tokens:                      1965295   
+Total generated tokens:                  650240    
+Total generated tokens (retokenized):    650123    
+Request throughput (req/s):              2.19      
+Input token throughput (tok/s):          4228.92   
+Output token throughput (tok/s):         1399.19   
+----------------End-to-End Latency----------------
+Mean E2E Latency (ms):                   14232.35  
+Median E2E Latency (ms):                 7288.96   
+P95 E2E Latency (ms):                    33329.71  
+P99 E2E Latency (ms):                    46396.27  
+---------------Time to First Token----------------
+Mean TTFT (ms):                          209.20    
+Median TTFT (ms):                        165.36    
+P95 TTFT (ms):                           554.63    
+P99 TTFT (ms):                           1449.54   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          16.73     
+Median TPOT (ms):                        17.64     
+P99 TPOT (ms):                           45.10     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           22.02     
+Median ITL (ms):                         19.07     
+P99 ITL (ms):                            127.59    
+==================================================

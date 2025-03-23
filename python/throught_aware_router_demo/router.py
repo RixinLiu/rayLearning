@@ -47,7 +47,7 @@ async def metrics_updater():
                         }
             except Exception as e:
                 print(f"Metrics update failed for {worker_url}: {str(e)}")
-        await asyncio.sleep(1)
+        # await asyncio.sleep(1)
 
 def parse_metrics(text: str) -> Dict[str, float]:
     """Parse Prometheus format metrics"""
@@ -77,10 +77,20 @@ def select_worker() -> Optional[str]:
     
     strategy = strategy_config["current_strategy"]
     if strategy == "tokens":
-        min_tokens = min(get_total_tokens(w) for w in valid_workers)
-        # if multiple workers have the same metric, pick one randomly
-        candidates = [w for w in valid_workers if get_total_tokens(w) == min_tokens]
-        worker = random.choice(candidates)
+        min_token = float('inf')
+        for w in valid_workers:
+            tokens = get_total_tokens(w)
+            print(f"Worker: {w}, Tokens: {tokens}")
+            if tokens < min_token:
+                min_token = tokens
+                worker = w
+        print(f"Selected worker: {worker}")
+    elif strategy == "random":
+        worker = random.choice(valid_workers)
+        for w in valid_workers:
+            tokens = get_total_tokens(w)
+            print(f"Worker: {w}, Tokens: {tokens}")
+        print(f"Selected worker: {worker}")
     elif strategy == "latency":
         latencies = [get_avg_latency(w) for w in valid_workers]
         min_latency = min(latencies)
@@ -93,7 +103,11 @@ def select_worker() -> Optional[str]:
         candidates = [w for w in valid_workers if get_cache_hit_rate(w) == max_hit]
         worker = random.choice(candidates)
     elif strategy == "round_robin":
+        for w in valid_workers:
+            tokens = get_total_tokens(w)
+            print(f"Worker: {w}, Tokens: {tokens}")
         worker = valid_workers[last_access_worker % len(valid_workers)]
+        print(f"Selected worker: {worker}")
         last_access_worker += 1
 
     # Record request count
@@ -113,7 +127,7 @@ def get_valid_workers() -> List[str]:
 def get_total_tokens(worker_url: str) -> float:
     """Total tokens processed by the worker"""
     metrics = metrics_cache.get(worker_url, {}).get("metrics", {})
-    return metrics.get("vllm:prompt_tokens_total", 0) + metrics.get("vllm:generation_tokens_total", 0)
+    return metrics.get("vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}", 0) + metrics.get("vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}", 0)
 
 def get_avg_latency(worker_url: str) -> float:
     """Return average request latency in the recent history"""
@@ -125,6 +139,7 @@ def get_cache_hit_rate(worker_url: str) -> float:
     return metrics.get("vllm:gauge_gpu_prefix_cache_hit_rate", -1)
 
 async def forward_request(request: Request, endpoint: str):
+    # print("Forwarding request...")
     start_time = time.time()
     worker_url = select_worker()
     
@@ -170,9 +185,28 @@ async def forward_request(request: Request, endpoint: str):
         )
 
 async def forward_streaming_request(request: Request, endpoint: str):
+    # print("Forwarding streaming request...")
+    # estimated_prompt_len = 0
+    
     """Handle streaming request, where the response is sent back in chunks"""
-    start_time = time.time()
+    body = await request.body()
+    request_body = json.loads(body) if body else None
     worker_url = select_worker()
+
+
+    # Calculate word count using split
+    if request_body and 'prompt' in request_body:
+        prompt = request_body['prompt']
+        word_count = len(prompt.split())
+        # print(f"Word count in request: {word_count}")
+
+    # Update metrics cache with word count and generalized token count
+    if worker_url in metrics_cache:
+        metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
+        if 2 * word_count + 256 > 4000:
+            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 1024
+        else:
+            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 256
     
     if not worker_url:
         return Response(
@@ -182,10 +216,10 @@ async def forward_streaming_request(request: Request, endpoint: str):
         )
 
     try:
-        body = await request.body()
-        request_body = json.loads(body) if body else None
         
         async def generate_stream():
+            start_total_tokens = get_total_tokens(worker_url)
+            initial_tokens = start_total_tokens
             async with httpx.AsyncClient() as client:
                 async with client.stream(
                     "POST",
@@ -194,9 +228,25 @@ async def forward_streaming_request(request: Request, endpoint: str):
                     timeout=120
                 ) as response:
                     async for chunk in response.aiter_bytes():
+                        # end_total_tokens = get_total_tokens(worker_url)
+                        # if end_total_tokens > start_total_tokens:
+                        #     print(f"Partial tokens processed: {end_total_tokens - start_total_tokens}")
+                        #     start_total_tokens = end_total_tokens
+                        # else:
+                        #     print("No token processed")
+
                         yield chunk
+                    # Update metrics cache with word count and generalized token count
+                    if worker_url in metrics_cache:
+                        metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
+                        if 2 * word_count + 256 > 4000:
+                            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 1024
+                        else:
+                            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 256
+                    
+            # print("Total tokens processed: ", end_total_tokens - initial_tokens)
         
-        await track_latency(worker_url, start_time)
+        # await track_latency(worker_url, start_time)
         return StreamingResponse(generate_stream(), media_type="text/event-stream")
     
     except Exception as e:
@@ -210,6 +260,7 @@ async def forward_streaming_request(request: Request, endpoint: str):
 async def handle_completions(request: Request):
     try:
         body = await request.json()
+        # print(body)
         if body.get("stream", False):
             return await forward_streaming_request(request, "/v1/completions")
     except:
@@ -245,7 +296,7 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, required=True,
                        help="Router listening port")
     parser.add_argument("--strategy", type=str, required=True,
-                       choices=["tokens", "latency", "cache_hit", "round_robin"],
+                       choices=["tokens", "latency", "cache_hit", "round_robin", "random"],
                        help="Routing strategy")
     args = parser.parse_args()
     

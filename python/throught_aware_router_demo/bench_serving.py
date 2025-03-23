@@ -446,6 +446,7 @@ class BenchmarkMetrics:
     mean_ttft_ms: float
     median_ttft_ms: float
     std_ttft_ms: float
+    p95_ttft_ms: float
     p99_ttft_ms: float
     mean_tpot_ms: float
     median_tpot_ms: float
@@ -457,6 +458,7 @@ class BenchmarkMetrics:
     p99_itl_ms: float
     mean_e2e_latency_ms: float
     median_e2e_latency_ms: float
+    p95_e2e_latency_ms: float
     p99_e2e_latency_ms: float
 
 SHAREGPT_URL = "https://hf-mirror.com/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/blob/main/ShareGPT_V3_unfiltered_cleaned_split_no_imsorry.json"
@@ -494,7 +496,6 @@ def download_and_cache_file(url: str, filename: Optional[str] = None):
 
     return filename
 
-
 def sample_sharegpt_requests(
     dataset_path: str,
     num_requests: int,
@@ -520,14 +521,18 @@ def sample_sharegpt_requests(
     ]
 
     # Shuffle the dataset.
-    random.shuffle(dataset)
+    # random.shuffle(dataset)
+
+    # Separate datasets based on total_token size.
+    small_tokens = []
+    large_tokens = []
+    filtered_dataset = []
 
     # Filter out sequences that are too long or too short
-    filtered_dataset: List[Tuple[str, int, int]] = []
+    print(f"Total number of conversations: {len(dataset)}")
     for i in range(len(dataset)):
         if len(filtered_dataset) == num_requests:
             break
-
         # Tokenize the prompts and completions.
         prompt = dataset[i][0]
         prompt_token_ids = tokenizer.encode(prompt)
@@ -537,19 +542,99 @@ def sample_sharegpt_requests(
         output_len = (
             len(completion_token_ids) if fixed_output_len is None else fixed_output_len
         )
-        if prompt_len < 4 or output_len < 4:
-            # Prune too short sequences.
-            continue
-        if prompt_len > 1024 or (
-            prompt_len + output_len > 2048 and fixed_output_len is None
-        ):
-            # Prune too long sequences.
-            continue
-        filtered_dataset.append((prompt, prompt_len, output_len))
+        
+        total_token = 2 * prompt_len + output_len
+        print(f"Total tokens for conversation {i}: {total_token}")
 
+        filtered_dataset.append((prompt, prompt_len, output_len))
+        
+        # if total_token < 100:
+        #     small_tokens.append((prompt, prompt_len, output_len))
+        # elif total_token > 1000:
+        #     large_tokens.append((prompt, prompt_len, output_len))
+
+    # print(f"Number of small tokens: {len(small_tokens)}")
+    # print(f"Number of large tokens: {len(large_tokens)}")
+
+    return filtered_dataset
+
+    # Ensure the final dataset follows the 80%/20% rule.
+    required_small_tokens = int(num_requests * 0.8)
+    required_large_tokens = num_requests - required_small_tokens
+    print("required_small_tokens:", required_small_tokens)
+    print("required_large_tokens:", required_large_tokens)
+    print("len(small_tokens):", len(small_tokens))
+    print("len(large_tokens):", len(large_tokens))
+    # Sample the required amount of small and large tokens.
+    sampled_small_tokens = random.sample(small_tokens, min(len(small_tokens), required_small_tokens))
+    sampled_large_tokens = random.sample(large_tokens, min(len(small_tokens), required_large_tokens))
+
+    # Combine the sampled tokens.
+    print("len(sampled_small_tokens):", len(sampled_small_tokens)) 
+    print("len(sampled_large_tokens):", len(sampled_large_tokens))
+    filtered_dataset = sampled_small_tokens + sampled_large_tokens
+    random.shuffle(filtered_dataset)  # 打乱数据顺序
+
+    # Print the token counts.
     print(f"#Input tokens: {np.sum([x[1] for x in filtered_dataset])}")
     print(f"#Output tokens: {np.sum([x[2] for x in filtered_dataset])}")
     return filtered_dataset
+
+# def sample_sharegpt_requests(
+#     dataset_path: str,
+#     num_requests: int,
+#     tokenizer: PreTrainedTokenizerBase,
+#     fixed_output_len: Optional[int] = None,
+# ) -> List[Tuple[str, int, int]]:
+#     if fixed_output_len is not None and fixed_output_len < 4:
+#         raise ValueError("output_len too small")
+
+#     # Download sharegpt if necessary
+#     if not os.path.isfile(dataset_path):
+#         dataset_path = download_and_cache_file(SHAREGPT_URL)
+
+#     # Load the dataset.
+#     with open(dataset_path) as f:
+#         dataset = json.load(f)
+#     # Filter out the conversations with less than 2 turns.
+#     dataset = [data for data in dataset if len(data["conversations"]) >= 2]
+#     # Only keep the first two turns of each conversation.
+#     dataset = [
+#         (data["conversations"][0]["value"], data["conversations"][1]["value"])
+#         for data in dataset
+#     ]
+
+#     # Shuffle the dataset.
+#     random.shuffle(dataset)
+
+#     # Filter out sequences that are too long or too short
+#     filtered_dataset: List[Tuple[str, int, int]] = []
+#     for i in range(len(dataset)):
+#         if len(filtered_dataset) == num_requests:
+#             break
+
+#         # Tokenize the prompts and completions.
+#         prompt = dataset[i][0]
+#         prompt_token_ids = tokenizer.encode(prompt)
+#         completion = dataset[i][1]
+#         completion_token_ids = tokenizer.encode(completion)
+#         prompt_len = len(prompt_token_ids)
+#         output_len = (
+#             len(completion_token_ids) if fixed_output_len is None else fixed_output_len
+#         )
+#         if prompt_len < 4 or output_len < 4:
+#             # Prune too short sequences.
+#             continue
+#         if prompt_len > 1024 or (
+#             prompt_len + output_len > 2048 and fixed_output_len is None
+#         ):
+#             # Prune too long sequences.
+#             continue
+#         filtered_dataset.append((prompt, prompt_len, output_len))
+
+#     print(f"#Input tokens: {np.sum([x[1] for x in filtered_dataset])}")
+#     print(f"#Output tokens: {np.sum([x[2] for x in filtered_dataset])}")
+#     return filtered_dataset
 
 
 def sample_random_requests(
@@ -701,7 +786,8 @@ async def get_request(
             continue
 
         # Sample the request interval from the exponential distribution.
-        interval = np.random.exponential(1.0 / request_rate)
+        # interval = np.random.exponential(1.0 / request_rate)
+        interval = 0.125
         # The next request will be sent after the interval.
         await asyncio.sleep(interval)
 
@@ -762,6 +848,7 @@ def calculate_metrics(
         * 1000,  # ttfts is empty if streaming is not supported by backend
         median_ttft_ms=np.median(ttfts or 0) * 1000,
         std_ttft_ms=np.std(ttfts or 0) * 1000,
+        p95_ttft_ms=np.percentile(ttfts or 0, 95) * 1000,
         p99_ttft_ms=np.percentile(ttfts or 0, 99) * 1000,
         mean_tpot_ms=np.mean(tpots or 0) * 1000,
         median_tpot_ms=np.median(tpots or 0) * 1000,
@@ -773,6 +860,7 @@ def calculate_metrics(
         p99_itl_ms=np.percentile(itls or 0, 99) * 1000,
         mean_e2e_latency_ms=np.mean(e2e_latencies) * 1000,
         median_e2e_latency_ms=np.median(e2e_latencies) * 1000,
+        p95_e2e_latency_ms=np.percentile(e2e_latencies or 0, 95) * 1000,
         p99_e2e_latency_ms=np.percentile(e2e_latencies or 0, 99) * 1000,
     )
 
@@ -794,6 +882,9 @@ async def benchmark(
         request_func = ASYNC_REQUEST_FUNCS[backend]
     else:
         raise ValueError(f"Unknown backend: {backend}")
+
+    for i in range(len(input_requests)):
+        print(f"Length of request {i}: {input_requests[i][1]}")
 
     print("Starting initial single prompt test run...")
     test_prompt, test_prompt_len, test_output_len = input_requests[0]
@@ -830,6 +921,11 @@ async def benchmark(
     tasks: List[asyncio.Task] = []
     async for request in get_request(input_requests, request_rate):
         prompt, prompt_len, output_len = request
+        if 2 * prompt_len + output_len > 4000:
+            # print("long request")
+            output_len = 1024
+        # else:
+            # print("short request")
         request_func_input = RequestFuncInput(
             model=model_id,
             prompt=prompt,
@@ -896,12 +992,18 @@ async def benchmark(
     )
     print(
         "{:<40} {:<10.2f}".format(
+            "P95 E2E Latency (ms):", metrics.p95_e2e_latency_ms
+        )
+    )
+    print(
+        "{:<40} {:<10.2f}".format(
             "P99 E2E Latency (ms):", metrics.p99_e2e_latency_ms
         )
     )
     print("{s:{c}^{n}}".format(s="Time to First Token", n=50, c="-"))
     print("{:<40} {:<10.2f}".format("Mean TTFT (ms):", metrics.mean_ttft_ms))
     print("{:<40} {:<10.2f}".format("Median TTFT (ms):", metrics.median_ttft_ms))
+    print("{:<40} {:<10.2f}".format("P95 TTFT (ms):", metrics.p95_ttft_ms))
     print("{:<40} {:<10.2f}".format("P99 TTFT (ms):", metrics.p99_ttft_ms))
     print(
         "{s:{c}^{n}}".format(s="Time per Output Token (excl. 1st token)", n=50, c="-")
@@ -951,6 +1053,7 @@ async def benchmark(
             "mean_ttft_ms": metrics.mean_ttft_ms,
             "median_ttft_ms": metrics.median_ttft_ms,
             "std_ttft_ms": metrics.std_ttft_ms,
+            "p95_ttft_ms": metrics.p95_ttft_ms,
             "p99_ttft_ms": metrics.p99_ttft_ms,
             "mean_tpot_ms": metrics.mean_tpot_ms,
             "median_tpot_ms": metrics.median_tpot_ms,
@@ -968,6 +1071,7 @@ async def benchmark(
             "errors": [output.error for output in outputs],
             "mean_e2e_latency_ms": metrics.mean_e2e_latency_ms,
             "median_e2e_latency_ms": metrics.median_e2e_latency_ms,
+            "p95_e2e_latency_ms": metrics.p95_e2e_latency_ms,
             "p99_e2e_latency_ms": metrics.p99_e2e_latency_ms,
         }
     else:

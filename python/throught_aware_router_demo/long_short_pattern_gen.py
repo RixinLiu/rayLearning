@@ -43,7 +43,6 @@ def download_and_cache_file(url: str, filename: Optional[str] = None):
 def sample_sharegpt_requests(
     dataset_path: str,
     num_requests: int,
-    tokenizer=None,
     fixed_output_len: Optional[int] = None,
 ) -> List[Tuple[str, int, int]]:
     """从 ShareGPT 数据集中随机抽取一定数量的请求。"""
@@ -59,23 +58,24 @@ def sample_sharegpt_requests(
         dataset = json.load(f)
 
     # 过滤掉对话轮次少于 2 的对话
-    dataset = [data for data in dataset if len(data["conversations"]) >= 2]
+    old_dataset = [data for data in dataset if len(data["conversations"]) >= 2]
 
     # 只保留每个对话的前两轮
     dataset = [
         (data["conversations"][0]["value"], data["conversations"][1]["value"])
-        for data in dataset
+        for data in old_dataset
     ]
 
     # 打乱数据集
-    random.shuffle(dataset)
+    # random.shuffle(dataset)
 
     # 过滤掉过长或过短的序列
     filtered_dataset = []
-    for i in range(len(dataset)):
-        if len(filtered_dataset) == num_requests:
-            break
 
+    short_requests = []
+    long_requests = []
+    print("length of dataset: ", len(dataset))
+    for i in range(len(dataset)):
         # 获取提示和补全
         prompt = dataset[i][0]
         completion = dataset[i][1]
@@ -84,38 +84,36 @@ def sample_sharegpt_requests(
         prompt_len = len(prompt.split())
         output_len = len(completion.split()) if fixed_output_len is None else fixed_output_len
 
-        if prompt_len < 4 or output_len < 4:
-            # 过滤掉过短的序列
-            continue
-        if prompt_len > 1024 or (prompt_len + output_len > 2048 and fixed_output_len is None):
-            # 过滤掉过长的序列
-            continue
+        total = 2 * prompt_len + output_len
 
-        filtered_dataset.append({
-            "prompt": prompt,
-            "completion": completion,
-            "prompt_len": prompt_len,
-            "output_len": output_len
-        })
+        if total < 400:
+            short_requests.append(old_dataset[i])
+        elif total > 4000:
+            long_requests.append(old_dataset[i])
+
+    print(f"Found {len(short_requests)} short requests and {len(long_requests)} long requests.")
+    min_pairs = min(len(long_requests), len(short_requests))
+    for i in range(min_pairs):
+        filtered_dataset.append(long_requests[i])
+        filtered_dataset.append(short_requests[i])
+        if i < 2:
+            print(long_requests[i]["conversations"][0]["value"])
+            print("-------------------------------------------")
+            print(short_requests[i]["conversations"][0]["value"])
 
     print(f"Sampled {len(filtered_dataset)} requests.")
-    return filtered_dataset
 
-def save_sampled_requests_to_json(sampled_requests, output_file):
-    """将采样后的请求保存到 JSON 文件中。"""
+    output_file = "long_short_pattern_sharegpt_requests.json"
     with open(output_file, "w") as f:
-        json.dump(sampled_requests, f, indent=4)
+        json.dump(filtered_dataset, f, indent=4)
     print(f"Sampled requests saved to {output_file}")
 
-if __name__ == "__main__":
-    # 设置输出文件名
-    output_file = "sampled_sharegpt_requests.json"
+    return filtered_dataset
 
-    # 从 ShareGPT 数据集中采样 100 个请求
+if __name__ == "__main__":
+
     sampled_requests = sample_sharegpt_requests(
         dataset_path="ShareGPT_V3_unfiltered_cleaned_split_no_imsorry.json",
-        num_requests=100
+        num_requests=1024,
+        fixed_output_len=256
     )
-
-    # 将采样后的请求保存到 JSON 文件中
-    save_sampled_requests_to_json(sampled_requests, output_file)
