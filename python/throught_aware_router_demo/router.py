@@ -85,6 +85,17 @@ def select_worker() -> Optional[str]:
                 min_token = tokens
                 worker = w
         print(f"Selected worker: {worker}")
+    elif strategy == "pow_2":
+        min_qlen = float('inf')
+        for w in valid_workers:
+            qlen = get_queue_len(w)
+            print(f"Worker: {w}, qlen: {qlen}")
+            if qlen < min_qlen:
+                min_qlen = qlen
+                worker = w
+            tokens = get_total_tokens(w)
+            print(f"Worker: {w}, Tokens: {tokens}")
+        print(f"Selected worker: {worker}")
     elif strategy == "random":
         worker = random.choice(valid_workers)
         for w in valid_workers:
@@ -128,6 +139,14 @@ def get_total_tokens(worker_url: str) -> float:
     """Total tokens processed by the worker"""
     metrics = metrics_cache.get(worker_url, {}).get("metrics", {})
     return metrics.get("vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}", 0) + metrics.get("vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}", 0)
+
+def get_queue_len (worker_url: str) -> int:
+    """Return the current queue length of the worker"""
+    metrics = metrics_cache.get(worker_url, {}).get("metrics", {})
+    num_running = metrics.get("vllm:num_requests_running{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}", 0)
+    num_waiting = metrics.get("vllm:num_requests_waiting{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}", 0)
+    print(f"Worker: {worker_url}, Running: {num_running}, Waiting: {num_waiting}")
+    return num_running
 
 def get_avg_latency(worker_url: str) -> float:
     """Return average request latency in the recent history"""
@@ -296,7 +315,7 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, required=True,
                        help="Router listening port")
     parser.add_argument("--strategy", type=str, required=True,
-                       choices=["tokens", "latency", "cache_hit", "round_robin", "random"],
+            choices=["tokens", "pow_2", "latency", "cache_hit", "round_robin", "random"],
                        help="Routing strategy")
     args = parser.parse_args()
     
