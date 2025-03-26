@@ -14,8 +14,7 @@ def create_experiment_dir() -> str:
 def run_command(command: str, 
                 success_message: Optional[str] = None, 
                 log_file: Optional[str] = None, 
-                wait_for_success: bool = False,
-                timeout: int = 300) -> Tuple[subprocess.Popen, str]:
+                wait_for_success: bool = False) -> Tuple[subprocess.Popen, str]:
     """优化后的命令运行函数"""
     print(f"Running command: {command}")
     start_time = time.time()
@@ -32,11 +31,8 @@ def run_command(command: str,
             )
             
             if wait_for_success and success_message:
-                print(f"Waiting for success message: '{success_message}' (timeout: {timeout}s)")
+                print(f"Waiting for success message: '{success_message}'")
                 while True:
-                    if time.time() - start_time > timeout:
-                        process.terminate()
-                        raise TimeoutError(f"Timeout while waiting for: {success_message}")
                     
                     line = process.stdout.readline()
                     if not line:
