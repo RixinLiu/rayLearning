@@ -90,7 +90,9 @@ def select_worker() -> Optional[str]:
         for w in valid_workers:
             qlen = get_queue_len(w)
             print(f"Worker: {w}, qlen: {qlen}")
-            if qlen < min_qlen:
+            if qlen == min_qlen:
+                worker = random.choice(valid_workers)
+            elif qlen < min_qlen:
                 min_qlen = qlen
                 worker = w
             tokens = get_total_tokens(w)
