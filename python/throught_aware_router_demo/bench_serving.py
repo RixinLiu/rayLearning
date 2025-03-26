@@ -798,7 +798,7 @@ def calculate_metrics(
     dur_s: float,
     tokenizer: PreTrainedTokenizerBase,
     backend: str,
-) -> Tuple[BenchmarkMetrics, List[int]]:
+) -> Tuple[BenchmarkMetrics, List[int], Dict[str, Any]]:
     output_lens: List[int] = []
     retokenized_output_lens: List[int] = []
     total_input = 0
@@ -807,6 +807,14 @@ def calculate_metrics(
     tpots: List[float] = []
     ttfts: List[float] = []
     e2e_latencies: List[float] = []
+
+    long_ttfts: List[float] = []
+    short_ttfts: List[float] = []
+    long_e2e_latencies: List[float] = []
+    short_e2e_latencies: List[float] = []
+    long_completed = 0
+    short_completed = 0
+
     for i in range(len(outputs)):
         if outputs[i].success:
             output_len = outputs[i].output_len
@@ -820,8 +828,16 @@ def calculate_metrics(
                 tpots.append((outputs[i].latency - outputs[i].ttft) / (output_len - 1))
             itls += outputs[i].itl
             ttfts.append(outputs[i].ttft)
-
             e2e_latencies.append(outputs[i].latency)
+
+            if 2 * input_requests[i][1] + 256 > 4000:
+                long_ttfts.append(outputs[i].ttft)
+                long_e2e_latencies.append(outputs[i].latency)
+                long_completed += 1
+            else:
+                short_ttfts.append(outputs[i].ttft)
+                short_e2e_latencies.append(outputs[i].latency)
+                short_completed += 1
 
             completed += 1
         else:
@@ -834,7 +850,7 @@ def calculate_metrics(
             "on the benchmark arguments.",
             stacklevel=2,
         )
-    # Rixin: Here is metric set
+
     metrics = BenchmarkMetrics(
         completed=completed,
         total_input=total_input,
@@ -844,8 +860,7 @@ def calculate_metrics(
         input_throughput=total_input / dur_s,
         output_throughput=sum(output_lens) / dur_s,
         output_throughput_retokenized=sum(retokenized_output_lens) / dur_s,
-        mean_ttft_ms=np.mean(ttfts or 0)
-        * 1000,  # ttfts is empty if streaming is not supported by backend
+        mean_ttft_ms=np.mean(ttfts or 0) * 1000,
         median_ttft_ms=np.median(ttfts or 0) * 1000,
         std_ttft_ms=np.std(ttfts or 0) * 1000,
         p95_ttft_ms=np.percentile(ttfts or 0, 95) * 1000,
@@ -864,7 +879,32 @@ def calculate_metrics(
         p99_e2e_latency_ms=np.percentile(e2e_latencies or 0, 99) * 1000,
     )
 
-    return metrics, output_lens
+    long_short_metrics = {
+        "long_request": {
+            "count": long_completed,
+            "mean_ttft_ms": np.mean(long_ttfts or 0) * 1000,
+            "median_ttft_ms": np.median(long_ttfts or 0) * 1000,
+            "p95_ttft_ms": np.percentile(long_ttfts or 0, 95) * 1000,
+            "p99_ttft_ms": np.percentile(long_ttfts or 0, 99) * 1000,
+            "mean_e2e_latency_ms": np.mean(long_e2e_latencies or 0) * 1000,
+            "median_e2e_latency_ms": np.median(long_e2e_latencies or 0) * 1000,
+            "p95_e2e_latency_ms": np.percentile(long_e2e_latencies or 0, 95) * 1000,
+            "p99_e2e_latency_ms": np.percentile(long_e2e_latencies or 0, 99) * 1000,
+        },
+        "short_request": {
+            "count": short_completed,
+            "mean_ttft_ms": np.mean(short_ttfts or 0) * 1000,
+            "median_ttft_ms": np.median(short_ttfts or 0) * 1000,
+            "p95_ttft_ms": np.percentile(short_ttfts or 0, 95) * 1000,
+            "p99_ttft_ms": np.percentile(short_ttfts or 0, 99) * 1000,
+            "mean_e2e_latency_ms": np.mean(short_e2e_latencies or 0) * 1000,
+            "median_e2e_latency_ms": np.median(short_e2e_latencies or 0) * 1000,
+            "p95_e2e_latency_ms": np.percentile(short_e2e_latencies or 0, 95) * 1000,
+            "p99_e2e_latency_ms": np.percentile(short_e2e_latencies or 0, 99) * 1000
+        },
+    }
+
+    return metrics, output_lens, long_short_metrics
 
 
 async def benchmark(
@@ -925,7 +965,8 @@ async def benchmark(
             # print("long request")
             output_len = 1024
         # else:
-            # print("short request")
+        #     print("short request")
+        #     print(output_len)
         request_func_input = RequestFuncInput(
             model=model_id,
             prompt=prompt,
@@ -946,7 +987,7 @@ async def benchmark(
 
     benchmark_duration = time.perf_counter() - benchmark_start_time
 
-    metrics, output_lens = calculate_metrics(
+    metrics, output_lens, long_short_metrics = calculate_metrics(
         input_requests=input_requests,
         outputs=outputs,
         dur_s=benchmark_duration,
@@ -958,6 +999,8 @@ async def benchmark(
     print("{:<40} {:<10}".format("Backend:", backend))
     print("{:<40} {:<10}".format("Traffic request rate:", request_rate))
     print("{:<40} {:<10}".format("Successful requests:", metrics.completed))
+    print("{:<40} {:<10}".format("Long requests:", long_short_metrics["long_request"]["count"]))
+    print("{:<40} {:<10}".format("Short requests:", long_short_metrics["short_request"]["count"]))
     print("{:<40} {:<10.2f}".format("Benchmark duration (s):", benchmark_duration))
     print("{:<40} {:<10}".format("Total input tokens:", metrics.total_input))
     print("{:<40} {:<10}".format("Total generated tokens:", metrics.total_output))
@@ -1000,11 +1043,29 @@ async def benchmark(
             "P99 E2E Latency (ms):", metrics.p99_e2e_latency_ms
         )
     )
+    print("{:<40} {:<10}".format("Long requests Mean E2E Latency (ms):", long_short_metrics["long_request"]["mean_e2e_latency_ms"]))
+    print("{:<40} {:<10}".format("Short requests Mean E2E Latency (ms):", long_short_metrics["short_request"]["mean_e2e_latency_ms"]))
+    print("{:<40} {:<10}".format("Long requests Median E2E Latency (ms):", long_short_metrics["long_request"]["median_e2e_latency_ms"]))
+    print("{:<40} {:<10}".format("Short requests Median E2E Latency (ms):", long_short_metrics["short_request"]["median_e2e_latency_ms"]))
+    print("{:<40} {:<10}".format("Long requests P95 E2E Latency (ms):", long_short_metrics["long_request"]["p95_e2e_latency_ms"]))
+    print("{:<40} {:<10}".format("Short requests P95 E2E Latency (ms):", long_short_metrics["short_request"]["p95_e2e_latency_ms"]))
+    print("{:<40} {:<10}".format("Long requests P99 E2E Latency (ms):", long_short_metrics["long_request"]["p99_e2e_latency_ms"]))
+    print("{:<40} {:<10}".format("Short requests P99 E2E Latency (ms):", long_short_metrics["short_request"]["p99_e2e_latency_ms"]))
+
     print("{s:{c}^{n}}".format(s="Time to First Token", n=50, c="-"))
     print("{:<40} {:<10.2f}".format("Mean TTFT (ms):", metrics.mean_ttft_ms))
     print("{:<40} {:<10.2f}".format("Median TTFT (ms):", metrics.median_ttft_ms))
     print("{:<40} {:<10.2f}".format("P95 TTFT (ms):", metrics.p95_ttft_ms))
     print("{:<40} {:<10.2f}".format("P99 TTFT (ms):", metrics.p99_ttft_ms))
+    print("{:<40} {:<10.2f}".format("Long Requests Mean TTFT (ms):", long_short_metrics["long_request"]["mean_ttft_ms"]))
+    print("{:<40} {:<10.2f}".format("Short Requests Mean TTFT (ms):", long_short_metrics["short_request"]["mean_ttft_ms"]))
+    print("{:<40} {:<10.2f}".format("Long Requests Median TTFT (ms):", long_short_metrics["long_request"]["median_ttft_ms"]))
+    print("{:<40} {:<10.2f}".format("Short Requests Median TTFT (ms):", long_short_metrics["short_request"]["median_ttft_ms"]))
+    print("{:<40} {:<10.2f}".format("Long Requests P95 TTFT (ms):", long_short_metrics["long_request"]["p95_ttft_ms"]))
+    print("{:<40} {:<10.2f}".format("Short Requests P95 TTFT (ms):", long_short_metrics["short_request"]["p95_ttft_ms"]))
+    print("{:<40} {:<10.2f}".format("Long Requests P99 TTFT (ms):", long_short_metrics["long_request"]["p99_ttft_ms"]))
+    print("{:<40} {:<10.2f}".format("Short Requests P99 TTFT (ms):", long_short_metrics["short_request"]["p99_ttft_ms"]))
+
     print(
         "{s:{c}^{n}}".format(s="Time per Output Token (excl. 1st token)", n=50, c="-")
     )
