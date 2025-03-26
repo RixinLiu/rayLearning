@@ -1,149 +1,118 @@
+import os
 import subprocess
 import time
-import sys
-import os
-from datetime import datetime, timedelta
-from typing import Optional, Tuple
+from datetime import datetime
 
-def create_experiment_dir() -> str:
-    now = datetime.utcnow() + timedelta(hours=8)
-    formatted_now = now.strftime("%Y%m%d_%H%M%S")
-    os.makedirs(formatted_now, exist_ok=True)
-    return formatted_now
+# Configuration
+STRATEGIES = ['tokens', 'round_robin', 'pow_2']
+NUM_RUNS = 3
+STEP1_SUCCESS_MSG = 'INFO:     Application startup complete.'
+STEP3_SUCCESS_MSG = '============ Serving Benchmark Result ============'
 
-def run_command(command: str, 
-                success_message: Optional[str] = None, 
-                log_file: Optional[str] = None, 
-                wait_for_success: bool = False) -> Tuple[subprocess.Popen, str]:
-    """优化后的命令运行函数"""
-    print(f"Running command: {command}")
-    start_time = time.time()
-    
-    if log_file:
-        with open(log_file, 'w') as log:
-            process = subprocess.Popen(
-                command, 
-                shell=True, 
-                stdout=subprocess.PIPE, 
+def run_experiment(root_dir):
+    for strategy in STRATEGIES:
+        strategy_dir = os.path.join(root_dir, strategy)
+        os.makedirs(strategy_dir, exist_ok=True)
+        
+        for run_num in range(1, NUM_RUNS+1):
+            run_dir = os.path.join(strategy_dir, str(run_num))
+            os.makedirs(run_dir, exist_ok=True)
+            
+            print(f"Running experiment: {strategy} - Run {run_num}")
+            
+            # Step 1: Start replicas
+            step1_log = os.path.join(run_dir, 'run_replicas.log')
+            proc_step1 = subprocess.Popen(
+                [
+                    'python', 'run_replicas.py',
+                    '--host', '127.0.0.1',
+                    '--worker-ports', '8001,8002',
+                    '--gpu-indices', '0,1',
+                    '--model-name', 'Qwen/Qwen2.5-1.5B-Instruct',
+                    '--no-enable-prefix-caching'
+                ],
+                stdout=open(step1_log, 'w'),
                 stderr=subprocess.STDOUT,
-                universal_newlines=True,
-                bufsize=1  # 行缓冲
+                text=True
             )
             
-            if wait_for_success and success_message:
-                print(f"Waiting for success message: '{success_message}'")
-                while True:
-                    
-                    line = process.stdout.readline()
-                    if not line:
-                        if process.poll() is not None:
-                            break
-                        continue
-                    
-                    log.write(line)
-                    
-                    if success_message in line:
-                        print("Success message found. Proceeding to next step.")
-                        return process, ""
-            else:
-                # 对于需要持续运行的后台进程（如router.py）
-                return process, ""
-    
-    # 非日志模式的处理（同步执行）
-    process = subprocess.Popen(command, shell=True)
-    process.wait()
-    return process, ""
+            # Wait for step1 to complete startup
+            if not monitor_log(step1_log, STEP1_SUCCESS_MSG):
+                print(f"Step 1 failed for {strategy} run {run_num}")
+                terminate_process(proc_step1)
+                continue
+            
+            # Step 2: Start router
+            step2_log = os.path.join(run_dir, 'router.log')
+            proc_step2 = subprocess.Popen(
+                [
+                    'python', 'router.py',
+                    '--worker-ports', '8001,8002',
+                    '--port', '8000',
+                    '--strategy', strategy
+                ],
+                stdout=open(step2_log, 'w'),
+                stderr=subprocess.STDOUT,
+                text=True
+            )
+            time.sleep(5)  # Wait for router to start
+            
+            # Step 3: Run benchmark
+            step3_log = os.path.join(run_dir, 'bench.log')
+            with open(step3_log, 'w') as f:
+                proc_step3 = subprocess.Popen(
+                    [
+                        'python3', '-m', 'bench_serving',
+                        '--backend', 'vllm',
+                        '--host', '127.0.0.1',
+                        '--port', '8000',
+                        '--dataset-name', 'sharegpt',
+                        '--num-prompts', '1024',
+                        '--sharegpt-output-len', '256',
+                        '--max-concurrency', '32',
+                        '--dataset-path', './long_short_pattern_sharegpt_requests.json'
+                    ],
+                    stdout=f,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                )
+                proc_step3.wait()
+            
+            # Verify step3 success
+            with open(step3_log, 'r') as f:
+                if STEP3_SUCCESS_MSG not in f.read():
+                    print(f"Step 3 failed for {strategy} run {run_num}")
+            
+            # Cleanup processes
+            terminate_process(proc_step2)
+            terminate_process(proc_step1)
+            time.sleep(2)  # Allow ports to release
 
-def run_experiment(base_dir: str, strategy: str, run_id: int):
-    """运行一次完整实验"""
-    print(f"\n=== Starting Experiment {run_id} with strategy {strategy} ===")
-    
-    # 创建策略目录和运行目录
-    strategy_dir = os.path.join(base_dir, strategy)
-    os.makedirs(strategy_dir, exist_ok=True)
-    run_dir = os.path.join(strategy_dir, str(run_id))
-    os.makedirs(run_dir, exist_ok=True)
-    
-    processes = []  # 用于保存所有子进程
-    
-    try:
-        # 第一步
-        step1_log = os.path.join(run_dir, "run_replicas.log")
-        step1_cmd = (
-            "python run_replicas.py --host 127.0.0.1 --worker-ports 8001,8002 "
-            "--gpu-indices 0,1 --model-name 'Qwen/Qwen2.5-1.5B-Instruct' "
-            "--no-enable-prefix-caching"
-        )
-        step1_process, _ = run_command(
-            step1_cmd, 
-            success_message="INFO:     Application startup complete.", 
-            log_file=step1_log, 
-            wait_for_success=True
-        )
-        processes.append(step1_process)
-        
-        # 第二步 - 作为后台进程运行
-        step2_log = os.path.join(run_dir, "router.log")
-        step2_cmd = (
-            f"python router.py --worker-ports 8001,8002 "
-            f"--port 8000 --strategy {strategy}"
-        )
-        step2_process, _ = run_command(
-            step2_cmd, 
-            log_file=step2_log
-        )
-        processes.append(step2_process)
-        
-        # 短暂等待确保router启动
-        time.sleep(3)
-        
-        # 第三步 - 同步执行
-        step3_log = os.path.join(run_dir, "bench_serving.log")
-        step3_cmd = (
-            "python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 "
-            "--dataset-name sharegpt --num-prompts 1024 --sharegpt-output-len 256 "
-            "--max-concurrency 32 --dataset-path ./long_short_pattern_sharegpt_requests.json"
-        )
-        step3_process, _ = run_command(
-            step3_cmd, 
-            log_file=step3_log
-        )
-        step3_process.wait()
-        
-    finally:
-        # 确保所有进程都被终止
-        for p in processes:
-            if p and p.poll() is None:
-                p.terminate()
-                try:
-                    p.wait(timeout=5)
-                except subprocess.TimeoutExpired:
-                    p.kill()
-        
-    print(f"=== Experiment {run_id} with strategy {strategy} completed ===")
+def monitor_log(log_path, success_msg, timeout=60, check_interval=1):
+    """Monitor log file for success message"""
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        try:
+            with open(log_path, 'r') as f:
+                content = f.read()
+                if success_msg in content:
+                    return True
+        except FileNotFoundError:
+            pass
+        time.sleep(check_interval)
+    return False
 
-def main():
-    strategies = ["round_robin", "tokens", "pow_2"]
-    num_runs = 3
-    
-    # 创建实验目录
-    experiment_dir = create_experiment_dir()
-    print(f"All results will be saved in directory: {experiment_dir}")
-    
-    try:
-        for strategy in strategies:
-            for run_id in range(1, num_runs + 1):
-                run_experiment(experiment_dir, strategy, run_id)
-                time.sleep(5)  # 实验间间隔
-        
-        print(f"\nAll experiments completed. Results saved in {experiment_dir}")
-    
-    except KeyboardInterrupt:
-        print("\nExperiment interrupted by user.")
-        sys.exit(1)
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        sys.exit(1)
+def terminate_process(proc):
+    """Terminate a process gracefully"""
+    if proc.poll() is None:
+        proc.terminate()
+        try:
+            proc.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            proc.kill()
 
 if __name__ == "__main__":
-    main()
+    root_dir = datetime.now().strftime("%Y%m%d_%H%M%S")
+    os.makedirs(root_dir, exist_ok=True)
+    run_experiment(root_dir)
+    print("All experiments completed!")
