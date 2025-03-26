@@ -16,7 +16,8 @@ app = FastAPI()
 worker_urls = []
 metrics_cache: Dict[str, Dict] = {}
 latency_history: Dict[str, deque] = {}
-worker_request_count = {"http://localhost:8001": 0, "http://localhost:8002": 0}
+worker_long_request_count = {"http://localhost:8001": 0, "http://localhost:8002": 0}
+worker_short_request_count = {"http://localhost:8001": 0, "http://localhost:8002": 0}
 strategy_config = {
     "current_strategy": "tokens",  # default strategy
     "history_size": 100,          # num of recent latency values to keep
@@ -123,10 +124,6 @@ def select_worker() -> Optional[str]:
         print(f"Selected worker: {worker}")
         last_access_worker += 1
 
-    # Record request count
-    if worker in worker_request_count:
-        worker_request_count[worker] += 1
-
     return worker
 
 def get_valid_workers() -> List[str]:
@@ -225,8 +222,10 @@ async def forward_streaming_request(request: Request, endpoint: str):
     if worker_url in metrics_cache:
         metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
         if 2 * word_count + 256 > 4000:
+            worker_long_request_count[worker_url] += 1
             metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 1024
         else:
+            worker_short_request_count[worker_url] += 1
             metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 256
     
     if not worker_url:
@@ -291,7 +290,8 @@ async def handle_completions(request: Request):
 @app.on_event("shutdown")
 async def shutdown():
     print("\nShutting down... Final worker request counts:")
-    print(json.dumps(worker_request_count, indent=4))
+    print(json.dumps(worker_long_request_count, indent=4))
+    print(json.dumps(worker_short_request_count, indent=4))
 
 # Handle `ctrl+c` gracefully
 def handle_sigint(sig, frame):
