@@ -24,26 +24,27 @@ def run_command(command: str,
             process = subprocess.Popen(
                 command, 
                 shell=True, 
-                stdout=log, 
+                stdout=subprocess.PIPE, 
                 stderr=subprocess.STDOUT,
                 universal_newlines=True,
                 bufsize=1  # 行缓冲
             )
+
+            while True:
+                line = process.stdout.readline()
+                if not line:
+                    if process.poll() is not None:
+                        break
+                    continue
+                
+                log.write(line)
             
             if wait_for_success and success_message:
                 print(f"Waiting for success message: '{success_message}'")
-                while True:
-                    line = process.stdout.readline()
-                    if not line:
-                        if process.poll() is not None:
-                            break
-                        continue
                     
-                    log.write(line)
-                    
-                    if success_message in line:
-                        print("Success message found. Proceeding to next step.")
-                        return process, ""
+                if success_message in line:
+                    print("Success message found. Proceeding to next step.")
+                    return process, ""
             else:
                 # 对于需要持续运行的后台进程（如router.py）
                 return process, ""
