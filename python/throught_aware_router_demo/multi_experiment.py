@@ -64,18 +64,34 @@ def run_router(strategy):
         time.sleep(5)
         run_benchmark(args.num_prompts, args.concurrency)  # 启动基准测试
 
-
 def run_benchmark(num_prompts, concurrency):
     cmd = f"""python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 \
     --dataset-name sharegpt --num-prompts {num_prompts} --sharegpt-output-len 256 --max-concurrency {concurrency} \
     --dataset-path ./long_short_pattern_sharegpt_requests.json"""
     
-    # 启动路由器并捕获输出
+    # 启动基准测试并捕获输出
     with open(f"benchmark.log", "w") as log_file:
         process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file)
         processes.append(process)  # 将子进程添加到全局列表中
     
     print(f"Benchmark started with {num_prompts} prompts and concurrency {concurrency}.")
+
+    # 监控 benchmark.log 文件
+    monitor_benchmark_log("benchmark.log")
+
+def monitor_benchmark_log(log_file_path):
+    """监控 benchmark.log 文件的输出"""
+    print("Monitoring benchmark log for completion...")
+    with open(log_file_path, "r") as log_file:
+        while True:
+            line = log_file.readline()
+            if not line:
+                time.sleep(0.1)  # 如果没有新内容，稍作等待
+                continue
+            print(line, end="")  # 打印日志内容
+            if "Serving Benchmark Result" in line:
+                print("Benchmark completed! Detected 'Serving Benchmark Result' in log.")
+                break
 
 def signal_handler(sig, frame):
     """捕获 Ctrl+C 信号并终止所有子进程"""
