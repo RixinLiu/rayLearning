@@ -544,7 +544,7 @@ def sample_sharegpt_requests(
         )
         
         total_token = 2 * prompt_len + output_len
-        print(f"Total tokens for conversation {i}: {total_token}")
+        # print(f"Total tokens for conversation {i}: {total_token}")
 
         filtered_dataset.append((prompt, prompt_len, output_len))
         
