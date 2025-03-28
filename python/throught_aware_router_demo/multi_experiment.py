@@ -3,11 +3,13 @@ import threading
 import time
 import argparse
 
+global args
+
 def run_vllm_server():
     cmd = """python run_replicas.py \
         --host 127.0.0.1 --worker-ports 8001,8002 \
         --gpu-indices 0,1 --model-name 'Qwen/Qwen2.5-1.5B-Instruct' \
-        --no-enable-prefix-caching"""
+        --no-enable-prefix-caching > run_replicas.log"""
     
     # 启动子进程并捕获输出
     process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
@@ -17,8 +19,7 @@ def run_vllm_server():
         print(line, end="")  # 打印控制台输出
         if "Application startup complete" in line:
             time.sleep(2)
-            run_router()
-            time.sleep(2)
+            run_router(args.strategy)
             break
 
 def run_router(strategy):
@@ -31,6 +32,9 @@ def run_router(strategy):
     # 启动路由器
     subprocess.Popen(cmd, shell=True)
     print(f"Router started with strategy: {strategy}")
+
+    time.sleep(2)
+    run_benchmark(args.num_prompts, args.concurrency)
 
 def run_benchmark(num_prompts, concurrency):
     cmd = f"""python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 \
@@ -53,8 +57,3 @@ if __name__ == "__main__":
     # 使用线程运行 VLLM 服务器
     server_thread = threading.Thread(target=run_vllm_server)
     server_thread.start()
-
-    # 等待 VLLM 服务器启动完成后运行路由器和基准测试
-    server_thread.join()
-    run_router(args.strategy)
-    run_benchmark(args.num_prompts, args.concurrency)
