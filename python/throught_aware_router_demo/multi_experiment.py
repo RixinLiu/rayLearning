@@ -163,4 +163,4 @@ if __name__ == "__main__":
 
             # 终止所有进程并等待 5 秒
             terminate_all_processes()
-            time.sleep(5)
+            time.sleep(30)
