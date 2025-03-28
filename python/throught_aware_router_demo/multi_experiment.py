@@ -33,6 +33,7 @@ def run_vllm_server():
     for line in process.stdout:
         print(line, end="")  # 打印控制台输出
         if "Application startup complete" in line:
+            print("VLLM server started successfully! Detected 'Application startup complete' in log.")
             time.sleep(2)
             break
 
@@ -108,6 +109,20 @@ def terminate_all_processes():
     global router_started
     router_started = False  # 重置路由器启动标志
 
+    # 确保端口释放
+    wait_for_port_release(8000)
+
+def wait_for_port_release(port, timeout=10):
+    """等待端口释放"""
+    start_time = time.time()
+    while time.time() - start_time < timeout:
+        if not is_port_in_use(port):
+            print(f"Port {port} is now free.")
+            return
+        print(f"Waiting for port {port} to be released...")
+        time.sleep(1)
+    print(f"Warning: Port {port} is still in use after {timeout} seconds.")
+
 def signal_handler(sig, frame):
     """捕获 Ctrl+C 信号并终止所有子进程"""
     terminate_all_processes()
@@ -129,7 +144,7 @@ if __name__ == "__main__":
     os.makedirs(experiment_root_dir, exist_ok=True)
 
     # 路由策略和实验次数
-    strategies = ["tokens", "round_robin", "pow_2"]
+    strategies = ["pow_2", "tokens", "round_robin"]
     num_experiments = 3
 
     for strategy in strategies:
