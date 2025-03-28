@@ -5,7 +5,7 @@ from tqdm import tqdm
 from typing import Any, AsyncGenerator, Dict, List, Optional, Tuple, Union
 
 # 定义 ShareGPT 数据集的 URL
-SHAREGPT_URL = "https://hf-mirror.com/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/blob/main/ShareGPT_V3_unfiltered_cleaned_split_no_imsorry.json"
+SHAREGPT_URL = "https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/resolve/main/ShareGPT_V3_unfiltered_cleaned_split_no_imsorry.json"
 
 def download_and_cache_file(url: str, filename: Optional[str] = None):
     """从 URL 下载并缓存文件。"""
