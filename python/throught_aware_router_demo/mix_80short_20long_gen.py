@@ -78,13 +78,10 @@ def sample_sharegpt_requests_with_ratio(
 
         # 计算输入和输出的长度
         prompt_len = len(prompt.split())
-        output_len = len(completion.split()) if fixed_output_len is None else fixed_output_len
 
-        total = 2 * prompt_len + output_len
-
-        if total < 400:
+        if prompt_len < 50:
             short_requests.append(old_dataset[i])
-        elif total > 4000:
+        elif prompt_len > 1000:
             long_requests.append(old_dataset[i])
 
     print(f"Found {len(short_requests)} short requests and {len(long_requests)} long requests.")
