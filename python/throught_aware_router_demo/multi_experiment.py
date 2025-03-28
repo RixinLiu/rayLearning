@@ -3,10 +3,14 @@ import threading
 import time
 import argparse
 import socket
+import signal
+import os
+import sys
 
 global args
 router_started = False  # 全局变量，标记路由器是否已启动
 lock = threading.Lock()  # 用于线程同步的锁
+processes = []  # 用于存储所有子进程的列表
 
 def is_port_in_use(port):
     """检查端口是否被占用"""
@@ -21,6 +25,7 @@ def run_vllm_server():
     
     # 启动子进程并捕获输出
     process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    processes.append(process)  # 将子进程添加到全局列表中
     
     # 监控输出
     for line in process.stdout:
@@ -53,10 +58,26 @@ def run_router(strategy):
         # 启动路由器并捕获输出
         with open(f"router_{strategy}.log", "w") as log_file:
             process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file)
+            processes.append(process)  # 将子进程添加到全局列表中
         
         print(f"Router started with strategy: {strategy}")
 
+def signal_handler(sig, frame):
+    """捕获 Ctrl+C 信号并终止所有子进程"""
+    print("\nTerminating all processes...")
+    for process in processes:
+        if process.poll() is None:  # 如果进程仍在运行
+            process.terminate()  # 发送终止信号
+            try:
+                process.wait(timeout=5)  # 等待进程终止
+            except subprocess.TimeoutExpired:
+                process.kill()  # 强制杀死进程
+    sys.exit(0)
+
 if __name__ == "__main__":
+    # 捕获 Ctrl+C 信号
+    signal.signal(signal.SIGINT, signal_handler)
+
     # 使用 argparse 解析命令行参数
     parser = argparse.ArgumentParser(description="Run VLLM server, router, and benchmark.")
     parser.add_argument("--strategy", type=str, default="round_robin", help="Routing strategy (e.g., round_robin, tokens, pow_2.)")
@@ -67,4 +88,7 @@ if __name__ == "__main__":
     # 使用线程运行 VLLM 服务器
     server_thread = threading.Thread(target=run_vllm_server)
     server_thread.start()
-    server_thread.join()  # 等待 VLLM 服务器线程完成
+
+    # 保持主线程运行，等待 Ctrl+C
+    while True:
+        time.sleep(1)
