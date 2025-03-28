@@ -67,7 +67,7 @@ def run_router(strategy):
 def run_benchmark(num_prompts, concurrency):
     cmd = f"""python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 \
     --dataset-name sharegpt --num-prompts {num_prompts} --sharegpt-output-len 256 --max-concurrency {concurrency} \
-    --dataset-path ./long_short_pattern_sharegpt_requests.json"""
+    --dataset-path ./short_80_long_20_sharegpt_requests.json"""
     
     # 启动基准测试并捕获输出
     with open(f"benchmark.log", "w") as log_file:
