@@ -121,7 +121,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # 获取当前中国时间并创建实验目录
-    china_time = datetime.utcnow() + time.timedelta(hours=8)
+    china_time = datetime.utcnow() + datetime.timedelta(hours=8)
     experiment_root_dir = china_time.strftime("%Y-%m-%d_%H-%M-%S")
     os.makedirs(experiment_root_dir, exist_ok=True)
 
