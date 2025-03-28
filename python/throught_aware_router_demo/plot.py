@@ -38,25 +38,29 @@ def read_file(file_path):
             data['Mean TTFT (ms)'] = float(line.split(":")[1].strip())
         elif "Median TTFT (ms):" in line:
             data['Median TTFT (ms)'] = float(line.split(":")[1].strip())
+        elif "P95 TTFT (ms):" in line:
+            data['P95 TTFT (ms)'] = float(line.split(":")[1].strip())
         elif "P99 TTFT (ms):" in line:
             data['P99 TTFT (ms)'] = float(line.split(":")[1].strip())
         
         # 每次读取到 "P99 TTFT (ms):" 行时，表示一份数据结束
-        if "P99 TTFT (ms):" in line:
+        if "P99 ITL (ms)" in line:
             data_list.append(data)
             data = {}
 
     # 计算平均值
     avg_data = {}
     print(len(data_list))
-    for key in data_list[0].keys():
-        avg_data[key] = np.mean([data[key] for data in data_list])
+    keys = set(key for data in data_list for key in data.keys())
+    for key in keys:
+        avg_data[key] = np.mean([data[key] for data in data_list if key in data])
     
     return avg_data
 
-# 读取文件A和文件B
+# 读取文件A、文件B和文件C
 data_A = read_file('token-based.txt')
 data_B = read_file('round-robin.txt')
+data_C = read_file('pow_2.txt')
 
 # 绘制Worker处理的Token数对比图
 workers = ['Worker1', 'Worker2']
@@ -64,12 +68,15 @@ workers_A = list(data_A.keys())[:2]
 tokens_A = [data_A[worker] for worker in workers_A]
 workers_B = list(data_B.keys())[:2]
 tokens_B = [data_B[worker] for worker in workers_B]
+workers_C = list(data_C.keys())[:2]
+tokens_C = [data_C[worker] for worker in workers_C]
 x = np.arange(len(workers))  # x轴位置
-width = 0.35  # 柱状图宽度
+width = 0.25  # 柱状图宽度
 
 plt.figure(figsize=(10, 6))
-plt.bar(x - width/2, tokens_A, width, label='Token based Router', alpha=0.7)
-plt.bar(x + width/2, tokens_B, width, label='Round robin Router', alpha=0.7)
+plt.bar(x - width, tokens_A, width, label='Token based Router', alpha=0.7)
+plt.bar(x, tokens_B, width, label='Round robin Router', alpha=0.7)
+plt.bar(x + width, tokens_C, width, label='Pow 2 Router', alpha=0.7)
 plt.xlabel('Worker')
 plt.ylabel('Tokens')
 plt.title('Processed tokens of each worker')
@@ -82,13 +89,15 @@ plt.close()
 throughput_metrics = ['Request throughput (req/s)', 'Input token throughput (tok/s)', 'Output token throughput (tok/s)']
 throughput_A = [data_A[metric] for metric in throughput_metrics]
 throughput_B = [data_B[metric] for metric in throughput_metrics]
+throughput_C = [data_C[metric] for metric in throughput_metrics]
 
 x = np.arange(len(throughput_metrics))  # x轴位置
-width = 0.35  # 柱状图宽度
+width = 0.25  # 柱状图宽度
 
 plt.figure(figsize=(10, 6))
-bars_A = plt.bar(x - width/2, throughput_A, width, label='Token based Router', alpha=0.7)
-bars_B = plt.bar(x + width/2, throughput_B, width, label='Round robin Router', alpha=0.7)
+bars_A = plt.bar(x - width, throughput_A, width, label='Token based Router', alpha=0.7)
+bars_B = plt.bar(x, throughput_B, width, label='Round robin Router', alpha=0.7)
+bars_C = plt.bar(x + width, throughput_C, width, label='Pow 2 Router', alpha=0.7)
 plt.xlabel('Throughput Metrics')
 plt.ylabel('Throughput')
 plt.title('Throughput')
@@ -101,6 +110,9 @@ for bar in bars_A:
 for bar in bars_B:
     yval = bar.get_height()
     plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom')
+for bar in bars_C:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom')
 plt.savefig('throughput_comparison.png')
 plt.close()
 
@@ -108,13 +120,15 @@ plt.close()
 e2e_latency_metrics = ['Mean E2E Latency (ms)', 'Median E2E Latency (ms)', 'P99 E2E Latency (ms)']
 e2e_latency_A = [data_A[metric] for metric in e2e_latency_metrics]
 e2e_latency_B = [data_B[metric] for metric in e2e_latency_metrics]
+e2e_latency_C = [data_C[metric] for metric in e2e_latency_metrics]
 
 x = np.arange(len(e2e_latency_metrics))  # x轴位置
-width = 0.35  # 柱状图宽度
+width = 0.25  # 柱状图宽度
 
 plt.figure(figsize=(10, 6))
-plt.bar(x - width/2, e2e_latency_A, width, label='Token based Router', alpha=0.7)
-plt.bar(x + width/2, e2e_latency_B, width, label='Round robin Router', alpha=0.7)
+plt.bar(x - width, e2e_latency_A, width, label='Token based Router', alpha=0.7)
+plt.bar(x, e2e_latency_B, width, label='Round robin Router', alpha=0.7)
+plt.bar(x + width, e2e_latency_C, width, label='Pow 2 Router', alpha=0.7)
 plt.xlabel('E2E Latency Metrics')
 plt.ylabel('Latency (ms)')
 plt.title('E2E Latency')
@@ -124,20 +138,29 @@ plt.savefig('e2e_latency_comparison.png')
 plt.close()
 
 # 绘制TTFT对比图（分组柱状图）
-ttft_metrics = ['Mean TTFT (ms)', 'Median TTFT (ms)', 'P99 TTFT (ms)']
+ttft_metrics = ['Mean TTFT (ms)', 'Median TTFT (ms)', 'P95 TTFT (ms)', 'P99 TTFT (ms)']
 ttft_A = [data_A[metric] for metric in ttft_metrics]
 ttft_B = [data_B[metric] for metric in ttft_metrics]
+ttft_C = [data_C[metric] for metric in ttft_metrics]
 
 x = np.arange(len(ttft_metrics))  # x轴位置
-width = 0.35  # 柱状图宽度
+width = 0.25  # 柱状图宽度
 
 plt.figure(figsize=(10, 6))
-plt.bar(x - width/2, ttft_A, width, label='Token based Router', alpha=0.7)
-plt.bar(x + width/2, ttft_B, width, label='Round robin Router', alpha=0.7)
+plt.bar(x - width, ttft_A, width, label='Token based Router', alpha=0.7)
+plt.bar(x, ttft_B, width, label='Round robin Router', alpha=0.7)
+plt.bar(x + width, ttft_C, width, label='Pow 2 Router', alpha=0.7)
 plt.xlabel('TTFT Metrics')
 plt.ylabel('Latency (ms)')
-plt.title('TTFT')
+plt.title('TTFT Comparison')
 plt.xticks(x, ttft_metrics)
 plt.legend()
-plt.savefig('ttft_comparison.png')
+
+# # 在柱状图上标出具体数值
+# for bar_group in [ttft_A, ttft_B, ttft_C]:
+#     for bar in bar_group:
+#         yval = bar.get_height()
+#         plt.text(bar.get_x() + bar.get_width() / 2, yval, round(yval, 2), ha='center', va='bottom')
+
+plt.savefig('ttft_comparison_with_p95.png')
 plt.close()
