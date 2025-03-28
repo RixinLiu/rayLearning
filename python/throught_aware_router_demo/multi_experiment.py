@@ -105,6 +105,8 @@ def terminate_all_processes():
             except subprocess.TimeoutExpired:
                 process.kill()  # 强制杀死进程
     processes.clear()  # 清空进程列表
+    global router_started
+    router_started = False  # 重置路由器启动标志
 
 def signal_handler(sig, frame):
     """捕获 Ctrl+C 信号并终止所有子进程"""
@@ -127,7 +129,7 @@ if __name__ == "__main__":
     os.makedirs(experiment_root_dir, exist_ok=True)
 
     # 路由策略和实验次数
-    strategies = ["round_robin", "tokens", "pow_2"]
+    strategies = ["tokens", "round_robin", "pow_2"]
     num_experiments = 3
 
     for strategy in strategies:
