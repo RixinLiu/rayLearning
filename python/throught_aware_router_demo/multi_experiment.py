@@ -99,12 +99,18 @@ def terminate_all_processes():
     """终止所有子进程"""
     print("\nTerminating all processes...")
     for process in processes:
-        if process.poll() is None:  # 如果进程仍在运行
-            process.terminate()  # 发送终止信号
+        if process.poll() is None:
             try:
-                process.wait(timeout=5)  # 等待进程终止
-            except subprocess.TimeoutExpired:
-                process.kill()  # 强制杀死进程
+                # 杀死整个进程组
+                print("Terminating process with PID:", process.pid)
+                os.killpg(os.getpgid(process.pid), signal.SIGKILL)  # Linux/macOS
+            except:
+                # Windows 或其他情况回退
+                process.terminate()
+                try:
+                    process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    process.kill()
     processes.clear()  # 清空进程列表
     global router_started
     router_started = False  # 重置路由器启动标志
