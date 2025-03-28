@@ -18,7 +18,7 @@ def run_vllm_server():
     for line in process.stdout:
         print(line, end="")  # 打印控制台输出
         if "Application startup complete" in line:
-            time.sleep(2)
+            time.sleep(10)
             run_router(args.strategy)
             break
 
@@ -30,11 +30,11 @@ def run_router(strategy):
         > router_{strategy}.log"""
     
     # 启动路由器
-    subprocess.Popen(cmd, shell=True)
     print(f"Router started with strategy: {strategy}")
+    subprocess.Popen(cmd, shell=True)
 
-    time.sleep(2)
-    run_benchmark(args.num_prompts, args.concurrency)
+    # time.sleep(10)
+    # run_benchmark(args.num_prompts, args.concurrency)
 
 def run_benchmark(num_prompts, concurrency):
     cmd = f"""python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 \
