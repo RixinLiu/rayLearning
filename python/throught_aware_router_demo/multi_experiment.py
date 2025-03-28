@@ -6,6 +6,7 @@ import socket
 import signal
 import os
 import sys
+from datetime import datetime
 
 global args
 router_started = False  # 全局变量，标记路由器是否已启动
@@ -32,10 +33,9 @@ def run_vllm_server():
         print(line, end="")  # 打印控制台输出
         if "Application startup complete" in line:
             time.sleep(2)
-            run_router(args.strategy)
             break
 
-def run_router(strategy):
+def run_router(strategy, experiment_dir):
     global router_started
     with lock:  # 确保线程安全
         if router_started:
@@ -56,28 +56,28 @@ def run_router(strategy):
             --strategy {strategy}"""
         
         # 启动路由器并捕获输出
-        with open(f"router_{strategy}.log", "w") as log_file:
+        router_log_path = os.path.join(experiment_dir, f"router_{strategy}.log")
+        with open(router_log_path, "w") as log_file:
             process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file)
             processes.append(process)  # 将子进程添加到全局列表中
         
         print(f"Router started with strategy: {strategy}")
-        time.sleep(5)
-        run_benchmark(args.num_prompts, args.concurrency)  # 启动基准测试
 
-def run_benchmark(num_prompts, concurrency):
+def run_benchmark(num_prompts, concurrency, experiment_dir):
     cmd = f"""python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 \
     --dataset-name sharegpt --num-prompts {num_prompts} --sharegpt-output-len 256 --max-concurrency {concurrency} \
     --dataset-path ./short_80_long_20_sharegpt_requests.json"""
     
     # 启动基准测试并捕获输出
-    with open(f"benchmark.log", "w") as log_file:
+    benchmark_log_path = os.path.join(experiment_dir, "benchmark.log")
+    with open(benchmark_log_path, "w") as log_file:
         process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file)
         processes.append(process)  # 将子进程添加到全局列表中
     
     print(f"Benchmark started with {num_prompts} prompts and concurrency {concurrency}.")
 
     # 监控 benchmark.log 文件
-    monitor_benchmark_log("benchmark.log")
+    monitor_benchmark_log(benchmark_log_path)
 
 def monitor_benchmark_log(log_file_path):
     """监控 benchmark.log 文件的输出"""
@@ -93,8 +93,8 @@ def monitor_benchmark_log(log_file_path):
                 print("Benchmark completed! Detected 'Serving Benchmark Result' in log.")
                 break
 
-def signal_handler(sig, frame):
-    """捕获 Ctrl+C 信号并终止所有子进程"""
+def terminate_all_processes():
+    """终止所有子进程"""
     print("\nTerminating all processes...")
     for process in processes:
         if process.poll() is None:  # 如果进程仍在运行
@@ -103,6 +103,11 @@ def signal_handler(sig, frame):
                 process.wait(timeout=5)  # 等待进程终止
             except subprocess.TimeoutExpired:
                 process.kill()  # 强制杀死进程
+    processes.clear()  # 清空进程列表
+
+def signal_handler(sig, frame):
+    """捕获 Ctrl+C 信号并终止所有子进程"""
+    terminate_all_processes()
     sys.exit(0)
 
 if __name__ == "__main__":
@@ -111,15 +116,32 @@ if __name__ == "__main__":
 
     # 使用 argparse 解析命令行参数
     parser = argparse.ArgumentParser(description="Run VLLM server, router, and benchmark.")
-    parser.add_argument("--strategy", type=str, default="round_robin", help="Routing strategy (e.g., round_robin, tokens, pow_2.)")
     parser.add_argument("--num-prompts", type=int, default=1024, help="Number of prompts for benchmarking.")
     parser.add_argument("--concurrency", type=int, default=32, help="Maximum concurrency for benchmarking.")
     args = parser.parse_args()
 
-    # 使用线程运行 VLLM 服务器
-    server_thread = threading.Thread(target=run_vllm_server)
-    server_thread.start()
+    # 获取当前中国时间并创建实验目录
+    china_time = datetime.utcnow() + time.timedelta(hours=8)
+    experiment_root_dir = china_time.strftime("%Y-%m-%d_%H-%M-%S")
+    os.makedirs(experiment_root_dir, exist_ok=True)
 
-    # 保持主线程运行，等待 Ctrl+C
-    while True:
-        time.sleep(1)
+    # 路由策略和实验次数
+    strategies = ["round_robin", "tokens", "pow_2"]
+    num_experiments = 3
+
+    for strategy in strategies:
+        strategy_dir = os.path.join(experiment_root_dir, strategy)
+        os.makedirs(strategy_dir, exist_ok=True)
+
+        for i in range(1, num_experiments + 1):
+            experiment_dir = os.path.join(strategy_dir, f"experiment_{i}")
+            os.makedirs(experiment_dir, exist_ok=True)
+
+            print(f"Running experiment {i} for strategy {strategy}...")
+            run_vllm_server()
+            run_router(strategy, experiment_dir)
+            run_benchmark(args.num_prompts, args.concurrency, experiment_dir)
+
+            # 终止所有进程并等待 5 秒
+            terminate_all_processes()
+            time.sleep(5)
