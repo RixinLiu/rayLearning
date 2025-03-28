@@ -42,15 +42,18 @@ def run_router(strategy):
             print("Error: Port 8000 is already in use. Exiting...")
             return
 
+        # 标记路由器已启动
+        router_started = True
+
         cmd = f"""python router.py \
             --worker-ports 8001,8002 \
             --port 8000 \
-            --strategy {strategy} \
-            > router_{strategy}.log"""
+            --strategy {strategy}"""
         
-        # 启动路由器
-        subprocess.Popen(cmd, shell=True)
-        router_started = True
+        # 启动路由器并捕获输出
+        with open(f"router_{strategy}.log", "w") as log_file:
+            process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file)
+        
         print(f"Router started with strategy: {strategy}")
 
 if __name__ == "__main__":
