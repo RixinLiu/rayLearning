@@ -3,6 +3,7 @@ import random
 import os
 from tqdm import tqdm
 from typing import Any, AsyncGenerator, Dict, List, Optional, Tuple, Union
+import requests
 
 # 定义 ShareGPT 数据集的 URL
 SHAREGPT_URL = "https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/resolve/main/ShareGPT_V3_unfiltered_cleaned_split_no_imsorry.json"
