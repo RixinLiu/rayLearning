@@ -108,6 +108,7 @@ def terminate_all_processes():
     processes.clear()  # 清空进程列表
     global router_started
     router_started = False  # 重置路由器启动标志
+    print("All processes terminated.")
 
     # 确保端口释放
     wait_for_port_release(8000)
