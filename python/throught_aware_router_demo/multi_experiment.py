@@ -7,6 +7,7 @@ import signal
 import os
 import sys
 from datetime import datetime
+from datetime import datetime, timedelta
 
 global args
 router_started = False  # 全局变量，标记路由器是否已启动
@@ -121,7 +122,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # 获取当前中国时间并创建实验目录
-    china_time = datetime.utcnow() + datetime.timedelta(hours=8)
+    china_time = datetime.utcnow() + timedelta(hours=8)
     experiment_root_dir = china_time.strftime("%Y-%m-%d_%H-%M-%S")
     os.makedirs(experiment_root_dir, exist_ok=True)
 
