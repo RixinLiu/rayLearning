@@ -106,7 +106,7 @@ def sample_sharegpt_requests_with_ratio(
 
     print(f"Sampled {len(filtered_dataset)} requests: {len(sampled_short_requests)} short and {len(sampled_long_requests)} long.")
 
-    output_file = "short_80_long_20_sharegpt_requests.json"
+    output_file = "LARGER_GAP_short_80_long_20_sharegpt_requests.json"
     with open(output_file, "w") as f:
         json.dump(filtered_dataset, f, indent=4)
     print(f"Sampled requests saved to {output_file}")
