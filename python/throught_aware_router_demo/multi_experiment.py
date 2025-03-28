@@ -2,8 +2,16 @@ import subprocess
 import threading
 import time
 import argparse
+import socket
 
 global args
+router_started = False  # 全局变量，标记路由器是否已启动
+lock = threading.Lock()  # 用于线程同步的锁
+
+def is_port_in_use(port):
+    """检查端口是否被占用"""
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex(("127.0.0.1", port)) == 0
 
 def run_vllm_server():
     cmd = """python run_replicas.py \
@@ -18,33 +26,32 @@ def run_vllm_server():
     for line in process.stdout:
         print(line, end="")  # 打印控制台输出
         if "Application startup complete" in line:
-            time.sleep(10)
+            time.sleep(2)
             run_router(args.strategy)
             break
 
 def run_router(strategy):
-    cmd = f"""python router.py \
-        --worker-ports 8001,8002 \
-        --port 8000 \
-        --strategy {strategy} \
-        > router_{strategy}.log"""
-    
-    # 启动路由器
-    print(f"Router started with strategy: {strategy}")
-    subprocess.Popen(cmd, shell=True)
+    global router_started
+    with lock:  # 确保线程安全
+        if router_started:
+            print("Router is already running. Skipping...")
+            return
 
-    # time.sleep(10)
-    # run_benchmark(args.num_prompts, args.concurrency)
+        # 检查端口是否被占用
+        if is_port_in_use(8000):
+            print("Error: Port 8000 is already in use. Exiting...")
+            return
 
-def run_benchmark(num_prompts, concurrency):
-    cmd = f"""python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 \
-    --dataset-name sharegpt --num-prompts {num_prompts} --sharegpt-output-len 256 --max-concurrency {concurrency} \
-    --dataset-path ./short_80_long_20_sharegpt_requests.json \
-        > benchmark.log"""
-    
-    # 启动基准测试
-    subprocess.Popen(cmd, shell=True)
-    print(f"Benchmark started with num_prompts={num_prompts} and concurrency={concurrency}")
+        cmd = f"""python router.py \
+            --worker-ports 8001,8002 \
+            --port 8000 \
+            --strategy {strategy} \
+            > router_{strategy}.log"""
+        
+        # 启动路由器
+        subprocess.Popen(cmd, shell=True)
+        router_started = True
+        print(f"Router started with strategy: {strategy}")
 
 if __name__ == "__main__":
     # 使用 argparse 解析命令行参数
@@ -57,3 +64,4 @@ if __name__ == "__main__":
     # 使用线程运行 VLLM 服务器
     server_thread = threading.Thread(target=run_vllm_server)
     server_thread.start()
+    server_thread.join()  # 等待 VLLM 服务器线程完成
