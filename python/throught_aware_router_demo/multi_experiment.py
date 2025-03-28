@@ -26,8 +26,9 @@ def run_vllm_server():
         --no-enable-prefix-caching > run_replicas.log"""
     
     # 启动子进程并捕获输出
-    process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, start_new_session=True)
     processes.append(process)  # 将子进程添加到全局列表中
+    print("Add VLLM server process to the list. PID:", process.pid)
     
     # 监控输出
     for line in process.stdout:
@@ -60,8 +61,9 @@ def run_router(strategy, experiment_dir):
         # 启动路由器并捕获输出
         router_log_path = os.path.join(experiment_dir, f"router_{strategy}.log")
         with open(router_log_path, "w") as log_file:
-            process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file)
+            process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file, start_new_session=True)
             processes.append(process)  # 将子进程添加到全局列表中
+            print("Add router process to the list. PID:", process.pid)
         
         print(f"Router started with strategy: {strategy}")
 
@@ -73,8 +75,9 @@ def run_benchmark(num_prompts, concurrency, experiment_dir):
     # 启动基准测试并捕获输出
     benchmark_log_path = os.path.join(experiment_dir, "benchmark.log")
     with open(benchmark_log_path, "w") as log_file:
-        process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file)
+        process = subprocess.Popen(cmd, shell=True, stdout=log_file, stderr=log_file, start_new_session=True)
         processes.append(process)  # 将子进程添加到全局列表中
+        print("Add benchmark process to the list. PID:", process.pid)
     
     print(f"Benchmark started with {num_prompts} prompts and concurrency {concurrency}.")
 
