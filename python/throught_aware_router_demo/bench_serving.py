@@ -828,6 +828,7 @@ def calculate_metrics(
                 tpots.append((outputs[i].latency - outputs[i].ttft) / (output_len - 1))
             itls += outputs[i].itl
             ttfts.append(outputs[i].ttft)
+            print(f"outputs[{i}].ttft = {outputs[i].ttft}")
             e2e_latencies.append(outputs[i].latency)
 
             if 2 * input_requests[i][1] + 256 > 4000:
