@@ -154,7 +154,7 @@ if __name__ == "__main__":
     os.makedirs(experiment_root_dir, exist_ok=True)
 
     # 路由策略和实验次数
-    strategies = ["round_robin", "only_one", "tokens", "pow_2"]
+    strategies = ["round_robin", "tokens", "pow_2"]
     num_experiments = 1
 
     for strategy in strategies:
@@ -172,4 +172,4 @@ if __name__ == "__main__":
 
             # 终止所有进程并等待 5 秒
             terminate_all_processes()
-            time.sleep(30)
+            time.sleep(10)
