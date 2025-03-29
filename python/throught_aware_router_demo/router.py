@@ -117,13 +117,15 @@ def select_worker() -> Optional[str]:
         candidates = [w for w in valid_workers if get_cache_hit_rate(w) == max_hit]
         worker = random.choice(candidates)
     elif strategy == "round_robin":
-        # for w in valid_workers:
-        #     tokens = get_total_tokens(w)
-        #     print(f"Worker: {w}, Tokens: {tokens}")
-        # worker = valid_workers[last_access_worker % len(valid_workers)]
-        worker = valid_workers[0]
+        for w in valid_workers:
+            tokens = get_total_tokens(w)
+            print(f"Worker: {w}, Tokens: {tokens}")
+        worker = valid_workers[last_access_worker % len(valid_workers)]
         print(f"Selected worker: {worker}")
         last_access_worker += 1
+    elif strategy == "only_one":
+        worker = valid_workers[0] 
+        print(f"Selected worker: {worker}")
 
     return worker
 
@@ -318,7 +320,7 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, required=True,
                        help="Router listening port")
     parser.add_argument("--strategy", type=str, required=True,
-            choices=["tokens", "pow_2", "latency", "cache_hit", "round_robin", "random"],
+            choices=["tokens", "pow_2", "latency", "cache_hit", "round_robin", "random", "only_one"],
                        help="Routing strategy")
     args = parser.parse_args()
     
