@@ -117,10 +117,11 @@ def select_worker() -> Optional[str]:
         candidates = [w for w in valid_workers if get_cache_hit_rate(w) == max_hit]
         worker = random.choice(candidates)
     elif strategy == "round_robin":
-        for w in valid_workers:
-            tokens = get_total_tokens(w)
-            print(f"Worker: {w}, Tokens: {tokens}")
-        worker = valid_workers[last_access_worker % len(valid_workers)]
+        # for w in valid_workers:
+        #     tokens = get_total_tokens(w)
+        #     print(f"Worker: {w}, Tokens: {tokens}")
+        # worker = valid_workers[last_access_worker % len(valid_workers)]
+        worker = valid_workers[0]
         print(f"Selected worker: {worker}")
         last_access_worker += 1
 
@@ -219,14 +220,14 @@ async def forward_streaming_request(request: Request, endpoint: str):
         # print(f"Word count in request: {word_count}")
 
     # Update metrics cache with word count and generalized token count
-    if worker_url in metrics_cache:
-        metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
-        if word_count > 1000:
-            worker_long_request_count[worker_url] += 1
-            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 3000
-        else:
-            worker_short_request_count[worker_url] += 1
-            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 50
+    # if worker_url in metrics_cache:
+    #     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
+    #     if word_count > 1000:
+    #         worker_long_request_count[worker_url] += 1
+    #         metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 3000
+    #     else:
+    #         worker_short_request_count[worker_url] += 1
+    #         metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 50
     
     if not worker_url:
         return Response(
@@ -257,12 +258,12 @@ async def forward_streaming_request(request: Request, endpoint: str):
 
                         yield chunk
                     # Update metrics cache with word count and generalized token count
-                    if worker_url in metrics_cache:
-                        metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
-                        if word_count > 1000:
-                            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 3000
-                        else:
-                            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 50
+                    # if worker_url in metrics_cache:
+                    #     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
+                    #     if word_count > 1000:
+                    #         metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 3000
+                    #     else:
+                    #         metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 50
                     
             # print("Total tokens processed: ", end_total_tokens - initial_tokens)
         
