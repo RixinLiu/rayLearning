@@ -223,7 +223,7 @@ async def forward_streaming_request(request: Request, endpoint: str):
         metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
         if word_count > 1000:
             worker_long_request_count[worker_url] += 1
-            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 10000
+            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 1000
         else:
             worker_short_request_count[worker_url] += 1
             metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 50
@@ -260,7 +260,7 @@ async def forward_streaming_request(request: Request, endpoint: str):
                     if worker_url in metrics_cache:
                         metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
                         if word_count > 1000:
-                            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 10000
+                            metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 1000
                         else:
                             metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 50
                     
