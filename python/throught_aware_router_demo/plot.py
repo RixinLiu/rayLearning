@@ -8,12 +8,22 @@ def read_file(file_path):
     
     data_list = []
     data = {}
+    token1 = 0
+    token2 = 0
     for line in lines:
-        if "Worker:" in line:
+        # 跳过以 "Long requests" 或 "Short requests" 开头的行
+        if line.strip().startswith("Long requests") or line.strip().startswith("Short requests"):
+            continue
+
+        if "Worker: http://localhost:8001," in line:
             worker, tokens = line.split(", Tokens:")
             worker = worker.strip().split(" ")[-1]
-            tokens = float(tokens.strip())
-            data[worker] = tokens
+            token1 = float(tokens.strip())
+        elif "Worker: http://localhost:8002," in line:
+            worker, tokens = line.split(", Tokens:")
+            worker = worker.strip().split(" ")[-1]
+            token2 = float(tokens.strip())
+            data["Difference in Tokens"] = abs(token1 - token2)  # 计算两个 worker 的 token 数差值
         elif "Successful requests:" in line:
             data['Successful requests'] = int(line.split(":")[1].strip())
         elif "Benchmark duration (s):" in line:
@@ -43,14 +53,13 @@ def read_file(file_path):
         elif "P99 TTFT (ms):" in line:
             data['P99 TTFT (ms)'] = float(line.split(":")[1].strip())
         
-        # 每次读取到 "P99 TTFT (ms):" 行时，表示一份数据结束
+        # 每次读取到 "P99 ITL (ms):" 行时，表示一份数据结束
         if "P99 ITL (ms)" in line:
             data_list.append(data)
             data = {}
 
     # 计算平均值
     avg_data = {}
-    print(len(data_list))
     keys = set(key for data in data_list for key in data.keys())
     for key in keys:
         avg_data[key] = np.mean([data[key] for data in data_list if key in data])
@@ -58,31 +67,36 @@ def read_file(file_path):
     return avg_data
 
 # 读取文件A、文件B和文件C
-data_A = read_file('token-based.txt')
-data_B = read_file('round-robin.txt')
+data_A = read_file('tokens.txt')
+data_B = read_file('round_robin.txt')
 data_C = read_file('pow_2.txt')
 
-# 绘制Worker处理的Token数对比图
-workers = ['Worker1', 'Worker2']
-workers_A = list(data_A.keys())[:2]
-tokens_A = [data_A[worker] for worker in workers_A]
-workers_B = list(data_B.keys())[:2]
-tokens_B = [data_B[worker] for worker in workers_B]
-workers_C = list(data_C.keys())[:2]
-tokens_C = [data_C[worker] for worker in workers_C]
-x = np.arange(len(workers))  # x轴位置
-width = 0.25  # 柱状图宽度
+# 修复 calculate_worker_token_difference 函数
+def calculate_worker_token_difference(data):
+    return data.get("Difference in Tokens", 0)
+
+token_diff_A = calculate_worker_token_difference(data_A)
+token_diff_B = calculate_worker_token_difference(data_B)
+token_diff_C = calculate_worker_token_difference(data_C)
+
+# 绘制Worker处理的Token数差值对比图
+strategies = ['Token based Router', 'Round robin Router', 'Pow 2 Router']
+token_differences = [token_diff_A, token_diff_B, token_diff_C]
+x = np.arange(len(strategies))  # x轴位置
 
 plt.figure(figsize=(10, 6))
-plt.bar(x - width, tokens_A, width, label='Token based Router', alpha=0.7)
-plt.bar(x, tokens_B, width, label='Round robin Router', alpha=0.7)
-plt.bar(x + width, tokens_C, width, label='Pow 2 Router', alpha=0.7)
-plt.xlabel('Worker')
-plt.ylabel('Tokens')
-plt.title('Processed tokens of each worker')
-plt.xticks(x, ['Worker1', 'Worker2'])
-plt.legend()
-plt.savefig('worker_tokens_comparison.png')
+bars = plt.bar(x, token_differences, color=['blue', 'orange', 'green'], alpha=0.7)
+plt.xlabel('Routing Strategies')
+plt.ylabel('Token Difference')
+plt.title('Token Difference Between Two Workers')
+plt.xticks(x, strategies)
+
+# 在柱状图上标出具体数值
+for bar in bars:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval, round(yval, 2), ha='center', va='bottom')
+
+plt.savefig('worker_token_difference.png')
 plt.close()
 
 # 绘制Throughput对比图（分组柱状图）

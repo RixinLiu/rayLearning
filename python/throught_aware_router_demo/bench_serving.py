@@ -543,7 +543,7 @@ def sample_sharegpt_requests(
             len(completion_token_ids) if fixed_output_len is None else fixed_output_len
         )
         
-        total_token = 2 * prompt_len + output_len
+        # total_token = 2 * prompt_len + output_len
         # print(f"Total tokens for conversation {i}: {total_token}")
 
         filtered_dataset.append((prompt, prompt_len, output_len))
@@ -963,7 +963,7 @@ async def benchmark(
         prompt, prompt_len, output_len = request
         if prompt_len > 1000:
             # print("long request")
-            output_len = 2000
+            output_len = 10000
         # else:
         #     print("short request")
         #     print(output_len)

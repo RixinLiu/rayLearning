@@ -1,0 +1,1 @@
+long <=> 2 word count of input + 256 > 4000 short <=> 2 word count of input + 256 < 400

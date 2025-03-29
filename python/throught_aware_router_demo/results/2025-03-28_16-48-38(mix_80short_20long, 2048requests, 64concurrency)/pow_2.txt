@@ -1,0 +1,152 @@
+Worker: http://localhost:8001, Tokens: 1195078.0
+Worker: http://localhost:8002, Tokens: 1186613.0
+============ Serving Benchmark Result ============
+Backend:                                 vllm      
+Traffic request rate:                    inf       
+Successful requests:                     2045      
+Long requests:                           410       
+Short requests:                          1635      
+Benchmark duration (s):                  476.24    
+Total input tokens:                      1568786   
+Total generated tokens:                  838400    
+Total generated tokens (retokenized):    837848    
+Request throughput (req/s):              4.29      
+Input token throughput (tok/s):          3294.14   
+Output token throughput (tok/s):         1760.47   
+----------------End-to-End Latency----------------
+Mean E2E Latency (ms):                   14417.41  
+Median E2E Latency (ms):                 9192.77   
+P95 E2E Latency (ms):                    38089.65  
+P99 E2E Latency (ms):                    42622.23  
+Long requests Mean E2E Latency (ms):     35647.47110557317
+Short requests Mean E2E Latency (ms):    9093.66277351865
+Long requests Median E2E Latency (ms):   36017.664807000074
+Short requests Median E2E Latency (ms):  8809.59621799957
+Long requests P95 E2E Latency (ms):      42620.242524549474
+Short requests P95 E2E Latency (ms):     12671.38046319942
+Long requests P99 E2E Latency (ms):      43691.92200201002
+Short requests P99 E2E Latency (ms):     13563.517503859875
+---------------Time to First Token----------------
+Mean TTFT (ms):                          631.79    
+Median TTFT (ms):                        407.53    
+P95 TTFT (ms):                           2158.44   
+P99 TTFT (ms):                           3839.50   
+Long Requests Mean TTFT (ms):            907.16    
+Short Requests Mean TTFT (ms):           562.73    
+Long Requests Median TTFT (ms):          628.71    
+Short Requests Median TTFT (ms):         322.42    
+Long Requests P95 TTFT (ms):             2527.95   
+Short Requests P95 TTFT (ms):            2095.96   
+Long Requests P99 TTFT (ms):             3824.28   
+Short Requests P99 TTFT (ms):            3746.30   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          33.56     
+Median TPOT (ms):                        33.07     
+P99 TPOT (ms):                           49.54     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           33.77     
+Median ITL (ms):                         41.63     
+P99 ITL (ms):                            177.46    
+==================================================
+
+Worker: http://localhost:8001, Tokens: 1184848.0
+Worker: http://localhost:8002, Tokens: 1191113.0
+============ Serving Benchmark Result ============
+Backend:                                 vllm      
+Traffic request rate:                    inf       
+Successful requests:                     2045      
+Long requests:                           410       
+Short requests:                          1635      
+Benchmark duration (s):                  469.79    
+Total input tokens:                      1568786   
+Total generated tokens:                  838400    
+Total generated tokens (retokenized):    837913    
+Request throughput (req/s):              4.35      
+Input token throughput (tok/s):          3339.32   
+Output token throughput (tok/s):         1784.62   
+----------------End-to-End Latency----------------
+Mean E2E Latency (ms):                   14221.48  
+Median E2E Latency (ms):                 9100.45   
+P95 E2E Latency (ms):                    36834.49  
+P99 E2E Latency (ms):                    42755.83  
+Long requests Mean E2E Latency (ms):     35273.9619419463
+Short requests Mean E2E Latency (ms):    8942.270541501512
+Long requests Median E2E Latency (ms):   34809.78574849996
+Short requests Median E2E Latency (ms):  8777.19773300123
+Long requests P95 E2E Latency (ms):      42739.26933400009
+Short requests P95 E2E Latency (ms):     11073.842544800027
+Long requests P99 E2E Latency (ms):      44887.9492687102
+Short requests P99 E2E Latency (ms):     12725.61958726008
+---------------Time to First Token----------------
+Mean TTFT (ms):                          557.69    
+Median TTFT (ms):                        395.16    
+P95 TTFT (ms):                           1550.15   
+P99 TTFT (ms):                           3447.79   
+Long Requests Mean TTFT (ms):            814.00    
+Short Requests Mean TTFT (ms):           493.42    
+Long Requests Median TTFT (ms):          625.11    
+Short Requests Median TTFT (ms):         304.97    
+Long Requests P95 TTFT (ms):             1915.32   
+Short Requests P95 TTFT (ms):            1519.47   
+Long Requests P99 TTFT (ms):             3749.72   
+Short Requests P99 TTFT (ms):            3148.19   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          33.24     
+Median TPOT (ms):                        32.73     
+P99 TPOT (ms):                           44.03     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           33.48     
+Median ITL (ms):                         41.02     
+P99 ITL (ms):                            176.34    
+==================================================
+
+Worker: http://localhost:8001, Tokens: 1174661.0
+Worker: http://localhost:8002, Tokens: 1200055.0
+============ Serving Benchmark Result ============
+Backend:                                 vllm      
+Traffic request rate:                    inf       
+Successful requests:                     2045      
+Long requests:                           410       
+Short requests:                          1635      
+Benchmark duration (s):                  471.80    
+Total input tokens:                      1568786   
+Total generated tokens:                  838400    
+Total generated tokens (retokenized):    837841    
+Request throughput (req/s):              4.33      
+Input token throughput (tok/s):          3325.12   
+Output token throughput (tok/s):         1777.03   
+----------------End-to-End Latency----------------
+Mean E2E Latency (ms):                   14250.58  
+Median E2E Latency (ms):                 9238.54   
+P95 E2E Latency (ms):                    36517.64  
+P99 E2E Latency (ms):                    40562.51  
+Long requests Mean E2E Latency (ms):     35237.63188389758
+Short requests Mean E2E Latency (ms):    8987.768121874618
+Long requests Median E2E Latency (ms):   35274.47475250028
+Short requests Median E2E Latency (ms):  8837.667656000121
+Long requests P95 E2E Latency (ms):      40559.474901699185
+Short requests P95 E2E Latency (ms):     11392.274384000664
+Long requests P99 E2E Latency (ms):      43582.79494080016
+Short requests P99 E2E Latency (ms):     12660.109643619471
+---------------Time to First Token----------------
+Mean TTFT (ms):                          609.57    
+Median TTFT (ms):                        403.23    
+P95 TTFT (ms):                           2233.10   
+P99 TTFT (ms):                           3464.29   
+Long Requests Mean TTFT (ms):            868.77    
+Short Requests Mean TTFT (ms):           544.57    
+Long Requests Median TTFT (ms):          633.77    
+Short Requests Median TTFT (ms):         319.12    
+Long Requests P95 TTFT (ms):             2367.40   
+Short Requests P95 TTFT (ms):            2004.64   
+Long Requests P99 TTFT (ms):             3618.64   
+Short Requests P99 TTFT (ms):            3397.93   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          33.21     
+Median TPOT (ms):                        32.88     
+P99 TPOT (ms):                           46.32     
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           33.42     
+Median ITL (ms):                         42.23     
+P99 ITL (ms):                            181.49    
+==================================================

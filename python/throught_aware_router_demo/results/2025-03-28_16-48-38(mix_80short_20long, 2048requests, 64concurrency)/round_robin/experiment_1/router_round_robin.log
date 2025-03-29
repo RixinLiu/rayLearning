@@ -8213,7 +8213,6 @@ Worker: http://localhost:8001, Tokens: 1201312.0
 Worker: http://localhost:8002, Tokens: 1177968.0
 Selected worker: http://localhost:8001
 INFO:     127.0.0.1:42038 - "POST /v1/completions HTTP/1.1" 200 OK
-Worker: http://localhost:8001, Tokens: 1201584.0
-Worker: http://localhost:8002, Tokens: 1177968.0
+c
 Selected worker: http://localhost:8002
 INFO:     127.0.0.1:42048 - "POST /v1/completions HTTP/1.1" 200 OK
