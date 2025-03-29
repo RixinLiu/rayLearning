@@ -69,7 +69,7 @@ def run_router(strategy, experiment_dir):
 
 def run_benchmark(num_prompts, concurrency, experiment_dir):
     cmd = f"""python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 \
-    --dataset-name sharegpt --num-prompts {num_prompts} --sharegpt-output-len 100 --max-concurrency {concurrency} \
+    --dataset-name sharegpt --num-prompts {num_prompts} --sharegpt-output-len 50 --max-concurrency {concurrency} \
     --dataset-path ./LARGER_GAP_short_80_long_20_sharegpt_requests.json"""
     
     # 启动基准测试并捕获输出
@@ -155,7 +155,7 @@ if __name__ == "__main__":
 
     # 路由策略和实验次数
     strategies = ["tokens", "round_robin", "pow_2"]
-    num_experiments = 3
+    num_experiments = 1
 
     for strategy in strategies:
         strategy_dir = os.path.join(experiment_root_dir, strategy)
