@@ -1,0 +1,55 @@
+Namespace(backend='vllm', base_url=None, host='127.0.0.1', port=8000, dataset_name='sharegpt', dataset_path='./LARGER_GAP_short_80_long_20_sharegpt_requests.json', model='Qwen/Qwen2.5-1.5B-Instruct', tokenizer=None, num_prompts=100, sharegpt_output_len=50, random_input_len=None, random_output_len=None, random_range_ratio=0.0, request_rate=inf, seed=1, multi=False, request_rate_range='2,34,2', output_file=None, disable_tqdm=False, disable_stream=False, disable_ignore_eos=False, extra_request_body=None, max_concurrency=32, gen_num_groups=64, gen_prompts_per_group=16, gen_system_prompt_len=2048, gen_question_len=128, gen_output_len=256)
+
+Total number of conversations: 10925
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:01<02:04,  1.26s/it]  3%|▎         | 3/100 [00:01<00:35,  2.71it/s] 19%|█▉        | 19/100 [00:01<00:05, 13.66it/s] 35%|███▌      | 35/100 [00:02<00:02, 24.21it/s] 39%|███▉      | 39/100 [00:02<00:02, 25.74it/s] 43%|████▎     | 43/100 [00:02<00:02, 26.02it/s] 49%|████▉     | 49/100 [00:02<00:01, 30.71it/s] 54%|█████▍    | 54/100 [00:02<00:01, 33.44it/s] 59%|█████▉    | 59/100 [00:03<00:01, 24.86it/s] 63%|██████▎   | 63/100 [00:03<00:01, 25.47it/s] 67%|██████▋   | 67/100 [00:03<00:01, 22.04it/s] 77%|███████▋  | 77/100 [00:03<00:00, 32.37it/s] 81%|████████  | 81/100 [00:03<00:00, 33.05it/s] 85%|████████▌ | 85/100 [00:03<00:00, 27.46it/s] 90%|█████████ | 90/100 [00:04<00:00, 25.13it/s]100%|██████████| 100/100 [00:04<00:00, 23.63it/s]
+
+============ Serving Benchmark Result ============
+Backend:                                 vllm      
+Traffic request rate:                    inf       
+Successful requests:                     100       
+Long requests:                           11        
+Short requests:                          89        
+Benchmark duration (s):                  4.23      
+Total input tokens:                      48738     
+Total generated tokens:                  100       
+Total generated tokens (retokenized):    99        
+Request throughput (req/s):              23.63     
+Input token throughput (tok/s):          11517.46  
+Output token throughput (tok/s):         23.63     
+----------------End-to-End Latency----------------
+Mean E2E Latency (ms):                   1188.83   
+Median E2E Latency (ms):                 1116.10   
+P95 E2E Latency (ms):                    1977.20   
+P99 E2E Latency (ms):                    1978.45   
+Long requests Mean E2E Latency (ms):     1178.6610560909387
+Short requests Mean E2E Latency (ms):    1190.0831981236458
+Long requests Median E2E Latency (ms):   1053.310610999688
+Short requests Median E2E Latency (ms):  1125.2957339993372
+Long requests P95 E2E Latency (ms):      1688.8440769998851
+Short requests P95 E2E Latency (ms):     1977.2940122002183
+Long requests P99 E2E Latency (ms):      1894.329125799777
+Short requests P99 E2E Latency (ms):     1978.4911378002653
+---------------Time to First Token----------------
+Mean TTFT (ms):                          1178.28   
+Median TTFT (ms):                        1116.09   
+P95 TTFT (ms):                           1977.19   
+P99 TTFT (ms):                           1978.45   
+Long Requests Mean TTFT (ms):            1082.90   
+Short Requests Mean TTFT (ms):           1190.07   
+Long Requests Median TTFT (ms):          1021.09   
+Short Requests Median TTFT (ms):         1125.28   
+Long Requests P95 TTFT (ms):             1688.84   
+Short Requests P95 TTFT (ms):            1977.29   
+Long Requests P99 TTFT (ms):             1894.32   
+Short Requests P99 TTFT (ms):            1978.48   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          0.00      
+Median TPOT (ms):                        0.00      
+P99 TPOT (ms):                           0.00      
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           0.00      
+Median ITL (ms):                         0.00      
+P99 ITL (ms):                            0.00      
+==================================================

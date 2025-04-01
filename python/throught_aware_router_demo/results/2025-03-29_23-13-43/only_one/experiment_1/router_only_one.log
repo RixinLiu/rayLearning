@@ -1,0 +1,2630 @@
+/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py:293: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py:312: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [3182]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Initialized with strategy: only_one
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:38840 - "GET /v1/models HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:38852 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:38866 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38872 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38876 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38882 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38898 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38908 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38914 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38916 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38920 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38932 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38946 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38948 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38964 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38970 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38982 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38996 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39012 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39024 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39030 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39032 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39042 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39052 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39062 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39070 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39072 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39082 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39090 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39098 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39102 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39112 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39114 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39130 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39140 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39156 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39160 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39162 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39166 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39174 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39186 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39190 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39196 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39210 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39226 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39228 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39244 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39248 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39268 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39276 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39278 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39284 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39286 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39296 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39312 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39316 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39318 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39322 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39324 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39338 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39348 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39356 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39372 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39386 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39396 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39406 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39412 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39422 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39432 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39434 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39448 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39464 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39466 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39478 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39484 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39498 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39514 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39524 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39530 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39544 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39548 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39558 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39568 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39584 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39590 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39596 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39610 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39614 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39620 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39622 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39632 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39640 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39650 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39656 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39666 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39668 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39690 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39694 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39698 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39708 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39718 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39722 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39724 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39730 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39738 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39742 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39744 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39750 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39758 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39770 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39786 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39802 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39818 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39822 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39834 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39838 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39840 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39854 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39856 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39860 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39872 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39878 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39890 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39912 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39918 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39922 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39936 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39952 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39968 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39976 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39980 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39996 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40010 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40012 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40018 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40026 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40032 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40048 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40052 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40054 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40070 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40072 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40086 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40092 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40102 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40116 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40120 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40130 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40132 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40136 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40140 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40152 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40158 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40172 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40176 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40186 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40200 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40206 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40216 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40218 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40226 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40240 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40260 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40266 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40278 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40294 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40300 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40306 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40308 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40310 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40312 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40328 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40342 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40352 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40360 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40370 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40380 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40388 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40390 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40402 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40412 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40418 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40432 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40448 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40456 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40466 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40482 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40498 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40506 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40520 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40536 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40548 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40562 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40572 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40586 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40600 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40602 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40616 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40630 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40638 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40644 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40656 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40668 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40684 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40700 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40712 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40726 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40736 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40744 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40748 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40750 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40756 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40760 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40766 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40780 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40786 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40788 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40790 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40802 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40804 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40818 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40832 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40834 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40836 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40844 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40860 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40864 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40876 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40888 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40892 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40896 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40900 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40918 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40928 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40944 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40956 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40968 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40972 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40974 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40980 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40986 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40994 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40998 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41006 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41018 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41024 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41030 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41034 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41048 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41062 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41070 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41082 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41096 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41112 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41114 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41126 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41142 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41148 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41154 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41162 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41166 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41178 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41182 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41186 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41202 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41206 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41218 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41234 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41244 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41268 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41272 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41278 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41294 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41306 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41322 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41338 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41340 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41344 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41356 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41372 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41378 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41380 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41388 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41392 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41406 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41420 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41426 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41434 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41450 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41460 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41468 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41474 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41488 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41502 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41514 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41520 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41522 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41538 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41550 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41552 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41558 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41566 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41580 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41588 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41598 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41614 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41622 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41634 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41646 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41662 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41670 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41676 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41682 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41692 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41694 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41700 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41712 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41728 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41734 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41740 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41750 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41754 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41764 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41770 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41780 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41784 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41786 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41794 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41800 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41814 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41830 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41844 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41854 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41862 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41866 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41878 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41890 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41900 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41914 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41928 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41944 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41958 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41974 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41976 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41986 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41988 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42004 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42008 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42014 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42018 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42026 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42030 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42044 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42046 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42050 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42054 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42064 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42078 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42088 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42104 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42112 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42128 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42132 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42144 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42160 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42168 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42180 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42186 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42196 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42204 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42218 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42232 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42244 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42260 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42274 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42280 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42296 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42308 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42324 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42330 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42344 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42358 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42370 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42378 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42380 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42392 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42396 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42412 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42428 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42442 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42458 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42466 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42474 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42484 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42494 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42504 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42510 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42522 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42538 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42548 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42550 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42564 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42570 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42586 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42602 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42614 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42626 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42638 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42648 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42660 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42672 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42688 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42692 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42704 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42710 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42726 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42730 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42736 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42752 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42756 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42772 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42778 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42794 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42802 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42812 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42818 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42826 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42828 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42842 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42856 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42872 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42882 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42890 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42902 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42914 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42916 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42928 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42930 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42940 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42944 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42950 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42956 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42970 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42980 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42982 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42990 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43006 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43008 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43024 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43040 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43044 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43060 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43074 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43084 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43106 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43110 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43120 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43134 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43136 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43150 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43164 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43180 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43182 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43190 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43194 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43202 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43212 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43224 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43232 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43244 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43258 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43274 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43278 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43280 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43294 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43302 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43318 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43332 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43338 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43352 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43354 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43366 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43368 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43384 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43390 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43394 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43400 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43416 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43430 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43444 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43446 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43462 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43466 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+Metrics update failed for http://localhost:8001: 
+INFO:     127.0.0.1:43474 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43484 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43492 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43498 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43508 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43516 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43518 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43532 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:43542 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54002 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54018 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54030 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54044 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54050 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54052 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54054 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54064 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54076 - "POST /v1/completions HTTP/1.1" 503 Service Unavailable
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54082 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54094 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54108 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54124 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54140 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54156 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54168 - "POST /v1/completions HTTP/1.1" 200 OK
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 263, in __call__
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+    |   File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 246, in generate_stream
+    |     async with httpx.AsyncClient() as client:
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1402, in __init__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1445, in _init_transport
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 297, in __init__
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_config.py", line 40, in create_ssl_context
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/ssl.py", line 766, in create_default_context
+    | OSError: [Errno 24] Too many open files
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+  File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 246, in generate_stream
+    async with httpx.AsyncClient() as client:
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1402, in __init__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1445, in _init_transport
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 297, in __init__
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_config.py", line 40, in create_ssl_context
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/ssl.py", line 766, in create_default_context
+OSError: [Errno 24] Too many open files
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 263, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    |     result = await app(  # type: ignore[func-returns-value]
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    |     return await self.app(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |     raise exc
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+    |     await response(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+    |     with collapse_excgroups():
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+    |     await func()
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+    |     async for chunk in self.body_iterator:
+    |   File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 246, in generate_stream
+    |     async with httpx.AsyncClient() as client:
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1402, in __init__
+    |     self._transport = self._init_transport(
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1445, in _init_transport
+    |     return AsyncHTTPTransport(
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 297, in __init__
+    |     ssl_context = create_ssl_context(verify=verify, cert=cert, trust_env=trust_env)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_config.py", line 40, in create_ssl_context
+    |     ctx = ssl.create_default_context(cafile=certifi.where())
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/ssl.py", line 766, in create_default_context
+    |     context.load_verify_locations(cafile, capath, cadata)
+    | OSError: [Errno 24] Too many open files
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+    with collapse_excgroups():
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+    await func()
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+    async for chunk in self.body_iterator:
+  File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 246, in generate_stream
+    async with httpx.AsyncClient() as client:
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1402, in __init__
+    self._transport = self._init_transport(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1445, in _init_transport
+    return AsyncHTTPTransport(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 297, in __init__
+    ssl_context = create_ssl_context(verify=verify, cert=cert, trust_env=trust_env)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_config.py", line 40, in create_ssl_context
+    ctx = ssl.create_default_context(cafile=certifi.where())
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/ssl.py", line 766, in create_default_context
+    context.load_verify_locations(cafile, capath, cadata)
+OSError: [Errno 24] Too many open files
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 24] Too many open files
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+    with collapse_excgroups():
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+    await func()
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+    async for chunk in self.body_iterator:
+  File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 247, in generate_stream
+    async with client.stream(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1583, in stream
+    response = await self.send(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 24] Too many open files
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+    with collapse_excgroups():
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+    await func()
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+    async for chunk in self.body_iterator:
+  File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 247, in generate_stream
+    async with client.stream(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1583, in stream
+    response = await self.send(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+ERROR:    Exception in ASGI application
+  + Exception Group Traceback (most recent call last):
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 76, in collapse_excgroups
+  |     yield
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 263, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 772, in __aexit__
+  |     raise BaseExceptionGroup(
+  | exceptiongroup.ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    |     result = await app(  # type: ignore[func-returns-value]
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    |     return await self.app(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    |     await super().__call__(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    |     raise exc
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    |     await self.app(scope, receive, _send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    |     await route.handle(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    |     await self.app(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+    |     await response(scope, receive, send)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+    |     with collapse_excgroups():
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    |     self.gen.throw(typ, value, traceback)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    |     raise exc
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+    |     await func()
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+    |     async for chunk in self.body_iterator:
+    |   File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 246, in generate_stream
+    |     async with httpx.AsyncClient() as client:
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1402, in __init__
+    |     self._transport = self._init_transport(
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1445, in _init_transport
+    |     return AsyncHTTPTransport(
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 297, in __init__
+    |     ssl_context = create_ssl_context(verify=verify, cert=cert, trust_env=trust_env)
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_config.py", line 40, in create_ssl_context
+    |     ctx = ssl.create_default_context(cafile=certifi.where())
+    |   File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/ssl.py", line 766, in create_default_context
+    |     context.load_verify_locations(cafile, capath, cadata)
+    | OSError: [Errno 24] Too many open files
+    +------------------------------------
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+    with collapse_excgroups():
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+    await func()
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+    async for chunk in self.body_iterator:
+  File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 246, in generate_stream
+    async with httpx.AsyncClient() as client:
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1402, in __init__
+    self._transport = self._init_transport(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1445, in _init_transport
+    return AsyncHTTPTransport(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 297, in __init__
+    ssl_context = create_ssl_context(verify=verify, cert=cert, trust_env=trust_env)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_config.py", line 40, in create_ssl_context
+    ctx = ssl.create_default_context(cafile=certifi.where())
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/ssl.py", line 766, in create_default_context
+    context.load_verify_locations(cafile, capath, cadata)
+OSError: [Errno 24] Too many open files
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: All connection attempts failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 714, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 734, in app
+    await route.handle(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+    await response(scope, receive, send)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 262, in __call__
+    with collapse_excgroups():
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 266, in wrap
+    await func()
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/starlette/responses.py", line 246, in stream_response
+    async for chunk in self.body_iterator:
+  File "/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py", line 247, in generate_stream
+    async with client.stream(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1583, in stream
+    response = await self.send(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/jrxing/anaconda3/envs/llm-router/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: All connection attempts failed
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54274 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:54286 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54296 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54308 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54310 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54322 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54336 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54350 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54356 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54366 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54376 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54388 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54402 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54412 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54424 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54428 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54442 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54444 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54454 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54462 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54474 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54488 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54500 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54506 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54522 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54538 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54542 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54546 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54554 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54570 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54574 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54576 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54584 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54590 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54594 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54598 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54612 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54616 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54624 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54640 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54644 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54646 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54658 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54668 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54682 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54698 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54712 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54728 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54738 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54740 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54746 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54756 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54770 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54786 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54794 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54804 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54806 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54810 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54818 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54834 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54846 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54850 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54854 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54870 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54872 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54886 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54892 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54904 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54912 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54926 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54942 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54956 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54958 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54968 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54984 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:54988 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55002 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55004 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55020 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55026 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55038 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55042 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55052 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55062 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55072 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55074 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55086 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55088 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55102 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55108 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55122 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55128 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55144 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55150 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55152 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55164 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55176 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46486 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46494 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46496 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46510 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46516 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46530 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46546 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46560 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46568 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46570 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46580 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46592 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46602 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46612 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46614 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46628 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46634 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46646 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46662 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46678 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46692 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46704 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46720 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46734 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46750 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46756 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46758 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46770 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46774 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46776 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46784 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46794 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46798 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46804 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46818 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46824 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46836 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46844 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46848 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46856 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46862 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46864 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46870 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46878 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46894 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46908 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46912 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46924 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46932 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46948 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46954 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46970 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46978 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46984 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47000 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47008 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47018 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47026 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47028 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47036 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47042 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47048 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47054 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47070 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47080 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47088 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47092 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47102 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47106 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47114 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47120 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47130 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47136 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47148 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47164 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47176 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47190 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47194 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47206 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47210 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47214 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47228 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47232 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47240 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47256 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47264 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47268 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47284 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47298 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47312 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47320 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47326 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47336 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47352 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47364 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47374 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47390 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47406 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47414 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47422 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47432 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47440 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47448 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47460 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47466 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47468 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47472 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47482 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47490 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47494 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47504 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47516 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47524 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47538 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47540 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47556 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47568 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47572 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47584 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47586 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47600 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47606 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47616 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47622 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47628 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47638 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47652 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47668 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47678 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47682 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47690 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47692 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47698 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47710 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47720 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47722 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47726 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47730 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47746 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47762 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47768 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47770 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47780 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47790 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47798 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47804 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47814 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47830 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47842 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47854 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47860 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47866 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47882 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47892 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47896 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47906 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47910 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47916 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47922 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47924 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47928 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47944 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47948 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47960 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47970 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47984 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47994 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47998 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48002 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48014 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48020 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48022 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48026 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48034 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48046 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48050 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48062 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48074 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48078 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48094 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48110 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48120 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48124 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48140 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48142 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48154 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48164 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48178 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48184 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48190 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48200 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48208 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48212 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48216 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48226 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48240 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48248 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48262 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48278 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48290 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48302 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48308 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48316 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48320 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48326 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48334 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48342 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48356 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48368 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48382 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48398 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48408 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48410 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48420 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48432 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48440 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48452 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48460 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48462 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48474 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48490 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48504 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48508 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48512 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48514 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48522 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48536 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48540 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48546 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48558 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48560 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48562 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48568 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48580 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48590 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48600 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48608 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48620 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48636 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48652 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48654 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48656 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48664 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48672 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48688 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48690 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48704 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48716 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48730 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48746 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48760 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48768 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48778 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48784 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48792 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48808 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48810 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48826 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48840 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48846 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48854 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48870 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48884 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48892 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48906 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48918 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48928 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48938 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48948 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48964 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48976 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48990 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:48996 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49012 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49028 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49042 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49052 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49064 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49074 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49090 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49104 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49116 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49120 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49122 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49126 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49138 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49152 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49168 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49176 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49190 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49194 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49202 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49216 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49220 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49224 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49232 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49246 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49248 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49256 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49260 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49272 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49280 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49296 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49312 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49314 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49330 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49344 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49356 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49362 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49368 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49380 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49390 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49404 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49410 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49420 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49426 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49438 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:49454 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39450 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39458 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39462 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39478 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39490 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39506 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39518 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39528 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39532 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39542 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39554 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39568 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39576 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39590 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39604 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39608 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39620 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39622 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39634 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39636 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39652 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39662 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39672 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39676 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39678 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39692 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39702 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39706 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39710 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39726 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39736 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39752 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39768 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39774 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39784 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39798 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39808 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39824 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39840 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39842 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39848 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39864 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39868 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39878 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39880 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39896 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39912 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39924 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39926 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39942 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39956 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39962 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39974 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39984 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:39998 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40002 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40006 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40018 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40030 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40044 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40060 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40074 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40076 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40080 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40086 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40092 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40098 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40102 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40108 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40124 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:40128 - "POST /v1/completions HTTP/1.1" 200 OK

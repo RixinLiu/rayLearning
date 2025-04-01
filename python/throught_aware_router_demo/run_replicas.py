@@ -48,7 +48,7 @@ def start_replicas(
             "vllm", "serve", model_name,
             "--host", host,
             "--port", str(port),
-            "--dtype=half"
+            "--dtype=half",
             "--enable-prefix-caching" if enable_prefix_caching else "--no-enable-prefix-caching",
         ]
         

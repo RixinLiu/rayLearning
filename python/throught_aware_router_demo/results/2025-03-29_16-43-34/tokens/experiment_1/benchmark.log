@@ -1,0 +1,155 @@
+Namespace(backend='vllm', base_url=None, host='127.0.0.1', port=8000, dataset_name='sharegpt', dataset_path='./LARGER_GAP_short_80_long_20_sharegpt_requests.json', model='Qwen/Qwen2.5-1.5B-Instruct', tokenizer=None, num_prompts=100, sharegpt_output_len=50, random_input_len=None, random_output_len=None, random_range_ratio=0.0, request_rate=inf, seed=1, multi=False, request_rate_range='2,34,2', output_file=None, disable_tqdm=False, disable_stream=False, disable_ignore_eos=False, extra_request_body=None, max_concurrency=32, gen_num_groups=64, gen_prompts_per_group=16, gen_system_prompt_len=2048, gen_question_len=128, gen_output_len=256)
+
+Total number of conversations: 10925
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:00<01:08,  1.44it/s]  8%|▊         | 8/100 [00:00<00:07, 13.05it/s] 12%|█▏        | 12/100 [00:00<00:05, 15.51it/s] 16%|█▌        | 16/100 [00:01<00:05, 15.84it/s] 22%|██▏       | 22/100 [00:01<00:03, 22.24it/s] 26%|██▌       | 26/100 [00:01<00:03, 22.34it/s] 30%|███       | 30/100 [00:01<00:02, 25.58it/s] 34%|███▍      | 34/100 [00:01<00:02, 22.96it/s] 37%|███▋      | 37/100 [00:02<00:02, 22.59it/s] 42%|████▏     | 42/100 [00:02<00:02, 28.00it/s] 46%|████▌     | 46/100 [00:02<00:02, 18.49it/s] 55%|█████▌    | 55/100 [00:02<00:01, 29.89it/s] 60%|██████    | 60/100 [00:02<00:01, 21.89it/s] 64%|██████▍   | 64/100 [00:03<00:01, 19.33it/s] 72%|███████▏  | 72/100 [00:03<00:01, 26.51it/s] 77%|███████▋  | 77/100 [00:03<00:00, 27.07it/s] 82%|████████▏ | 82/100 [00:03<00:00, 30.95it/s] 86%|████████▌ | 86/100 [00:03<00:00, 28.05it/s] 96%|█████████▌| 96/100 [00:04<00:00, 35.20it/s]100%|██████████| 100/100 [00:04<00:00, 27.57it/s]100%|██████████| 100/100 [00:04<00:00, 23.04it/s]
+outputs[0].ttft = 0.6211318370005756
+outputs[1].ttft = 0.6558376390003104
+outputs[2].ttft = 0.655633496999144
+outputs[3].ttft = 0.6551887770001485
+outputs[4].ttft = 0.6549263400011114
+outputs[5].ttft = 0.6547815350004385
+outputs[6].ttft = 0.689928300000247
+outputs[7].ttft = 0.7247288260005007
+outputs[8].ttft = 0.7590182670010108
+outputs[9].ttft = 0.7943087589992501
+outputs[10].ttft = 0.8295304720013519
+outputs[11].ttft = 0.8969259180012159
+outputs[12].ttft = 1.1583290709986613
+outputs[13].ttft = 1.1577631469990592
+outputs[14].ttft = 1.1575771259995236
+outputs[15].ttft = 1.157633202999932
+outputs[16].ttft = 1.1573260680015665
+outputs[17].ttft = 1.1570607310004561
+outputs[18].ttft = 1.1925456379995012
+outputs[19].ttft = 1.1922913289999997
+outputs[20].ttft = 1.2270595479985786
+outputs[21].ttft = 1.2616084170003887
+outputs[22].ttft = 1.2962745829991036
+outputs[23].ttft = 1.431045831001029
+outputs[24].ttft = 1.4308267239994166
+outputs[25].ttft = 1.4649091039991617
+outputs[26].ttft = 1.5390330589998484
+outputs[27].ttft = 1.5043637950002449
+outputs[28].ttft = 1.5381003970014717
+outputs[29].ttft = 1.5721304250000685
+outputs[30].ttft = 1.6065336880001269
+outputs[31].ttft = 1.6406267290003598
+outputs[32].ttft = 0.9920478900003218
+outputs[33].ttft = 1.1028299039990088
+outputs[34].ttft = 1.0277850139991642
+outputs[35].ttft = 0.0
+outputs[36].ttft = 1.2060445770002843
+outputs[37].ttft = 1.2058522930001345
+outputs[38].ttft = 1.1726064659997064
+outputs[39].ttft = 1.1713209519984957
+outputs[40].ttft = 1.171145214999342
+outputs[41].ttft = 1.1383125410011417
+outputs[42].ttft = 1.138978696999402
+outputs[43].ttft = 1.1194160229988483
+outputs[44].ttft = 0.9121674189991609
+outputs[45].ttft = 1.196638145000179
+outputs[46].ttft = 1.1962962729994615
+outputs[47].ttft = 1.1961299769991456
+outputs[48].ttft = 1.2660196729993913
+outputs[49].ttft = 1.1954515389988956
+outputs[50].ttft = 1.162598914001137
+outputs[51].ttft = 1.162569097999949
+outputs[52].ttft = 1.162553015999947
+outputs[53].ttft = 1.1321598349986743
+outputs[54].ttft = 1.1326693610008078
+outputs[55].ttft = 1.165440643000693
+outputs[56].ttft = 1.4100166739990527
+outputs[57].ttft = 1.202928445998623
+outputs[58].ttft = 1.3420323589998588
+outputs[59].ttft = 1.3072434959995007
+outputs[60].ttft = 1.3068231850011216
+outputs[61].ttft = 1.4154831449995982
+outputs[62].ttft = 1.3805633080010011
+outputs[63].ttft = 1.4523875560007582
+outputs[64].ttft = 1.5197137769991969
+outputs[65].ttft = 1.4103234510002949
+outputs[66].ttft = 1.376180082999781
+outputs[67].ttft = 1.2713030760005495
+outputs[68].ttft = 1.2710615470004996
+outputs[69].ttft = 1.2704409939997277
+outputs[70].ttft = 1.2701521599992702
+outputs[71].ttft = 1.3060338689992932
+outputs[72].ttft = 1.271360167000239
+outputs[73].ttft = 1.2703946780002298
+outputs[74].ttft = 1.2001279670002987
+outputs[75].ttft = 1.1992627069994342
+outputs[76].ttft = 1.3025062670003535
+outputs[77].ttft = 1.0173520059997827
+outputs[78].ttft = 1.0168160510002053
+outputs[79].ttft = 1.0165345179993892
+outputs[80].ttft = 1.0508294779992866
+outputs[81].ttft = 1.0864419599984103
+outputs[82].ttft = 1.2684439650001877
+outputs[83].ttft = 1.2354243790014152
+outputs[84].ttft = 1.2000042859999667
+outputs[85].ttft = 1.2342706290000933
+outputs[86].ttft = 1.1996572379994177
+outputs[87].ttft = 1.0574596580008802
+outputs[88].ttft = 1.101760966999791
+outputs[89].ttft = 1.0804374780000217
+outputs[90].ttft = 1.0798527189999731
+outputs[91].ttft = 1.0795048410000163
+outputs[92].ttft = 1.1931516540007578
+outputs[93].ttft = 1.2008451100009552
+outputs[94].ttft = 0.7804114829996252
+outputs[95].ttft = 0.681951675000164
+outputs[96].ttft = 0.6118594059989846
+outputs[97].ttft = 0.6114069059985923
+outputs[98].ttft = 0.611328233999302
+outputs[99].ttft = 0.6109952839997277
+
+============ Serving Benchmark Result ============
+Backend:                                 vllm      
+Traffic request rate:                    inf       
+Successful requests:                     100       
+Long requests:                           11        
+Short requests:                          89        
+Benchmark duration (s):                  4.34      
+Total input tokens:                      48738     
+Total generated tokens:                  100       
+Total generated tokens (retokenized):    99        
+Request throughput (req/s):              23.04     
+Input token throughput (tok/s):          11230.37  
+Output token throughput (tok/s):         23.04     
+----------------End-to-End Latency----------------
+Mean E2E Latency (ms):                   1137.53   
+Median E2E Latency (ms):                 1182.46   
+P95 E2E Latency (ms):                    1520.64   
+P99 E2E Latency (ms):                    1606.89   
+Long requests Mean E2E Latency (ms):     1276.1515034546228
+Short requests Mean E2E Latency (ms):    1120.3941461122524
+Long requests Median E2E Latency (ms):   1206.561759001488
+Short requests Median E2E Latency (ms):  1162.6120670007367
+Long requests P95 E2E Latency (ms):      1486.0631274996194
+Short requests P95 E2E Latency (ms):     1524.617019600191
+Long requests P99 E2E Latency (ms):      1512.99317590001
+Short requests P99 E2E Latency (ms):     1610.6361800399466
+---------------Time to First Token----------------
+Mean TTFT (ms):                          1125.45   
+Median TTFT (ms):                        1171.96   
+P95 TTFT (ms):                           1520.63   
+P99 TTFT (ms):                           1606.87   
+Long Requests Mean TTFT (ms):            1166.45   
+Short Requests Mean TTFT (ms):           1120.38   
+Long Requests Median TTFT (ms):          1200.85   
+Short Requests Median TTFT (ms):         1162.60   
+Long Requests P95 TTFT (ms):             1486.05   
+Short Requests P95 TTFT (ms):            1524.61   
+Long Requests P99 TTFT (ms):             1512.98   
+Short Requests P99 TTFT (ms):            1610.62   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          0.00      
+Median TPOT (ms):                        0.00      
+P99 TPOT (ms):                           0.00      
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           0.00      
+Median ITL (ms):                         0.00      
+P99 ITL (ms):                            0.00      
+==================================================
