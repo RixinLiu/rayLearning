@@ -237,8 +237,7 @@ async def async_request_truss(
             "temperature": 0.0,
             "best_of": 1,
             "max_tokens": request_func_input.output_len,
-            "stream": not args.
-            ,
+            "stream": not args.disable_stream,
             "ignore_eos": not args.disable_ignore_eos,
             **request_func_input.extra_request_body,
         }
@@ -317,8 +316,7 @@ async def async_request_sglang_generate(
                 "max_new_tokens": request_func_input.output_len,
                 "ignore_eos": not args.disable_ignore_eos,
             },
-            "stream": not args.
-            ,
+            "stream": not args.disable_stream,
             **request_func_input.extra_request_body,
         }
         headers = {}
@@ -964,10 +962,10 @@ async def benchmark(
     tasks: List[asyncio.Task] = []
     async for request in get_request(input_requests, request_rate):
         prompt, prompt_len, output_len = request
-        # output_len = 1
-        if prompt_len > 1000:
+        output_len = 1
+        # if prompt_len > 1000:
             # print("long request")
-            output_len = 3000
+            # output_len = 3000
         # else:
         #     print("short request")
         #     print(output_len)
