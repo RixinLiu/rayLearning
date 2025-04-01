@@ -178,16 +178,24 @@ async def forward_request(request: Request, endpoint: str):
         if request_body and 'prompt' in request_body:
             prompt = request_body['prompt']
             word_count = len(prompt.split())
-            print(f"Word count in request: {word_count}")
+            # print(f"Word count in request: {word_count}")
         
         # Call different function based on request method
         async with httpx.AsyncClient() as client:
             if request.method == "POST":
+                # Update metrics cache with word count and generalized token count
+                if worker_url in metrics_cache:
+                    metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
+
                 response = await client.post(
                     f"{worker_url}{endpoint}",
                     json=request_body,
                     timeout=60
                 )
+
+                # Update metrics cache with word count and generalized token count
+                if worker_url in metrics_cache:
+                    metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
             else:
                 response = await client.get(
                     f"{worker_url}{endpoint}",
