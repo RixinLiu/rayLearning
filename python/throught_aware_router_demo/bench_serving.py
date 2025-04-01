@@ -172,8 +172,9 @@ async def async_request_openai_completions(
         st = time.perf_counter()
         most_recent_timestamp = st
         try:
+            print(payload)
             async with session.post(
-                url=api_url, json=payload, headers=headers
+                url=api_url, json=payload, headers=headers, chunked=False,
             ) as response:
                 if response.status == 200:
                     async for chunk_bytes in response.content:
