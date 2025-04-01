@@ -188,6 +188,8 @@ async def forward_request(request: Request, endpoint: str):
                 # Update metrics cache with word count and generalized token count
                 if worker_url in metrics_cache:
                     print("check1")
+                    print(metrics_cache[worker_url])
+                    print(metrics_cache[worker_url]["metrics"])
                     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
                     print("check2")
 
