@@ -159,6 +159,7 @@ def get_cache_hit_rate(worker_url: str) -> float:
     metrics = metrics_cache.get(worker_url, {}).get("metrics", {})
     return metrics.get("vllm:gauge_gpu_prefix_cache_hit_rate", -1)
 
+is_first_try = True
 async def forward_request(request: Request, endpoint: str):
     # print("Forwarding request...")
     start_time = time.time()
@@ -186,7 +187,7 @@ async def forward_request(request: Request, endpoint: str):
                 print(worker_url)
                 # print(prompt)
                 # Update metrics cache with word count and generalized token count
-                if worker_url in metrics_cache:
+                if is_first_try == False and worker_url in metrics_cache:
                     print("check1")
                     print(metrics_cache[worker_url])
                     print(metrics_cache[worker_url]["metrics"])
@@ -200,7 +201,7 @@ async def forward_request(request: Request, endpoint: str):
                 )
 
                 # Update metrics cache with word count and generalized token count
-                if worker_url in metrics_cache:
+                if is_first_try == False and worker_url in metrics_cache:
                     print("check3")
                     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
                     print("check4")
@@ -212,6 +213,8 @@ async def forward_request(request: Request, endpoint: str):
             
             # Track latency
             await track_latency(worker_url, start_time)
+
+            is_first_try = False
             
             return Response(
                 content=response.content,
