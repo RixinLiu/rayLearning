@@ -237,7 +237,8 @@ async def async_request_truss(
             "temperature": 0.0,
             "best_of": 1,
             "max_tokens": request_func_input.output_len,
-            "stream": not args.disable_stream,
+            "stream": not args.
+            ,
             "ignore_eos": not args.disable_ignore_eos,
             **request_func_input.extra_request_body,
         }
@@ -316,7 +317,8 @@ async def async_request_sglang_generate(
                 "max_new_tokens": request_func_input.output_len,
                 "ignore_eos": not args.disable_ignore_eos,
             },
-            "stream": not args.disable_stream,
+            "stream": not args.
+            ,
             **request_func_input.extra_request_body,
         }
         headers = {}
