@@ -189,12 +189,12 @@ async def forward_request(request: Request, endpoint: str):
                     print("BUG BUG BUG")
                 # print(prompt)
                 # Update metrics cache with word count and generalized token count
-                # if is_first_try == False and worker_url in metrics_cache:
-                #     print("check1")
-                #     print(metrics_cache[worker_url])
-                #     print(metrics_cache[worker_url]["metrics"])
-                #     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
-                #     print("check2")
+                elif worker_url in metrics_cache:
+                    print("check1")
+                    print(metrics_cache[worker_url])
+                    print(metrics_cache[worker_url]["metrics"])
+                    metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
+                    print("check2")
 
                 response = await client.post(
                     f"{worker_url}{endpoint}",
@@ -202,11 +202,13 @@ async def forward_request(request: Request, endpoint: str):
                     timeout=60
                 )
 
+                if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" not in metrics_cache[worker_url]["metrics"]:
+                    print("BUG BUG BUG")
                 # Update metrics cache with word count and generalized token count
-                # if is_first_try == False and worker_url in metrics_cache:
-                #     print("check3")
-                #     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
-                #     print("check4")
+                elif worker_url in metrics_cache:
+                    print("check3")
+                    metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
+                    print("check4")
             else:
                 response = await client.get(
                     f"{worker_url}{endpoint}",
