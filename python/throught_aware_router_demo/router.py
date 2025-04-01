@@ -183,6 +183,8 @@ async def forward_request(request: Request, endpoint: str):
         # Call different function based on request method
         async with httpx.AsyncClient() as client:
             if request.method == "POST":
+                print(worker_url)
+                print(prompt)
                 # Update metrics cache with word count and generalized token count
                 if worker_url in metrics_cache:
                     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
