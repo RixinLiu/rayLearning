@@ -185,6 +185,8 @@ async def forward_request(request: Request, endpoint: str):
         async with httpx.AsyncClient() as client:
             if request.method == "POST":
                 print(worker_url)
+                if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" not in metrics_cache[worker_url]["metrics"]:
+                    print("BUG BUG BUG")
                 # print(prompt)
                 # Update metrics cache with word count and generalized token count
                 # if is_first_try == False and worker_url in metrics_cache:
