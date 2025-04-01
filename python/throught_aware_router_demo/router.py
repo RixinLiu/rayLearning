@@ -184,10 +184,12 @@ async def forward_request(request: Request, endpoint: str):
         async with httpx.AsyncClient() as client:
             if request.method == "POST":
                 print(worker_url)
-                print(prompt)
+                # print(prompt)
                 # Update metrics cache with word count and generalized token count
                 if worker_url in metrics_cache:
+                    print("check1")
                     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
+                    print("check2")
 
                 response = await client.post(
                     f"{worker_url}{endpoint}",
@@ -197,7 +199,9 @@ async def forward_request(request: Request, endpoint: str):
 
                 # Update metrics cache with word count and generalized token count
                 if worker_url in metrics_cache:
+                    print("check3")
                     metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
+                    print("check4")
             else:
                 response = await client.get(
                     f"{worker_url}{endpoint}",
