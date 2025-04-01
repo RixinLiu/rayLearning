@@ -1,0 +1,311 @@
+Namespace(backend='vllm', base_url=None, host='127.0.0.1', port=8000, dataset_name='sharegpt', dataset_path='./LARGER_GAP_short_80_long_20_sharegpt_requests.json', model='Qwen/Qwen2.5-1.5B-Instruct', tokenizer=None, num_prompts=256, sharegpt_output_len=50, random_input_len=None, random_output_len=None, random_range_ratio=0.0, request_rate=inf, seed=1, multi=False, request_rate_range='2,34,2', output_file=None, disable_tqdm=False, disable_stream=True, disable_ignore_eos=False, extra_request_body=None, max_concurrency=16, gen_num_groups=64, gen_prompts_per_group=16, gen_system_prompt_len=2048, gen_question_len=128, gen_output_len=256)
+
+Total number of conversations: 10925
+Starting initial single prompt test run...
+Initial test run completed. Starting main benchmark run...
+  0%|          | 0/256 [00:00<?, ?it/s]  0%|          | 1/256 [00:01<04:20,  1.02s/it]  1%|          | 2/256 [00:03<07:03,  1.67s/it]  7%|▋         | 17/256 [00:03<00:34,  6.87it/s]  7%|▋         | 19/256 [00:03<00:32,  7.24it/s]  8%|▊         | 21/256 [00:03<00:28,  8.16it/s]  9%|▉         | 24/256 [00:03<00:23,  9.86it/s] 10%|█         | 26/256 [00:04<00:21, 10.58it/s] 14%|█▎        | 35/256 [00:04<00:18, 11.86it/s] 16%|█▋        | 42/256 [00:05<00:13, 15.51it/s] 20%|█▉        | 51/256 [00:05<00:11, 18.52it/s] 23%|██▎       | 58/256 [00:05<00:09, 20.50it/s] 24%|██▍       | 61/256 [00:06<00:18, 10.78it/s] 26%|██▌       | 67/256 [00:07<00:17, 10.87it/s] 30%|██▉       | 76/256 [00:07<00:13, 13.37it/s] 31%|███       | 79/256 [00:07<00:12, 14.30it/s] 34%|███▎      | 86/256 [00:08<00:10, 15.99it/s] 37%|███▋      | 95/256 [00:08<00:08, 18.87it/s] 40%|███▉      | 102/256 [00:08<00:08, 18.26it/s] 41%|████▏     | 106/256 [00:11<00:24,  6.09it/s] 46%|████▌     | 118/256 [00:11<00:14,  9.53it/s] 48%|████▊     | 122/256 [00:11<00:12, 10.71it/s] 49%|████▉     | 125/256 [00:12<00:12, 10.86it/s] 55%|█████▌    | 141/256 [00:12<00:07, 14.98it/s] 56%|█████▌    | 143/256 [00:14<00:13,  8.56it/s] 61%|██████    | 156/256 [00:14<00:08, 11.62it/s] 62%|██████▏   | 158/256 [00:16<00:16,  5.83it/s] 67%|██████▋   | 172/256 [00:17<00:08,  9.47it/s] 68%|██████▊   | 174/256 [00:17<00:08,  9.46it/s] 69%|██████▉   | 177/256 [00:17<00:07,  9.98it/s] 74%|███████▍  | 190/256 [00:17<00:04, 15.53it/s] 75%|███████▌  | 193/256 [00:18<00:04, 15.21it/s] 76%|███████▌  | 195/256 [00:18<00:04, 13.77it/s] 77%|███████▋  | 197/256 [00:18<00:04, 11.81it/s] 83%|████████▎ | 212/256 [00:19<00:02, 16.42it/s] 84%|████████▍ | 215/256 [00:19<00:02, 15.97it/s] 90%|█████████ | 231/256 [00:20<00:01, 19.44it/s] 91%|█████████ | 233/256 [00:21<00:01, 12.38it/s] 97%|█████████▋| 248/256 [00:21<00:00, 17.98it/s] 98%|█████████▊| 250/256 [00:21<00:00, 16.13it/s]100%|██████████| 256/256 [00:21<00:00, 11.73it/s]
+outputs[0].ttft = 1.019696800998645
+outputs[1].ttft = 3.143587352000395
+outputs[2].ttft = 3.1449918970010913
+outputs[3].ttft = 3.1448519870009477
+outputs[4].ttft = 3.143276918999618
+outputs[5].ttft = 3.1418441440000606
+outputs[6].ttft = 3.1438242189997254
+outputs[7].ttft = 3.1392070620004233
+outputs[8].ttft = 3.1420090409992554
+outputs[9].ttft = 3.1420607729996846
+outputs[10].ttft = 3.1411984309997933
+outputs[11].ttft = 3.140417078999235
+outputs[12].ttft = 3.1409416120004607
+outputs[13].ttft = 3.140849104998779
+outputs[14].ttft = 3.140494351999223
+outputs[15].ttft = 3.1399669090005773
+outputs[16].ttft = 2.4908652619997156
+outputs[17].ttft = 0.5608354420000978
+outputs[18].ttft = 0.5577947809997568
+outputs[19].ttft = 0.6247785190007562
+outputs[20].ttft = 0.6574519259993394
+outputs[21].ttft = 0.6952890529992146
+outputs[22].ttft = 0.728444030000901
+outputs[23].ttft = 0.7928097309995792
+outputs[24].ttft = 0.7927137650003715
+outputs[25].ttft = 0.9286561400003848
+outputs[26].ttft = 1.0003917789999832
+outputs[27].ttft = 0.999960340999678
+outputs[28].ttft = 0.9999011290001363
+outputs[29].ttft = 0.999202097998932
+outputs[30].ttft = 0.9986746469985519
+outputs[31].ttft = 0.9982268390012905
+outputs[32].ttft = 0.6360673879989918
+outputs[33].ttft = 0.44415950999973575
+outputs[34].ttft = 1.0640199440003926
+outputs[35].ttft = 0.9973459819993877
+outputs[36].ttft = 0.963893692000056
+outputs[37].ttft = 0.9260143470000912
+outputs[38].ttft = 0.8911349830013933
+outputs[39].ttft = 0.8274679030000698
+outputs[40].ttft = 0.827065355000741
+outputs[41].ttft = 0.9225170110003091
+outputs[42].ttft = 0.8528848459991423
+outputs[43].ttft = 0.8532601610004349
+outputs[44].ttft = 0.8528622119993088
+outputs[45].ttft = 0.8525632130003942
+outputs[46].ttft = 0.8517263720004848
+outputs[47].ttft = 0.8522453280002082
+outputs[48].ttft = 0.851791699999012
+outputs[49].ttft = 0.8514777439995669
+outputs[50].ttft = 0.5849396670000715
+outputs[51].ttft = 0.5832321630005026
+outputs[52].ttft = 0.58272899000076
+outputs[53].ttft = 0.5831443520000903
+outputs[54].ttft = 0.5826994509989163
+outputs[55].ttft = 0.5818710130006366
+outputs[56].ttft = 0.5823156280002877
+outputs[57].ttft = 0.6157090190008603
+outputs[58].ttft = 0.6126689230004558
+outputs[59].ttft = 1.5736911829990277
+outputs[60].ttft = 1.5722161699995922
+outputs[61].ttft = 1.5729824129994086
+outputs[62].ttft = 1.5718319030002021
+outputs[63].ttft = 1.572289843001272
+outputs[64].ttft = 1.5719760460015095
+outputs[65].ttft = 1.5716432789995451
+outputs[66].ttft = 1.7632112190003681
+outputs[67].ttft = 1.7630820270005643
+outputs[68].ttft = 1.762744012999974
+outputs[69].ttft = 1.7625129429998196
+outputs[70].ttft = 1.7622940310011472
+outputs[71].ttft = 1.761991893999948
+outputs[72].ttft = 1.7611476690017298
+outputs[73].ttft = 1.5010436869997648
+outputs[74].ttft = 1.5011547739995876
+outputs[75].ttft = 1.1196783039995353
+outputs[76].ttft = 1.1190008769990527
+outputs[77].ttft = 1.1194171080005617
+outputs[78].ttft = 1.1189866659988184
+outputs[79].ttft = 1.118574157000694
+outputs[80].ttft = 1.1180913879998116
+outputs[81].ttft = 1.1172147139986919
+outputs[82].ttft = 0.44450844199855055
+outputs[83].ttft = 0.4443419390008785
+outputs[84].ttft = 0.44398997999996936
+outputs[85].ttft = 0.9189802469991264
+outputs[86].ttft = 0.9190308580000419
+outputs[87].ttft = 0.9182661109989567
+outputs[88].ttft = 0.9182768010014115
+outputs[89].ttft = 0.9181559740009106
+outputs[90].ttft = 0.9179896240002563
+outputs[91].ttft = 0.4776357390001067
+outputs[92].ttft = 0.4774812979994749
+outputs[93].ttft = 0.47703787600039504
+outputs[94].ttft = 0.6836097540017363
+outputs[95].ttft = 0.683468350000112
+outputs[96].ttft = 0.6834368639993045
+outputs[97].ttft = 0.6829549260000931
+outputs[98].ttft = 0.682831829000861
+outputs[99].ttft = 0.6826767910006311
+outputs[100].ttft = 0.6825251620011841
+outputs[101].ttft = 3.181966050999108
+outputs[102].ttft = 0.7536066090015083
+outputs[103].ttft = 0.7540405290001218
+outputs[104].ttft = 0.7531077569983609
+outputs[105].ttft = 0.7534159129991167
+outputs[106].ttft = 3.181947165998281
+outputs[107].ttft = 3.180424033998861
+outputs[108].ttft = 3.180211197000972
+outputs[109].ttft = 3.179272278001008
+outputs[110].ttft = 2.8398041389991704
+outputs[111].ttft = 2.8384861490012554
+outputs[112].ttft = 2.8393427039991366
+outputs[113].ttft = 2.838796688000002
+outputs[114].ttft = 2.8386441959992226
+outputs[115].ttft = 2.8389061729994864
+outputs[116].ttft = 2.838337467001111
+outputs[117].ttft = 2.8471530280003208
+outputs[118].ttft = 2.8469648259997484
+outputs[119].ttft = 2.846438202999707
+outputs[120].ttft = 2.845918380000512
+outputs[121].ttft = 0.5818469490004645
+outputs[122].ttft = 0.5816881979990285
+outputs[123].ttft = 0.8364565989995754
+outputs[124].ttft = 0.5806757450009172
+outputs[125].ttft = 0.8362270520010497
+outputs[126].ttft = 0.8361111439990054
+outputs[127].ttft = 0.8360214020012791
+outputs[128].ttft = 0.8353074579990789
+outputs[129].ttft = 0.8355934989995148
+outputs[130].ttft = 0.8350442280006973
+outputs[131].ttft = 0.8362101359998633
+outputs[132].ttft = 0.833638363999853
+outputs[133].ttft = 0.41852376099996036
+outputs[134].ttft = 0.41850028400040173
+outputs[135].ttft = 0.4176392890003626
+outputs[136].ttft = 0.4191514560006908
+outputs[137].ttft = 0.2565501419994689
+outputs[138].ttft = 0.2542634100009309
+outputs[139].ttft = 0.2541537229990354
+outputs[140].ttft = 0.7363678519996029
+outputs[141].ttft = 1.9868808659994102
+outputs[142].ttft = 1.9854545819998748
+outputs[143].ttft = 1.9865929699990375
+outputs[144].ttft = 1.9859505410004203
+outputs[145].ttft = 1.9858323169992218
+outputs[146].ttft = 1.9851320900015708
+outputs[147].ttft = 1.9856187349996617
+outputs[148].ttft = 1.9852795240003616
+outputs[149].ttft = 1.9849432289993274
+outputs[150].ttft = 1.9838980960012123
+outputs[151].ttft = 1.9840201380011422
+outputs[152].ttft = 1.9826601770000707
+outputs[153].ttft = 1.9833010700003797
+outputs[154].ttft = 1.98327357099879
+outputs[155].ttft = 2.6217725690003135
+outputs[156].ttft = 1.8894298840004922
+outputs[157].ttft = 2.6934958169986203
+outputs[158].ttft = 2.6927625089992944
+outputs[159].ttft = 2.691725396000038
+outputs[160].ttft = 2.6911093319995416
+outputs[161].ttft = 2.6918899119991693
+outputs[162].ttft = 2.692504472001019
+outputs[163].ttft = 2.690829784000016
+outputs[164].ttft = 2.6906055959989317
+outputs[165].ttft = 2.6907218670003203
+outputs[166].ttft = 2.689845167000385
+outputs[167].ttft = 2.6896490159997484
+outputs[168].ttft = 2.689684358001614
+outputs[169].ttft = 2.689281396000297
+outputs[170].ttft = 2.688861378999718
+outputs[171].ttft = 2.5151580830006424
+outputs[172].ttft = 2.514583247000701
+outputs[173].ttft = 0.673241020000205
+outputs[174].ttft = 0.6730605169996124
+outputs[175].ttft = 0.672671309001089
+outputs[176].ttft = 0.922613310000088
+outputs[177].ttft = 0.9544471580011304
+outputs[178].ttft = 0.9548019400008343
+outputs[179].ttft = 0.9541676280005049
+outputs[180].ttft = 0.9215414890004467
+outputs[181].ttft = 0.95418223300112
+outputs[182].ttft = 0.9531310799993662
+outputs[183].ttft = 0.9530589960013458
+outputs[184].ttft = 0.9205770250009664
+outputs[185].ttft = 0.9204286580006737
+outputs[186].ttft = 1.2490613730005862
+outputs[187].ttft = 0.7927739579990885
+outputs[188].ttft = 0.7926474749983754
+outputs[189].ttft = 0.21286389700071595
+outputs[190].ttft = 0.2124152670003241
+outputs[191].ttft = 0.21194848499908403
+outputs[192].ttft = 0.5869972740001685
+outputs[193].ttft = 0.5876854580001236
+outputs[194].ttft = 0.8343243450017326
+outputs[195].ttft = 1.1108975229999487
+outputs[196].ttft = 1.108828562000781
+outputs[197].ttft = 1.1086917069987976
+outputs[198].ttft = 1.1087394280002627
+outputs[199].ttft = 1.076874623000549
+outputs[200].ttft = 1.0781248310013325
+outputs[201].ttft = 1.0767011110001476
+outputs[202].ttft = 1.0758191080003598
+outputs[203].ttft = 1.0759086060006666
+outputs[204].ttft = 1.0760919849999482
+outputs[205].ttft = 0.7804994750003971
+outputs[206].ttft = 0.7810950140010391
+outputs[207].ttft = 0.7811200799988001
+outputs[208].ttft = 0.5590938869991078
+outputs[209].ttft = 0.5580685940003605
+outputs[210].ttft = 0.3107335269996838
+outputs[211].ttft = 0.68173137300073
+outputs[212].ttft = 0.681516669001212
+outputs[213].ttft = 0.681297679000636
+outputs[214].ttft = 0.9002998530013429
+outputs[215].ttft = 0.8987735059999977
+outputs[216].ttft = 0.8984836370000266
+outputs[217].ttft = 0.8979995230001805
+outputs[218].ttft = 0.897480263000034
+outputs[219].ttft = 0.8987769629984541
+outputs[220].ttft = 0.8983593209995888
+outputs[221].ttft = 0.898198486000183
+outputs[222].ttft = 0.8961385800012067
+outputs[223].ttft = 0.8977269300012267
+outputs[224].ttft = 0.8958263360000274
+outputs[225].ttft = 0.8971749369993631
+outputs[226].ttft = 0.8952499689985416
+outputs[227].ttft = 0.21732449700175493
+outputs[228].ttft = 0.2171416559995123
+outputs[229].ttft = 0.21657507000054466
+outputs[230].ttft = 0.6624668059994292
+outputs[231].ttft = 1.4449410149991309
+outputs[232].ttft = 1.4451718820000679
+outputs[233].ttft = 1.4443671139997605
+outputs[234].ttft = 1.4438186200004566
+outputs[235].ttft = 1.4426423849999992
+outputs[236].ttft = 1.4425553469991428
+outputs[237].ttft = 1.4437952759999462
+outputs[238].ttft = 1.4437251250001282
+outputs[239].ttft = 1.443011982999451
+outputs[240].ttft = 1.4420129739992262
+outputs[241].ttft = 1.4421142809987941
+outputs[242].ttft = 1.4424568110007385
+outputs[243].ttft = 1.4414141040015238
+outputs[244].ttft = 1.4414253939994524
+outputs[245].ttft = 1.441394528001183
+outputs[246].ttft = 0.7829733260005014
+outputs[247].ttft = 0.4252400959994702
+outputs[248].ttft = 0.6887357979994704
+outputs[249].ttft = 0.6870238889987377
+outputs[250].ttft = 0.6874260029999277
+outputs[251].ttft = 0.6875917139986996
+outputs[252].ttft = 0.6864302359990688
+outputs[253].ttft = 0.6870343030004733
+outputs[254].ttft = 0.6865961080002307
+outputs[255].ttft = 0.6867262720006693
+
+============ Serving Benchmark Result ============
+Backend:                                 vllm      
+Traffic request rate:                    inf       
+Successful requests:                     256       
+Long requests:                           28        
+Short requests:                          228       
+Benchmark duration (s):                  21.82     
+Total input tokens:                      113531    
+Total generated tokens:                  256       
+Total generated tokens (retokenized):    256       
+Request throughput (req/s):              11.73     
+Input token throughput (tok/s):          5203.51   
+Output token throughput (tok/s):         11.73     
+----------------End-to-End Latency----------------
+Mean E2E Latency (ms):                   1341.44   
+Median E2E Latency (ms):                 953.08    
+P95 E2E Latency (ms):                    3141.35   
+P99 E2E Latency (ms):                    3180.29   
+Long requests Mean E2E Latency (ms):     2123.4991646073076
+Short requests Mean E2E Latency (ms):    1245.3946349166886
+Long requests Median E2E Latency (ms):   2238.8539854991905
+Short requests Median E2E Latency (ms):  918.2541165000657
+Long requests P95 E2E Latency (ms):      3167.380298100943
+Short requests P95 E2E Latency (ms):     3140.2478659995722
+Long requests P99 E2E Latency (ms):      3181.4629629799674
+Short requests P99 E2E Latency (ms):     3170.001506169956
+---------------Time to First Token----------------
+Mean TTFT (ms):                          1341.45   
+Median TTFT (ms):                        953.10    
+P95 TTFT (ms):                           3141.36   
+P99 TTFT (ms):                           3180.31   
+Long Requests Mean TTFT (ms):            2123.52   
+Short Requests Mean TTFT (ms):           1245.41   
+Long Requests Median TTFT (ms):          2238.87   
+Short Requests Median TTFT (ms):         918.27    
+Long Requests P95 TTFT (ms):             3167.39   
+Short Requests P95 TTFT (ms):            3140.26   
+Long Requests P99 TTFT (ms):             3181.48   
+Short Requests P99 TTFT (ms):            3170.02   
+-----Time per Output Token (excl. 1st token)------
+Mean TPOT (ms):                          0.00      
+Median TPOT (ms):                        0.00      
+P99 TPOT (ms):                           0.00      
+---------------Inter-token Latency----------------
+Mean ITL (ms):                           0.00      
+Median ITL (ms):                         0.00      
+P99 ITL (ms):                            0.00      
+==================================================

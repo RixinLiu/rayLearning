@@ -1,0 +1,1051 @@
+/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py:293: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py:312: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [16942]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Initialized with strategy: round_robin
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55846 - "GET /v1/models HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:55860 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:55872 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55888 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 1883.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56012 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55952 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55970 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55908 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55994 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55916 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55934 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56038 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56118 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56054 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56090 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8215.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:55912 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56000 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55950 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55918 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55968 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55978 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55892 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56142 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56160 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56104 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56026 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56130 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56074 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56060 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56176 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56148 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 1834.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56204 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56236 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56220 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56182 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:56216 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56194 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56224 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 8374.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56242 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56280 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 10312.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 12041.0
+Worker: http://localhost:8002, Tokens: 10312.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56298 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56316 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56328 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56346 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56354 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56380 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10312.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10312.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10312.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10312.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10312.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10312.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56398 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56320 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56348 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56284 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56368 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56300 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56264 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56330 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56388 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 14984.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56442 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56450 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56410 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56454 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56446 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56426 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 16980.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 16980.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 16980.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 16980.0
+Worker: http://localhost:8002, Tokens: 10438.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 16980.0
+Worker: http://localhost:8002, Tokens: 10516.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 16980.0
+Worker: http://localhost:8002, Tokens: 10516.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56474 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56500 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 16980.0
+Worker: http://localhost:8002, Tokens: 10516.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 16980.0
+Worker: http://localhost:8002, Tokens: 10516.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56458 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 18374.0
+Worker: http://localhost:8002, Tokens: 10516.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:56550 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56530 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56504 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56488 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 20106.0
+Worker: http://localhost:8002, Tokens: 11731.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 20106.0
+Worker: http://localhost:8002, Tokens: 11731.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 20106.0
+Worker: http://localhost:8002, Tokens: 11731.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 20106.0
+Worker: http://localhost:8002, Tokens: 11731.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:56542 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56566 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56516 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 11731.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 11731.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 11731.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:56606 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56594 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56622 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56628 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56612 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56644 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56626 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56578 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56600 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56684 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56694 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 21656.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44474 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56654 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56668 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44456 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44470 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44496 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 15306.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:44490 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44502 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44528 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44548 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44560 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44488 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44544 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44564 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44558 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44518 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:44588 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44572 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44596 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 23919.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 27083.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44614 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 27083.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 27083.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 27083.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:44640 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44602 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 27083.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44652 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 27083.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 27083.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 27083.0
+Worker: http://localhost:8002, Tokens: 18684.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:44628 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44670 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 28670.0
+Worker: http://localhost:8002, Tokens: 18865.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44682 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44720 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44710 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44690 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44758 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44734 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 18865.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 18865.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 18865.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 18865.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 18865.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 18865.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 18865.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:44796 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44824 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44852 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44772 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 20539.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 20539.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 20539.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 20539.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:44890 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 20653.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44900 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 20673.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:44908 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22023.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44650 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44744 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44698 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44660 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44686 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44730 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44718 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44866 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44840 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44874 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44810 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44916 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44760 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44780 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 31077.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44928 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44960 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44942 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44934 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44984 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44944 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44968 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22047.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:44996 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44972 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45014 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45030 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45004 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45044 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 46413.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45078 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45056 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 46617.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 46617.0
+Worker: http://localhost:8002, Tokens: 22086.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45112 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45098 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 46617.0
+Worker: http://localhost:8002, Tokens: 25832.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 46617.0
+Worker: http://localhost:8002, Tokens: 25832.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45016 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45046 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45036 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 46617.0
+Worker: http://localhost:8002, Tokens: 25832.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 46617.0
+Worker: http://localhost:8002, Tokens: 25832.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 46617.0
+Worker: http://localhost:8002, Tokens: 25832.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45162 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45116 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45082 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45068 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45124 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45108 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45142 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45176 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45136 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45140 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45158 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 27854.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45182 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45202 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45188 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 54224.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45184 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45190 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45218 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45236 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45304 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45298 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45278 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45326 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 32192.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45246 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45224 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45292 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45266 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45310 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45208 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45300 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45334 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45342 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 57829.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45390 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45348 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45366 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45364 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45352 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45398 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45380 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 37226.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45424 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45480 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45434 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45454 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45464 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45440 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45410 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62704.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45500 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45524 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45542 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 38998.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45552 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45476 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45458 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45598 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45580 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45496 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45508 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45546 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45562 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45536 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45578 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45588 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45606 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45610 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45608 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45622 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62852.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45632 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45634 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45636 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45642 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45646 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43197.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45674 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45692 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45716 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45658 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45706 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45722 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45676 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45726 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45732 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45748 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45778 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 62948.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 63125.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45800 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 63125.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:45746 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45792 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45814 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45764 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 63125.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45824 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 63125.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 63125.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45826 - "POST /v1/completions HTTP/1.1" 200 OK
+Worker: http://localhost:8001, Tokens: 63125.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8001
+Worker: http://localhost:8001, Tokens: 63125.0
+Worker: http://localhost:8002, Tokens: 43329.0
+Selected worker: http://localhost:8002
+INFO:     127.0.0.1:45842 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45864 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45914 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45894 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45934 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45950 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45828 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45956 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45880 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45926 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45942 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45854 - "POST /v1/completions HTTP/1.1" 200 OK

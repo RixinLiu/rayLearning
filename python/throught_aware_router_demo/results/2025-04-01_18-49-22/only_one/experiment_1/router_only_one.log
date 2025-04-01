@@ -1,0 +1,535 @@
+/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py:293: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+/home/jrxing/rayLearning/python/throught_aware_router_demo/router.py:312: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [18950]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+Initialized with strategy: only_one
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:43654 - "GET /v1/models HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:43658 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:43664 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:43696 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43674 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43678 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43684 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43710 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:43722 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43970 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43894 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43964 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43818 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43764 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43752 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43910 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43732 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43874 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43848 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43934 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43890 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43782 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43770 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43834 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43804 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43880 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43810 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43918 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43860 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43966 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43776 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43946 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43738 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43794 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43948 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:43976 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43988 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44000 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44008 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43974 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44026 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44030 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44024 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44038 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44050 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44056 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44064 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44070 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44074 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44088 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44090 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44092 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44106 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44108 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44118 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44124 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44132 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44138 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44150 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44156 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44158 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44162 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44192 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44182 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44168 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44190 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44214 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44316 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44194 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44204 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44268 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44274 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44284 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44330 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44242 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44336 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44282 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44292 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44340 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44252 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44266 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44228 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44304 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:44406 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44436 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44402 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44418 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46310 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44364 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46326 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44428 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44350 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44424 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46332 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44392 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46306 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44380 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44382 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46338 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46352 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46362 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46374 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46376 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46398 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46388 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46406 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46418 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46420 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46442 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46462 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46458 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46490 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46496 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46464 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46480 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46434 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46704 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46512 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46524 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46598 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46636 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46616 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46732 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46606 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46664 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46672 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46626 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46708 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46536 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46722 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46690 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46550 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46748 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46582 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46650 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46654 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46688 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46596 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46500 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46566 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46824 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46774 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46776 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46780 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46830 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46810 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46794 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46764 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46848 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46856 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46836 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46894 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46892 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46884 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46906 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46916 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46870 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46920 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:46946 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46940 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46964 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46966 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47030 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47078 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47070 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46974 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47050 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47100 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46928 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46934 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47004 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46960 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47040 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47088 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47124 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47110 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47136 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46988 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47076 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47104 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47008 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47056 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47018 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47212 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47194 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47166 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47152 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47180 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47190 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47202 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47226 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47238 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47240 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47246 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47250 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47262 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47274 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47326 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47334 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47314 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47310 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47278 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47294 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47358 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47374 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47372 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47348 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47368 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47386 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47394 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47384 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47354 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47398 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47402 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47418 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47426 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47434 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47448 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47452 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47458 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47462 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47472 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:47484 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42188 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42192 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42200 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42214 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42220 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42260 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42246 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42244 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42234 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42270 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42280 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42290 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42306 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42320 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42358 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42370 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42378 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42344 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42336 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42382 - "POST /v1/completions HTTP/1.1" 200 OK
+Selected worker: http://localhost:8001
+INFO:     127.0.0.1:42388 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42400 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42412 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42462 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42460 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42428 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42470 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42480 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42486 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42430 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42434 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42502 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42448 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "POST /v1/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42436 - "POST /v1/completions HTTP/1.1" 200 OK

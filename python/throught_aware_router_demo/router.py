@@ -174,6 +174,11 @@ async def forward_request(request: Request, endpoint: str):
     try:
         body = await request.body()
         request_body = json.loads(body) if body else None
+
+        if request_body and 'prompt' in request_body:
+            prompt = request_body['prompt']
+            word_count = len(prompt.split())
+            print(f"Word count in request: {word_count}")
         
         # Call different function based on request method
         async with httpx.AsyncClient() as client:
