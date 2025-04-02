@@ -69,20 +69,6 @@ async def metrics_updater():
                             "metrics": metrics,
                             "timestamp": time.time()
                         }
-                        # total_tokens = get_total_tokens(worker_url)
-                        # # 检查是否发生变化
-                        # if worker_url not in previous_tokens:
-                        #     # 初始化 previous_tokens
-                        #     previous_tokens[worker_url] = {"tokens": total_tokens, "timestamp": time.time()}
-                        # elif previous_tokens[worker_url]["tokens"] != total_tokens:
-                        #     # 计算时间间隔
-                        #     current_time = time.time()
-                        #     time_interval = current_time - previous_tokens[worker_url]["timestamp"]
-                        #     print(f"Worker: {worker_url}, Total Tokens: {total_tokens}, Time Interval: {time_interval:.2f} seconds")
-
-                        #     # 更新 previous_tokens
-                        #     previous_tokens[worker_url] = {"tokens": total_tokens, "timestamp": current_time}
-                        # print(f"Update metric from {worker_url} took {duration:.2f} seconds.")
             except Exception as e:
                 print(f"Metrics update failed for {worker_url}: {str(e)}")
         # await asyncio.sleep(1)
@@ -128,14 +114,6 @@ def select_worker() -> Optional[str]:
                 selected_worker = w
         print(f"Selected worker: {selected_worker}")
         return selected_worker
-        # min_token = float('inf')
-        # for w in valid_workers:
-        #     tokens = get_total_tokens(w)
-        #     print(f"Worker: {w}, Tokens: {tokens}")
-        #     if tokens < min_token:
-        #         min_token = tokens
-        #         worker = w
-        # print(f"Selected worker: {worker}")
     elif strategy == "pow_2":
         min_qlen = float('inf')
         for w in valid_workers:
@@ -146,13 +124,13 @@ def select_worker() -> Optional[str]:
             elif qlen < min_qlen:
                 min_qlen = qlen
                 worker = w
-            tokens = get_total_tokens(w)
+            tokens = manual_tokens[w]["tokens"]
             print(f"Worker: {w}, Tokens: {tokens}")
         print(f"Selected worker: {worker}")
     elif strategy == "random":
         worker = random.choice(valid_workers)
         for w in valid_workers:
-            tokens = get_total_tokens(w)
+            tokens = manual_tokens[w]["tokens"]
             print(f"Worker: {w}, Tokens: {tokens}")
         print(f"Selected worker: {worker}")
     elif strategy == "latency":
@@ -168,7 +146,7 @@ def select_worker() -> Optional[str]:
         worker = random.choice(candidates)
     elif strategy == "round_robin":
         for w in valid_workers:
-            tokens = get_total_tokens(w)
+            tokens = manual_tokens[w]["tokens"]
             print(f"Worker: {w}, Tokens: {tokens}")
         worker = valid_workers[last_access_worker % len(valid_workers)]
         print(f"Selected worker: {worker}")
@@ -234,6 +212,11 @@ async def forward_request(request: Request, endpoint: str):
             status_code=503,
             media_type="application/json"
         )
+
+    if word_count > 1000:
+        word_count += 1000
+    else:
+        word_count += 50
     
     # Update manual tokens before processing
     update_manual_tokens(worker_url, word_count)
@@ -289,6 +272,11 @@ async def forward_streaming_request(request: Request, endpoint: str):
         # print(f"Word count in request: {word_count}")
 
     worker_url = select_worker()
+
+    if word_count > 1000:
+        word_count += 1000
+    else:
+        word_count += 50
 
     # Update manual tokens before processing
     update_manual_tokens(worker_url, word_count)

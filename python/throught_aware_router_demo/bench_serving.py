@@ -963,10 +963,10 @@ async def benchmark(
     tasks: List[asyncio.Task] = []
     async for request in get_request(input_requests, request_rate):
         prompt, prompt_len, output_len = request
-        output_len = 1
-        # if prompt_len > 1000:
+        # output_len = 1
+        if prompt_len > 1000:
             # print("long request")
-            # output_len = 3000
+            output_len = 1000
         # else:
         #     print("short request")
         #     print(output_len)
