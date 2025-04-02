@@ -70,7 +70,7 @@ def run_router(strategy, experiment_dir):
 def run_benchmark(num_prompts, concurrency, experiment_dir):
     cmd = f"""python3 -m bench_serving --backend vllm --host 127.0.0.1 --port 8000 \
     --dataset-name sharegpt --num-prompts {num_prompts} --sharegpt-output-len 50 --max-concurrency {concurrency} \
-    --request-rate 20 --disable-stream --dataset-path ./LARGER_GAP_short_80_long_20_sharegpt_requests.json"""
+    --disable-stream --dataset-path ./LARGER_GAP_short_80_long_20_sharegpt_requests.json"""
     
     # 启动基准测试并捕获输出
     benchmark_log_path = os.path.join(experiment_dir, "benchmark.log")

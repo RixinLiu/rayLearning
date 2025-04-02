@@ -46,7 +46,7 @@ def update_manual_tokens(worker_url: str, delta: int):
 async def monitor_manual_tokens():
     """Monitor and print manual_tokens every 100ms"""
     while True:
-        await asyncio.sleep(1)  # 100ms interval
+        await asyncio.sleep(0.3)  # 100ms interval
         for worker_url, data in manual_tokens.items():
             # Calculate tokens processed in last 100ms window
             tokens_in_window = data["tokens"] - data["last_100ms_tokens"]
@@ -100,25 +100,41 @@ def select_worker() -> Optional[str]:
         return None
     
     strategy = strategy_config["current_strategy"]
-
+    
     # 添加请求计数器
     if not hasattr(select_worker, "request_count"):
         select_worker.request_count = 0
     select_worker.request_count += 1
-
-    if strategy == "tokens" and select_worker.request_count <= 100:
-        worker = valid_workers[last_access_worker % len(valid_workers)]
-        last_access_worker += 1
+    
+    if strategy == "tokens":
+        # Warm start阶段：前100个请求使用round-robin
+        if select_worker.request_count <= 100:
+            worker = valid_workers[last_access_worker % len(valid_workers)]
+            last_access_worker += 1
+            print(f"Warm start ({select_worker.request_count}/100): Round-robin selected worker: {worker}")
+            return worker
         
-        # 打印warm start信息
-        print(f"Warm start ({select_worker.request_count}/100): Round-robin selected worker: {worker}")
-        return worker
-    elif strategy == "tokens":
-        # Modified to use manual token throughput
+        # 检查所有worker的throughput是否都为0
+        all_zero_throughput = True
+        throughputs = {}
+        for w in valid_workers:
+            throughput = manual_tokens[w]["throughput"]
+            throughputs[w] = throughput
+            if throughput > 0:
+                all_zero_throughput = False
+        
+        # 如果所有throughput都为0，退化为round-robin
+        if all_zero_throughput:
+            worker = valid_workers[last_access_worker % len(valid_workers)]
+            last_access_worker += 1
+            print(f"All throughputs zero: Fallback to round-robin, selected worker: {worker}")
+            return worker
+        
+        # 正常tokens策略：选择throughput最低的worker
         min_throughput = float('inf')
         selected_worker = None
         for w in valid_workers:
-            throughput = manual_tokens[w]["throughput"]
+            throughput = throughputs[w]
             tokens = manual_tokens[w]["tokens"]
             print(f"Worker: {w}, Tokens: {tokens}")
             print(f"Worker: {w}, Throughput: {throughput:.2f} tokens/s")
