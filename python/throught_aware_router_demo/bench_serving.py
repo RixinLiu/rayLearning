@@ -786,8 +786,8 @@ async def get_request(
             continue
 
         # Sample the request interval from the exponential distribution.
-        # interval = np.random.exponential(1.0 / request_rate)
-        interval = 0.125
+        interval = np.random.exponential(1.0 / request_rate)
+        print(interval)
         # The next request will be sent after the interval.
         await asyncio.sleep(interval)
 
