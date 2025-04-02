@@ -25,12 +25,44 @@ strategy_config = {
 }
 last_access_worker = 0
 
+# Add manual tokens tracking
+manual_tokens = {}  # {worker_url: {"tokens": int, "timestamp": float}}
+token_throughput_history = {}  # {worker_url: deque of throughput values}
+
 def initialize_config(ports: List[int], strategy: str):
     global worker_urls, latency_history
     worker_urls = [f"http://localhost:{port}" for port in ports]
     latency_history = {url: deque(maxlen=strategy_config["history_size"]) for url in worker_urls}
     strategy_config["current_strategy"] = strategy
+    manual_tokens = {url: {"tokens": 0, "timestamp": time.time()} for url in worker_urls}
+    token_throughput_history = {url: deque(maxlen=strategy_config["history_size"]) for url in worker_urls}
     print(f"Initialized with strategy: {strategy}")
+
+def update_manual_tokens(worker_url: str, delta: int):
+    """Update manual tokens count and calculate throughput"""
+    current_time = time.time()
+    
+    # Get previous state
+    prev_state = manual_tokens.get(worker_url, {"tokens": 0, "timestamp": current_time})
+    prev_tokens = prev_state["tokens"]
+    prev_time = prev_state["timestamp"]
+    
+    # Calculate throughput (tokens per second)
+    time_diff = current_time - prev_time
+    if time_diff > 0:
+        throughput = (delta) / time_diff
+        token_throughput_history[worker_url].append(throughput)
+    
+    # Update manual tokens
+    manual_tokens[worker_url] = {
+        "tokens": prev_tokens + delta,
+        "timestamp": current_time
+    }
+
+def get_manual_token_throughput(worker_url: str) -> float:
+    """Get average token throughput for the worker"""
+    history = token_throughput_history.get(worker_url, deque())
+    return sum(history)/len(history) if history else 0
 
 previous_tokens = {}
 async def metrics_updater():
@@ -48,19 +80,19 @@ async def metrics_updater():
                             "metrics": metrics,
                             "timestamp": time.time()
                         }
-                        total_tokens = get_total_tokens(worker_url)
-                        # 检查是否发生变化
-                        if worker_url not in previous_tokens:
-                            # 初始化 previous_tokens
-                            previous_tokens[worker_url] = {"tokens": total_tokens, "timestamp": time.time()}
-                        elif previous_tokens[worker_url]["tokens"] != total_tokens:
-                            # 计算时间间隔
-                            current_time = time.time()
-                            time_interval = current_time - previous_tokens[worker_url]["timestamp"]
-                            print(f"Worker: {worker_url}, Total Tokens: {total_tokens}, Time Interval: {time_interval:.2f} seconds")
+                        # total_tokens = get_total_tokens(worker_url)
+                        # # 检查是否发生变化
+                        # if worker_url not in previous_tokens:
+                        #     # 初始化 previous_tokens
+                        #     previous_tokens[worker_url] = {"tokens": total_tokens, "timestamp": time.time()}
+                        # elif previous_tokens[worker_url]["tokens"] != total_tokens:
+                        #     # 计算时间间隔
+                        #     current_time = time.time()
+                        #     time_interval = current_time - previous_tokens[worker_url]["timestamp"]
+                        #     print(f"Worker: {worker_url}, Total Tokens: {total_tokens}, Time Interval: {time_interval:.2f} seconds")
 
-                            # 更新 previous_tokens
-                            previous_tokens[worker_url] = {"tokens": total_tokens, "timestamp": current_time}
+                        #     # 更新 previous_tokens
+                        #     previous_tokens[worker_url] = {"tokens": total_tokens, "timestamp": current_time}
                         # print(f"Update metric from {worker_url} took {duration:.2f} seconds.")
             except Exception as e:
                 print(f"Metrics update failed for {worker_url}: {str(e)}")
@@ -94,14 +126,25 @@ def select_worker() -> Optional[str]:
     
     strategy = strategy_config["current_strategy"]
     if strategy == "tokens":
-        min_token = float('inf')
+        # Modified to use manual token throughput
+        max_throughput = -1
+        selected_worker = None
         for w in valid_workers:
-            tokens = get_total_tokens(w)
-            print(f"Worker: {w}, Tokens: {tokens}")
-            if tokens < min_token:
-                min_token = tokens
-                worker = w
-        print(f"Selected worker: {worker}")
+            throughput = get_manual_token_throughput(w)
+            print(f"Worker: {w}, Throughput: {throughput:.2f} tokens/s")
+            if throughput > max_throughput:
+                max_throughput = throughput
+                selected_worker = w
+        print(f"Selected worker: {selected_worker}")
+        return selected_worker
+        # min_token = float('inf')
+        # for w in valid_workers:
+        #     tokens = get_total_tokens(w)
+        #     print(f"Worker: {w}, Tokens: {tokens}")
+        #     if tokens < min_token:
+        #         min_token = tokens
+        #         worker = w
+        # print(f"Selected worker: {worker}")
     elif strategy == "pow_2":
         min_qlen = float('inf')
         for w in valid_workers:
@@ -180,6 +223,18 @@ async def forward_request(request: Request, endpoint: str):
     # print("Forwarding request...")
     start_time = time.time()
     print(f"start_time = {start_time}")
+
+    # Get word count first
+    word_count = 0
+    try:
+        body = await request.body()
+        request_body = json.loads(body) if body else None
+        if request_body and 'prompt' in request_body:
+            prompt = request_body['prompt']
+            word_count = len(prompt.split())
+    except:
+        pass
+
     worker_url = select_worker()
     
     if not worker_url:
@@ -188,39 +243,22 @@ async def forward_request(request: Request, endpoint: str):
             status_code=503,
             media_type="application/json"
         )
+    
+    # Update manual tokens before processing
+    update_manual_tokens(worker_url, word_count)
 
     try:
         body = await request.body()
         request_body = json.loads(body) if body else None
-
-        if request_body and 'prompt' in request_body:
-            prompt = request_body['prompt']
-            word_count = len(prompt.split())
-            # print(f"Word count in request: {word_count}")
         
         # Call different function based on request method
         async with httpx.AsyncClient() as client:
             if request.method == "POST":
-                # print(worker_url)
-                # if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" in metrics_cache[worker_url]["metrics"] and worker_url in metrics_cache:
-                    # print("check1")
-                    # print(metrics_cache[worker_url])
-                    # print(metrics_cache[worker_url]["metrics"])
-                    # metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
-                    # print("check2")
-
                 response = await client.post(
                     f"{worker_url}{endpoint}",
                     json=request_body,
                     timeout=60
                 )
-
-                print("A request just finished")
-
-                # if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" in metrics_cache[worker_url]["metrics"] and worker_url in metrics_cache:
-                    # print("check3")
-                    # metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
-                    # print("check4")
             else:
                 response = await client.get(
                     f"{worker_url}{endpoint}",
@@ -229,8 +267,6 @@ async def forward_request(request: Request, endpoint: str):
             
             # Track latency
             await track_latency(worker_url, start_time)
-
-            is_first_try = False
             
             return Response(
                 content=response.content,
@@ -252,7 +288,7 @@ async def forward_streaming_request(request: Request, endpoint: str):
     """Handle streaming request, where the response is sent back in chunks"""
     body = await request.body()
     request_body = json.loads(body) if body else None
-    worker_url = select_worker()
+    word_count = 0
 
 
     # Calculate word count using split
@@ -261,15 +297,10 @@ async def forward_streaming_request(request: Request, endpoint: str):
         word_count = len(prompt.split())
         # print(f"Word count in request: {word_count}")
 
-    # Update metrics cache with word count and generalized token count
-    if worker_url in metrics_cache:
-        metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
-        # if word_count > 1000:
-        #     worker_long_request_count[worker_url] += 1
-        #     metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 3000
-        # else:
-        #     worker_short_request_count[worker_url] += 1
-        #     metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += 50
+    worker_url = select_worker()
+
+    # Update manual tokens before processing
+    update_manual_tokens(worker_url, word_count)
     
     if not worker_url:
         return Response(
@@ -281,8 +312,6 @@ async def forward_streaming_request(request: Request, endpoint: str):
     try:
         
         async def generate_stream():
-            start_total_tokens = get_total_tokens(worker_url)
-            initial_tokens = start_total_tokens
             async with httpx.AsyncClient() as client:
                 async with client.stream(
                     "POST",
@@ -291,23 +320,7 @@ async def forward_streaming_request(request: Request, endpoint: str):
                     timeout=120
                 ) as response:
                     async for chunk in response.aiter_bytes():
-                        # end_total_tokens = get_total_tokens(worker_url)
-                        # if end_total_tokens > start_total_tokens:
-                        #     print(f"Partial tokens processed: {end_total_tokens - start_total_tokens}")
-                        #     start_total_tokens = end_total_tokens
-                        # else:
-                        #     print("No token processed")
-
                         yield chunk
-                    # Update metrics cache with word count and generalized token count
-                    if worker_url in metrics_cache:
-                        metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
-                        # if word_count > 1000:
-                        #     metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 3000
-                        # else:
-                        #     metrics_cache[worker_url]["metrics"]["vllm:generation_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= 50
-                    
-            # print("Total tokens processed: ", end_total_tokens - initial_tokens)
         
         # await track_latency(worker_url, start_time)
         return StreamingResponse(generate_stream(), media_type="text/event-stream")
