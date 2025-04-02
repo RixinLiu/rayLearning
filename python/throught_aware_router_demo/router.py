@@ -354,6 +354,7 @@ async def handle_models(request: Request):
 @app.on_event("startup")
 async def startup():
     asyncio.create_task(metrics_updater())
+    asyncio.create_task(monitor_manual_tokens())
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
