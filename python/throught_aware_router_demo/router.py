@@ -30,7 +30,7 @@ manual_tokens = {}  # {worker_url: {"tokens": int, "timestamp": float}}
 token_throughput_history = {}  # {worker_url: deque of throughput values}
 
 def initialize_config(ports: List[int], strategy: str):
-    global worker_urls, latency_history
+    global worker_urls, latency_history, manual_tokens, token_throughput_history
     worker_urls = [f"http://localhost:{port}" for port in ports]
     latency_history = {url: deque(maxlen=strategy_config["history_size"]) for url in worker_urls}
     strategy_config["current_strategy"] = strategy
