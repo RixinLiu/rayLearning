@@ -152,7 +152,7 @@ async def async_request_openai_completions(
     prompt = request_func_input.prompt
 
     async with aiohttp.ClientSession(timeout=AIOHTTP_TIMEOUT) as session:
-        print(f"request_func_input.output_len = {request_func_input.output_len}")
+        # print(f"request_func_input.output_len = {request_func_input.output_len}")
         payload = {
             "model": request_func_input.model,
             "prompt": prompt,
