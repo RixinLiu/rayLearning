@@ -127,13 +127,13 @@ def select_worker() -> Optional[str]:
     strategy = strategy_config["current_strategy"]
     if strategy == "tokens":
         # Modified to use manual token throughput
-        max_throughput = -1
+        min_throughput = float('inf')
         selected_worker = None
         for w in valid_workers:
             throughput = get_manual_token_throughput(w)
             print(f"Worker: {w}, Throughput: {throughput:.2f} tokens/s")
-            if throughput > max_throughput:
-                max_throughput = throughput
+            if throughput < min_throughput:
+                min_throughput = throughput
                 selected_worker = w
         print(f"Selected worker: {selected_worker}")
         return selected_worker
