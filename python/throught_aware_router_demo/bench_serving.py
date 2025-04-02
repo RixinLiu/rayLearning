@@ -780,7 +780,7 @@ async def get_request(
     input_requests = iter(input_requests)
     for request in input_requests:
         start_time = time.time()
-        print(f"start_time = {start_time}")
+        # print(f"start_time = {start_time}")
         yield request
 
         if request_rate == float("inf"):
@@ -829,7 +829,7 @@ def calculate_metrics(
                 tpots.append((outputs[i].latency - outputs[i].ttft) / (output_len - 1))
             itls += outputs[i].itl
             ttfts.append(outputs[i].ttft)
-            print(f"outputs[{i}].ttft = {outputs[i].ttft}")
+            # print(f"outputs[{i}].ttft = {outputs[i].ttft}")
             e2e_latencies.append(outputs[i].latency)
 
             if 2 * input_requests[i][1] + 256 > 4000:
