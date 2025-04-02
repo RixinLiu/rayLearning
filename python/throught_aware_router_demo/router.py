@@ -189,11 +189,11 @@ async def forward_request(request: Request, endpoint: str):
         async with httpx.AsyncClient() as client:
             if request.method == "POST":
                 print(worker_url)
-                if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" in metrics_cache[worker_url]["metrics"] and worker_url in metrics_cache:
+                # if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" in metrics_cache[worker_url]["metrics"] and worker_url in metrics_cache:
                     # print("check1")
                     # print(metrics_cache[worker_url])
                     # print(metrics_cache[worker_url]["metrics"])
-                    metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
+                    # metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] += word_count
                     # print("check2")
 
                 response = await client.post(
@@ -202,9 +202,9 @@ async def forward_request(request: Request, endpoint: str):
                     timeout=60
                 )
 
-                if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" in metrics_cache[worker_url]["metrics"] and worker_url in metrics_cache:
+                # if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" in metrics_cache[worker_url]["metrics"] and worker_url in metrics_cache:
                     # print("check3")
-                    metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
+                    # metrics_cache[worker_url]["metrics"]["vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}"] -= word_count
                     # print("check4")
             else:
                 response = await client.get(
