@@ -46,7 +46,7 @@ def update_manual_tokens(worker_url: str, delta: int):
 async def monitor_manual_tokens():
     """Monitor and print manual_tokens every 100ms"""
     while True:
-        await asyncio.sleep(0.1)  # 100ms interval
+        await asyncio.sleep(1)  # 100ms interval
         for worker_url, data in manual_tokens.items():
             # Calculate tokens processed in last 100ms window
             tokens_in_window = data["tokens"] - data["last_100ms_tokens"]
@@ -120,6 +120,7 @@ def select_worker() -> Optional[str]:
         selected_worker = None
         for w in valid_workers:
             throughput = manual_tokens[w]["throughput"]
+            print(f"Worker: {w}, Tokens: {manual_tokens[w]["tokens"]}")
             print(f"Worker: {w}, Throughput: {throughput:.2f} tokens/s")
             if throughput < min_throughput:
                 min_throughput = throughput
