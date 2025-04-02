@@ -38,7 +38,6 @@ async def metrics_updater():
     while True:
         for worker_url in worker_urls:
             try:
-                start_time = time.time()
                 async with httpx.AsyncClient() as client:
                     # Get metrics from each worker, and cache them
                     # Metrics are maintained by vLLM
@@ -49,12 +48,19 @@ async def metrics_updater():
                             "metrics": metrics,
                             "timestamp": time.time()
                         }
-                        end_time = time.time()
-                        duration = end_time - start_time
                         total_tokens = get_total_tokens(worker_url)
-                        if worker_url not in previous_tokens or previous_tokens[worker_url] != total_tokens:
-                            print(f"Worker: {worker_url}, Total Tokens: {total_tokens}")
-                            previous_tokens[worker_url] = total_tokens  # 更新缓存值
+                        # 检查是否发生变化
+                        if worker_url not in previous_tokens:
+                            # 初始化 previous_tokens
+                            previous_tokens[worker_url] = {"tokens": total_tokens, "timestamp": time.time()}
+                        elif previous_tokens[worker_url]["tokens"] != total_tokens:
+                            # 计算时间间隔
+                            current_time = time.time()
+                            time_interval = current_time - previous_tokens[worker_url]["timestamp"]
+                            print(f"Worker: {worker_url}, Total Tokens: {total_tokens}, Time Interval: {time_interval:.2f} seconds")
+
+                            # 更新 previous_tokens
+                            previous_tokens[worker_url] = {"tokens": total_tokens, "timestamp": current_time}
                         # print(f"Update metric from {worker_url} took {duration:.2f} seconds.")
             except Exception as e:
                 print(f"Metrics update failed for {worker_url}: {str(e)}")
