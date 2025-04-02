@@ -27,42 +27,31 @@ last_access_worker = 0
 
 # Add manual tokens tracking
 manual_tokens = {}  # {worker_url: {"tokens": int, "timestamp": float}}
-token_throughput_history = {}  # {worker_url: deque of throughput values}
 
 def initialize_config(ports: List[int], strategy: str):
-    global worker_urls, latency_history, manual_tokens, token_throughput_history
+    global worker_urls, latency_history, manual_tokens
     worker_urls = [f"http://localhost:{port}" for port in ports]
     latency_history = {url: deque(maxlen=strategy_config["history_size"]) for url in worker_urls}
     strategy_config["current_strategy"] = strategy
-    manual_tokens = {url: {"tokens": 0, "timestamp": time.time()} for url in worker_urls}
-    token_throughput_history = {url: deque(maxlen=strategy_config["history_size"]) for url in worker_urls}
+    manual_tokens = {url: {"tokens": 0, "last_100ms_tokens": 0, "throughput": 0, "timestamp": time.time()} for url in worker_urls}
     print(f"Initialized with strategy: {strategy}")
 
 def update_manual_tokens(worker_url: str, delta: int):
     """Update manual tokens count and calculate throughput"""
     current_time = time.time()
-    
-    # Get previous state
-    prev_state = manual_tokens.get(worker_url, {"tokens": 0, "timestamp": current_time})
-    prev_tokens = prev_state["tokens"]
-    prev_time = prev_state["timestamp"]
-    
-    # Calculate throughput (tokens per second)
-    time_diff = current_time - prev_time
-    if time_diff > 0:
-        throughput = (delta) / time_diff
-        token_throughput_history[worker_url].append(throughput)
-    
-    # Update manual tokens
-    manual_tokens[worker_url] = {
-        "tokens": prev_tokens + delta,
-        "timestamp": current_time
-    }
 
-def get_manual_token_throughput(worker_url: str) -> float:
-    """Get average token throughput for the worker"""
-    history = token_throughput_history.get(worker_url, deque())
-    return sum(history)/len(history) if history else 0
+    manual_tokens[worker_url]["tokens"] += delta
+    manual_tokens[worker_url]["timestamp"] = current_time
+
+async def monitor_manual_tokens():
+    """Monitor and print manual_tokens every 100ms"""
+    while True:
+        await asyncio.sleep(0.1)  # 100ms interval
+        for worker_url, data in manual_tokens.items():
+            # Calculate tokens processed in last 100ms window
+            tokens_in_window = data["tokens"] - data["last_100ms_tokens"]
+            manual_tokens[worker_url]["throughput"] = tokens_in_window
+            manual_tokens[worker_url]["last_100ms_tokens"] = data["tokens"]
 
 previous_tokens = {}
 async def metrics_updater():
@@ -130,7 +119,7 @@ def select_worker() -> Optional[str]:
         min_throughput = float('inf')
         selected_worker = None
         for w in valid_workers:
-            throughput = get_manual_token_throughput(w)
+            throughput = manual_tokens[w]["throughput"]
             print(f"Worker: {w}, Throughput: {throughput:.2f} tokens/s")
             if throughput < min_throughput:
                 min_throughput = throughput
