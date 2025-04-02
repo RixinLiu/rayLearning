@@ -36,6 +36,7 @@ async def metrics_updater():
     while True:
         for worker_url in worker_urls:
             try:
+                start_time = time.time()
                 async with httpx.AsyncClient() as client:
                     # Get metrics from each worker, and cache them
                     # Metrics are maintained by vLLM
@@ -46,6 +47,9 @@ async def metrics_updater():
                             "metrics": metrics,
                             "timestamp": time.time()
                         }
+                        end_time = time.time()
+                        duration = end_time - start_time
+                        print(f"Update metric from {worker_url} took {duration:.2f} seconds.")
             except Exception as e:
                 print(f"Metrics update failed for {worker_url}: {str(e)}")
         # await asyncio.sleep(1)
