@@ -195,7 +195,7 @@ async def forward_request(request: Request, endpoint: str):
         # Call different function based on request method
         async with httpx.AsyncClient() as client:
             if request.method == "POST":
-                print(worker_url)
+                # print(worker_url)
                 # if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" in metrics_cache[worker_url]["metrics"] and worker_url in metrics_cache:
                     # print("check1")
                     # print(metrics_cache[worker_url])
@@ -208,6 +208,8 @@ async def forward_request(request: Request, endpoint: str):
                     json=request_body,
                     timeout=60
                 )
+
+                print("A request just finished")
 
                 # if "vllm:prompt_tokens_total{model_name=\"Qwen/Qwen2.5-1.5B-Instruct\"}" in metrics_cache[worker_url]["metrics"] and worker_url in metrics_cache:
                     # print("check3")
