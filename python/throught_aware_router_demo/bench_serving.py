@@ -965,11 +965,11 @@ async def benchmark(
         prompt, prompt_len, output_len = request
         # output_len = 1
         if prompt_len > 1000:
-            # print("long request")
+            print("long request")
             output_len = 400
-        # else:
-        #     print("short request")
-        #     print(output_len)
+        else:
+            print("short request")
+            print(output_len)
         request_func_input = RequestFuncInput(
             model=model_id,
             prompt=prompt,

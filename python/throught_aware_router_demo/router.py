@@ -46,7 +46,7 @@ def update_manual_tokens(worker_url: str, delta: int):
 async def monitor_manual_tokens():
     """Monitor and print manual_tokens every 100ms"""
     while True:
-        await asyncio.sleep(1.5)  # 100ms interval
+        await asyncio.sleep(1)  # 100ms interval
         for worker_url, data in manual_tokens.items():
             # Calculate tokens processed in last 100ms window
             tokens_in_window = data["tokens"] - data["last_100ms_tokens"]
@@ -105,7 +105,7 @@ def select_worker() -> Optional[str]:
     if not hasattr(select_worker, "request_count"):
         select_worker.request_count = 0
     select_worker.request_count += 1
-    
+
     if strategy == "tokens" and select_worker.request_count <= 100:
         worker = valid_workers[last_access_worker % len(valid_workers)]
         last_access_worker += 1
