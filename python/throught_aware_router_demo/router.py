@@ -120,7 +120,8 @@ def select_worker() -> Optional[str]:
         selected_worker = None
         for w in valid_workers:
             throughput = manual_tokens[w]["throughput"]
-            print(f"Worker: {w}, Tokens: {manual_tokens[w]["tokens"]}")
+            tokens = manual_tokens[w]["tokens"]
+            print(f"Worker: {w}, Tokens: {tokens}")
             print(f"Worker: {w}, Throughput: {throughput:.2f} tokens/s")
             if throughput < min_throughput:
                 min_throughput = throughput
