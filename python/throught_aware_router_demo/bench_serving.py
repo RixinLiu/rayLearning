@@ -966,7 +966,7 @@ async def benchmark(
         # output_len = 1
         if prompt_len > 1000:
             # print("long request")
-            output_len = 1000
+            output_len = 400
         # else:
         #     print("short request")
         #     print(output_len)

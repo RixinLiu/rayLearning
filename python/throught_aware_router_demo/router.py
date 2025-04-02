@@ -46,7 +46,7 @@ def update_manual_tokens(worker_url: str, delta: int):
 async def monitor_manual_tokens():
     """Monitor and print manual_tokens every 100ms"""
     while True:
-        await asyncio.sleep(0.2)  # 100ms interval
+        await asyncio.sleep(0.5)  # 100ms interval
         for worker_url, data in manual_tokens.items():
             # Calculate tokens processed in last 100ms window
             tokens_in_window = data["tokens"] - data["last_100ms_tokens"]
@@ -191,7 +191,7 @@ is_first_try = True
 async def forward_request(request: Request, endpoint: str):
     # print("Forwarding request...")
     start_time = time.time()
-    print(f"start_time = {start_time}")
+    # print(f"start_time = {start_time}")
 
     # Get word count first
     word_count = 0
@@ -214,7 +214,7 @@ async def forward_request(request: Request, endpoint: str):
         )
 
     if word_count > 1000:
-        word_count += 1000
+        word_count += 400
     else:
         word_count += 50
     
