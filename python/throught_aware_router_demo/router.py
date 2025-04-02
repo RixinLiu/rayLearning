@@ -227,7 +227,7 @@ async def forward_request(request: Request, endpoint: str):
         )
 
     if word_count > 1000:
-        word_count += 400
+        word_count += 1000
     else:
         word_count += 50
     
