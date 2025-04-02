@@ -32,7 +32,9 @@ def initialize_config(ports: List[int], strategy: str):
     strategy_config["current_strategy"] = strategy
     print(f"Initialized with strategy: {strategy}")
 
+previous_tokens = {}
 async def metrics_updater():
+    global previous_tokens
     while True:
         for worker_url in worker_urls:
             try:
@@ -49,7 +51,11 @@ async def metrics_updater():
                         }
                         end_time = time.time()
                         duration = end_time - start_time
-                        print(f"Update metric from {worker_url} took {duration:.2f} seconds.")
+                        total_tokens = get_total_tokens(worker_url)
+                        if worker_url not in previous_tokens or previous_tokens[worker_url] != total_tokens:
+                            print(f"Worker: {worker_url}, Total Tokens: {total_tokens}")
+                            previous_tokens[worker_url] = total_tokens  # 更新缓存值
+                        # print(f"Update metric from {worker_url} took {duration:.2f} seconds.")
             except Exception as e:
                 print(f"Metrics update failed for {worker_url}: {str(e)}")
         # await asyncio.sleep(1)
@@ -167,6 +173,7 @@ is_first_try = True
 async def forward_request(request: Request, endpoint: str):
     # print("Forwarding request...")
     start_time = time.time()
+    print(f"start_time = {start_time}")
     worker_url = select_worker()
     
     if not worker_url:
